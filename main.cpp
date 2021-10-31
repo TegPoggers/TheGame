@@ -10,5 +10,5 @@ int main(){
     GameName::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Game Name");
     std::cout << "Hello, World!" << std::endl;
     return 0;
-
+//Teste de comit com o clion
 }
