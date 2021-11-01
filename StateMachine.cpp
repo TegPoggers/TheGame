@@ -31,14 +31,14 @@ namespace GameName {
                 if (is_replacing) {
                     states.pop();
                 } else {
-                    states.top()->pause();
+                    states.top()->Pause();
                 }
             }
-
+            states.push(std::move(new_state));
+            states.top()->Init();
+            is_adding = false;
         }
-        states.push(std::move(new_state));
-        states.top()->Init();
-        is_adding = false;
+
 
 
     }

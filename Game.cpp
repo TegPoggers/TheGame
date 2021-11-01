@@ -7,7 +7,7 @@
 
 namespace GameName{
     Game::Game(int width, int height, string title) {
-        data->window.create(sf::VideoMode(width, height), title, sf::Style::Close || sf::Style::Titlebar);
+        data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
 
         data->machine.AddState(StateRef(new SplashState(data)));
         /*
@@ -19,7 +19,7 @@ namespace GameName{
     }
 
     void Game::Run() {
-        float new_time, frame_time, interpolation;
+        float new_time = 0, frame_time = 0, interpolation = 0;
 
         float current_time = 0;
         current_time = clock.getElapsedTime().asSeconds();

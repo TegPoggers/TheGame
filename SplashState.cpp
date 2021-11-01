@@ -11,9 +11,9 @@ namespace GameName{
     }
 
     void SplashState::Init(){
-        data->assets.LoadFont("Splash screen.png", SPLASH_SCENE_BACKGROUND_FILEPATH);
+        data->assets.LoadTexture("Splash State Background", SPLASH_SCENE_BACKGROUND_FILEPATH);
 
-        background.setTexture(data->assets.GetTexture("Splash screen.png"));
+        //background.setTexture(data->assets.GetTexture("Splash screen"));
     }
 
     void SplashState::HandleInput() {

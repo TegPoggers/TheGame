@@ -18,7 +18,7 @@ namespace GameName {
         //dt representa o tempo entre frames pra fazer o jogo independente do fps
         virtual void Draw(float dt) = 0;
 
-        virtual void pause(){}
+        virtual void Pause(){}
 
         virtual void Resume(){}
     };

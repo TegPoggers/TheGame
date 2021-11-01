@@ -30,5 +30,4 @@ namespace GameName{
         return sf::Mouse::getPosition(window);
     }
 
-
 }

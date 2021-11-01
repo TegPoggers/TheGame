@@ -11,6 +11,6 @@
 
 #define SPLASH_SHOW_TIME 0.5
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures/Splash screen.jpg"
 
 #endif //JOGO_DEFINITIONS_H

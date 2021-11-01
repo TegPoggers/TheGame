@@ -38,6 +38,7 @@ namespace GameName {
 
     public:
         Game(int width = 1920, int height = 1080, string title = "");
+
     };
 }
 
