@@ -1,14 +1,14 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
-using namespace std;
-
 #include "Game.h"
 
-#include "Definitions.h"
-int main(){
-    //Esse height precisará ser mudado pra static pra aceitar diferentes tamanhos
-    GameName::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Game Name");
-    std::cout << "Hello, World!" << std::endl;
+int main()
+{
+
+    saveSaps::Game game;
+
+    game.run();
+
+    std::cout << "Plim plim plim o meu jogo faz assim" << std::endl;
+
     return 0;
-//Teste de comit com o clion
 }
