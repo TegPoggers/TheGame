@@ -11,6 +11,9 @@
 #include "WindowManager.h"
 #include "PlayState.h"
 
+
+#include "InputManager.h"
+
 namespace saveSaps {
     class Game {
     private:

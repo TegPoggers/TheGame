@@ -14,8 +14,13 @@ namespace saveSaps {
 
         PlayState state(&window);
 
+        //Remover
+        InputManager test;
+
         while(window.isOpen()){
             window.render();
+            if(test.isKeyPressed(sf::Keyboard::A)){cout << "a";}
+            if(test.isKeyPressed(sf::Keyboard::S)){cout << "s";}
         }
 
         /*sf::RenderWindow window(sf::VideoMode(1280, 720), "Save Saps");

@@ -9,6 +9,10 @@
 #include "WindowManager.h"
 #include "SFML/Graphics.hpp"
 
+
+#include "InputManager.h"
+
+
 namespace saveSaps {
     class PlayState {
 

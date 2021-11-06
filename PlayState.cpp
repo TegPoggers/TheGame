@@ -23,13 +23,16 @@ namespace saveSaps{
         assets.LoadSprite("../Resources/Textures/Failed.jpg","failed_tex");
         display->insertSprite(assets["failed_tex"]);
 
-        /*sf::RenderWindow window;
+        //Testes
+        /*InputManager test;
+        sf::RenderWindow window;
         window.create(sf::VideoMode(1280, 720), "Teste");
 
         while(window.isOpen()){
             window.clear();
             window.draw(assets.GetSprite("failed_tex"));
             window.display();
+            if(test.isSpriteClicked(assets["failed_tex"], &window, sf::Mouse::Left)){cout << "oie";};
         }*/
 
         //sf::Texture lalala;
