@@ -10,28 +10,28 @@
 #include <string>
 #include <iostream>
 
-namespace saveSaps {
-    class AssetManager {
-    private:
-        std::map<std::string, sf::Sprite> sprites;
-        std::map<std::string, sf::Font*> fonts;
-        std::map<std::string, sf::Texture> textures;
 
-        sf::Texture texture;
-        sf::Font* font;
-        sf::Sprite sprite;
+class AssetManager {
+private:
+    std::map<std::string, sf::Sprite> sprites;
+    std::map<std::string, sf::Font*> fonts;
+    std::map<std::string, sf::Texture> textures;
 
-    public:
-        AssetManager();
-        ~AssetManager();
+    sf::Texture texture;
+    sf::Font* font;
+    sf::Sprite sprite;
 
-        void LoadSprite(std::string path = "../Resources/Textures/Failed.jpg", std::string name = "failed");
+public:
+    AssetManager();
+    ~AssetManager();
 
-        sf::Sprite GetSprite(std::string name = "failed");
+    void LoadSprite(std::string path = "../Resources/Textures/Failed.jpg", std::string name = "failed");
 
-        sf::Sprite operator[](std::string name);
+    sf::Sprite GetSprite(std::string name = "failed");
 
-    };
-}
+    sf::Sprite operator[](std::string name);
+
+};
+
 
 #endif //JOGO_ASSETMANAGER_H

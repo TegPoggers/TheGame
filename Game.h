@@ -14,17 +14,19 @@
 
 #include "InputManager.h"
 
-namespace saveSaps {
-    class Game {
-    private:
 
-    public:
-        Game();
+class Game {
 
-        ~Game();
+private:
 
-        void run();
-    };
-}
+public:
+    Game();
+
+    ~Game();
+
+    void run();
+
+};
+
 
 #endif //JOGO_GAME_H

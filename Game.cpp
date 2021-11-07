@@ -3,54 +3,23 @@
 //
 
 #include "Game.h"
-namespace saveSaps {
-    Game::Game() {}
 
-    Game::~Game() {}
+Game::Game() {}
 
-    void Game::run(){
+Game::~Game() {}
 
-        WindowManager window(1280, 720);
+void Game::run(){
 
-        PlayState state(&window);
+    WindowManager window(1280, 720);
 
-        //Remover
-        InputManager test;
+    PlayState state(&window);
 
-        while(window.isOpen()){
-            window.render();
-            if(test.isKeyPressed(sf::Keyboard::A)){cout << "a";}
-            if(test.isKeyPressed(sf::Keyboard::S)){cout << "s";}
-        }
+    //Remover
+    InputManager test;
 
-        /*sf::RenderWindow window(sf::VideoMode(1280, 720), "Save Saps");
-
-        //Draw a texture for testing (delete)
-
-        AssetManager asset_manager;
-        asset_manager.LoadTexture("../Resources/Textures/Failed.jpg", "failed_tex");
-
-        sf::Texture failed_tex;
-        failed_tex = asset_manager.GetTexture("failed_tex");
-        sf::Sprite sprite;
-        sprite.setTexture(failed_tex);
-
-        while (window.isOpen())
-        {
-
-
-            sf::Event event;
-
-            while (window.pollEvent(event))
-            {
-                if (event.type == sf::Event::Closed) {
-                    window.close();
-                }
-            }
-            window.clear();
-            window.draw(sprite);
-            window.display();
-        }*/
+    while(window.isOpen()){
+        window.render();
+        if(test.isKeyPressed(sf::Keyboard::A)){cout << "a";}
+        if(test.isKeyPressed(sf::Keyboard::S)){cout << "s";}
     }
-
 }

@@ -11,25 +11,26 @@
 
 
 #include "InputManager.h"
+#include "Player.h"
 
 
-namespace saveSaps {
-    class PlayState {
 
-    private:
-        AssetManager assets;
-        sf::Sprite error_sprite;
-        WindowManager* display;
+class PlayState {
 
-    public:
-        PlayState(WindowManager* window);
-        ~PlayState();
+private:
+    AssetManager assets;
+    sf::Sprite error_sprite;
+    WindowManager* display;
 
-        void loadState();
+public:
+    PlayState(WindowManager* window);
 
-        void runState();
+    ~PlayState();
 
-    };
-}
+    void loadState();
+
+    void runState();
+
+};
 
 #endif //JOGO_PLAYSTATE_H

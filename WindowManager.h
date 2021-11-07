@@ -11,27 +11,31 @@
 #include <iostream>
 using namespace std;
 
-namespace saveSaps {
-    class WindowManager {
 
-    private:
-        list<sf::Sprite> sprites;
-        list<sf::Sprite>::iterator it;
-        int x, y;
-        sf::RenderWindow window;
+class WindowManager {
 
-    public:
-        WindowManager();
-        WindowManager(int width, int height);
-        ~WindowManager();
+private:
+    list<sf::Sprite> sprites;
+    list<sf::Sprite>::iterator it;
+    int x, y;
+    sf::RenderWindow window;
 
-        void insertSprite(sf::Sprite texture);
+public:
+    WindowManager();
 
-        void render();
+    WindowManager(int width, int height);
 
-        bool isOpen();
+    ~WindowManager();
 
-    };
-}
+    void insertSprite(sf::Sprite texture);
+
+    void render();
+
+    bool isOpen();
+
+    void draw(sf::Sprite* sprite);
+
+};
+
 
 #endif //JOGO_WINDOWMANAGER_H
