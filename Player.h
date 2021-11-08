@@ -45,7 +45,7 @@ public:
 
     //Parte que estará em Entity
 
-private:
+protected:
 
     sf::Sprite* sprite;
 
