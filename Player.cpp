@@ -25,7 +25,7 @@ bool Player::isMoving() {
     return is_moving;
 }
 
-void Player::setSprite(sf::Sprite sprite) {
+void Player::setSprite(sf::Sprite* sprite) {
     this->sprite = sprite;
 }
 
