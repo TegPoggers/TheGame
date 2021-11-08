@@ -4,7 +4,9 @@
 
 #include "Player.h"
 
-Player::Player() {}
+Player::Player() {
+    inputs = new InputManager();
+}
 
 Player::~Player() {}
 
@@ -13,8 +15,8 @@ void Player::setPosition(sf::Vector2f pos) {
 }
 
 void Player::draw() {
-    sprite.setPosition(position);
-    window->draw(&sprite);
+    sprite->setPosition(position);
+    window->draw(sprite);
 }
 
 void Player::setWindow(WindowManager *window) {
@@ -25,7 +27,7 @@ bool Player::isMoving() {
     return is_moving;
 }
 
-void Player::setSprite(sf::Sprite sprite) {
+void Player::setSprite(sf::Sprite* sprite) {
     this->sprite = sprite;
 }
 
@@ -52,10 +54,10 @@ void Player::runPhysics() {
 
     manageInputs();
 
-    if(is_moving){
+    //if(is_moving){
         position.x += moving_speed;
-        sprite.setPosition(position);
-        window->draw(&sprite);
-    }
+        sprite->setPosition(position);
+        window->draw(sprite);
+    //}
 
 }
