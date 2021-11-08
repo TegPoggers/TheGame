@@ -47,12 +47,12 @@ public:
 
 private:
 
-    sf::Sprite sprite;
+    sf::Sprite* sprite;
 
 public:
 
     void setWindow(WindowManager* window);
-    void setSprite(sf::Sprite sprite);
+    void setSprite(sf::Sprite* sprite);
     void draw();
     void setPosition(sf::Vector2f pos);
 
