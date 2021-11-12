@@ -13,8 +13,8 @@
 class Player { //:MovingEntity
 
 private:
-    static float moving_speed;
-    static float jump_speed;
+    static float moving_speed;//1.5 é um bom número pra 144 fps
+    //static float jump_speed;
     InputManager* inputs;
 
 public:
@@ -23,11 +23,11 @@ public:
 
     ~Player();
 
-    void move(short int direction);
+    //void move(short int direction);
 
-    bool canJump();//Precisa de collision manager
+    //bool canJump();//Precisa de collision manager
 
-    void jump();
+    //void jump();
 
     void manageInputs();
 

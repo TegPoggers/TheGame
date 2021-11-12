@@ -7,27 +7,41 @@
 
 #include "Entity.h"
 
-class MovingEntity : public Entity {
+namespace entities {
 
-protected:
+    enum Direction{
+        Left,
+        Right
+    };
 
-    bool moving;
 
-public:
+    class MovingEntity : public Entity {
 
-    MovingEntity();
+    protected:
 
-    ~MovingEntity();
+        Direction direction;
+        bool moving;
 
-    const bool isMoving() const;
+    public:
 
-    virtual void runPhysics() = 0;
+        MovingEntity();
 
-    virtual void move() = 0;
+        ~MovingEntity();
 
-    void setMoving(bool moving);
+        const bool isMoving() const;
 
-};
+        virtual void run() = 0;
 
+        virtual void move() = 0;
+
+        void setMoving(bool moving);
+
+        void setDirection(Direction direction);
+
+        Direction getDirection();
+
+    };
+
+}
 
 #endif //JOGO_MOVINGENTITY_H

@@ -24,21 +24,24 @@ void PlayState::loadState() {
     assets.LoadSprite("../Resources/Textures/Failed.jpg","failed_tex");
     //display->insertSprite(*assets["failed_tex"]);
 
-    Player p1;
-    assets.LoadSprite("../Resources/Textures/bolinha.png", "bolinha");
-    p1.setSprite(assets["bolinha"]);
 
+    sf::Texture texture;
+    texture.loadFromFile("../Resources/Textures/bolinha.png");
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
 
     sf::RenderWindow window;
     window.create(sf::VideoMode(1280, 720), "Teste");
 
+    window.setFramerateLimit(144);
     while(window.isOpen()){
         window.clear();
         //sf::Sprite* a;
         //a = assets["failed_tex"];
-
-        window.draw(assets["failed_tex"]);
-        p1.runPhysics();
+        //sf::Vector2f position = teste.getPosition();
+        //sprite.setPosition(position);
+        window.draw(sprite);
+        sprite.move(0.5, 1);
         window.display();
     }
 

@@ -4,13 +4,22 @@
 
 #include "MovingEntity.h"
 
-MovingEntity::MovingEntity() : Entity(),
-moving(false){}
+namespace entities {
 
-const bool MovingEntity::isMoving() const {
-    return moving;
-}
+    MovingEntity::MovingEntity() :
+    Entity(),
+    moving(false) {}
 
-void MovingEntity::setMoving(bool moving) {
-    this->moving = moving;
+    const bool MovingEntity::isMoving() const {
+        return moving;
+    }
+
+    void MovingEntity::setMoving(bool moving) {
+        this->moving = moving;
+    }
+
+    void MovingEntity::setDirection(Direction) {
+        this->direction = direction;
+    }
+
 }
