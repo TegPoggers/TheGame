@@ -13,7 +13,7 @@ namespace entities {
 
     class Entity : public Being {
 
-    private:
+    protected:
 
         sf::Vector2f position;
         sf::Sprite* sprite;

@@ -8,40 +8,48 @@
 #include "Entity.h"
 
 namespace entities {
+    namespace characters {
 
-    enum Direction{
-        Left,
-        Right
-    };
+        enum Direction {
+            Left,
+            Right
+        };
+
+        class MovingEntity : public Entity {
+
+        protected:
+
+            int direction;
+            sf::Vector2f speed;
+            int lives;
+
+        public:
+
+            MovingEntity();
+
+            ~MovingEntity();
+
+            virtual void run() = 0;
 
 
-    class MovingEntity : public Entity {
+            virtual void move(sf::Vector2f) = 0;
 
-    protected:
+            int getDirection();
 
-        Direction direction;
-        bool moving;
+            void setLives(int life);
 
-    public:
+            void loseLives();
 
-        MovingEntity();
+            int getLives();
 
-        ~MovingEntity();
+            const sf::Vector2f getSpeed() const;
 
-        const bool isMoving() const;
+            void setSpeed(sf::Vector2f speed);
 
-        virtual void run() = 0;
+            void addSpeed(sf::Vector2f acceleration);
 
-        virtual void move() = 0;
-
-        void setMoving(bool moving);
-
-        void setDirection(Direction direction);
-
-        Direction getDirection();
-
-    };
-
+        };
+    }
 }
 
 #endif //JOGO_MOVINGENTITY_H

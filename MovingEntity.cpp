@@ -5,21 +5,39 @@
 #include "MovingEntity.h"
 
 namespace entities {
+    namespace characters {
 
-    MovingEntity::MovingEntity() :
-    Entity(),
-    moving(false) {}
+        MovingEntity::MovingEntity() :
+                Entity(),
+                direction(),
+                lives(1) {}
 
-    const bool MovingEntity::isMoving() const {
-        return moving;
+        int MovingEntity::getDirection() {
+            return direction;
+        }
+
+        void MovingEntity::setLives(int life) {
+            this->lives = life;
+        }
+
+        int MovingEntity::getLives() {
+            return lives;
+        }
+
+        void MovingEntity::loseLives() {
+            lives--;
+        }
+
+        void MovingEntity::addSpeed(sf::Vector2f acceleration) {
+            speed += acceleration;
+        }
+
+        const sf::Vector2f MovingEntity::getSpeed() const {
+            return speed;
+        }
+
+        void MovingEntity::setSpeed(sf::Vector2f speed) {
+            this->speed = speed;
+        }
     }
-
-    void MovingEntity::setMoving(bool moving) {
-        this->moving = moving;
-    }
-
-    void MovingEntity::setDirection(Direction) {
-        this->direction = direction;
-    }
-
 }
