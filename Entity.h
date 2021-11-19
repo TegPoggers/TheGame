@@ -7,38 +7,36 @@
 
 #include "SFML/Graphics.hpp"
 #include "WindowManager.h"
+#include "Being.h"
 
-class Entity {
+namespace entities {
 
-private:
+    class Entity : public Being {
 
-    sf::Vector2f position;
+    protected:
 
-    sf::Sprite* sprite;
+        sf::Vector2f position;
+        sf::Sprite* sprite;
 
-    WindowManager* window;//Pode acabar virando uma struct
+    public:
 
-public:
+        Entity();
 
-    Entity();
+        ~Entity();
 
-    Entity(WindowManager* window);
+        virtual void run() = 0;
 
-    ~Entity();
+        sf::Vector2f getPosition();
 
-    void setSprite(sf::Sprite* sprite);
+        void setPosition(sf::Vector2f position);
+        void setPosition(float x, float y);
 
-    void draw();
+        sf::Sprite* getSprite();
 
-    void setPosition(sf::Vector2f position);
+        void setSprite(sf::Sprite* sprite);
 
-    sf::Vector2f getPosition();
+    };
 
-    void setWindow(WindowManager* window);
-
-
-
-};
-
+}
 
 #endif //JOGO_ENTITY_H

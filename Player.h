@@ -7,59 +7,37 @@
 
 #include "InputManager.h"
 #include <SFML/Graphics.hpp>
-#include"WindowManager.h"
+#include "WindowManager.h"
+#include "MovingEntity.h"
 
+namespace entities{
+    namespace characters {
+        class Player : public MovingEntity {
 
-class Player { //:MovingEntity
+        private:
+            static float moving_speed;//1.5 é um bom número pra 144 fps
+            static float jump_speed;
+            InputManager *inputs;
+            int health;
+            sf::Vector2f speed;
+            bool ground;
+            
 
-private:
-    static float moving_speed;
-    static float jump_speed;
-    InputManager* inputs;
+        public:
 
-public:
+            Player();
 
-    Player();
+            ~Player();
 
-    ~Player();
+            void setGround(bool on_ground);
 
-    void move(short int direction);
+            void jump();
 
-    bool canJump();//Precisa de collision manager
+            void run();
 
-    void jump();
-
-    void manageInputs();
-
-    //Parte que estará em MovingEntity
-
-private:
-
-    sf::Vector2f position;
-    WindowManager* window;
-    bool is_moving;
-
-public:
-    bool isMoving();
-    void runPhysics();
-
-    //Parte que estará em Entity
-
-protected:
-
-    sf::Sprite* sprite;
-
-public:
-
-    void setWindow(WindowManager* window);
-    void setSprite(sf::Sprite* sprite);
-    void draw();
-    void setPosition(sf::Vector2f pos);
-
-};
-
-//float Player::moving_speed = 0.1;
-//float Player::jump_speed = 1;
+        };
+    }
+}
 
 #endif //JOGO_PLAYER_H
 

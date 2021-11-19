@@ -24,27 +24,26 @@ void PlayState::loadState() {
     assets.LoadSprite("../Resources/Textures/Failed.jpg","failed_tex");
     //display->insertSprite(*assets["failed_tex"]);
 
-    assets.LoadSprite("../Resources/Textures/bolinha.png", "bolinha");
+
+
+    sf::Texture texture;
+    texture.loadFromFile("../Resources/Textures/bolinha.png");
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
 
     sf::RenderWindow window;
     window.create(sf::VideoMode(1280, 720), "Teste");
 
-
-
+    window.setFramerateLimit(144);
     while(window.isOpen()){
         window.clear();
-        for(int i = 0; i < 10000; i++) {
-            window.clear();
-            window.draw(*assets["failed_tex"]);
-            window.display();
-        }
-        for(int i = 0 ; i < 10000; i++){
-            window.clear();
-            window.draw(*assets["bolinha"]);
-            window.display();
-            sf::Vector2f diminui; diminui.x = 0.5;diminui.y = 0.5;
-            assets.setScale("bolinha", diminui);
-        }
+        //sf::Sprite* a;
+        //a = assets["failed_tex"];
+        //sf::Vector2f position = teste.getPosition();
+        //sprite.setPosition(position);
+        window.draw(sprite);
+        sprite.move(0.5, 1);
+        window.display();
     }
 
     //sf::Texture lalala;

@@ -12,5 +12,3 @@ int main()
 
     return 0;
 }
-float Player::moving_speed = 0.1;
-float Player::jump_speed = 1;

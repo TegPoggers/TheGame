@@ -3,61 +3,42 @@
 //
 
 #include "Player.h"
+namespace entities {
+    namespace characters {
 
-Player::Player() {
-    inputs = new InputManager();
-}
+        Player::Player() {
+            inputs = new InputManager();
+        }
 
-Player::~Player() {}
+        Player::~Player() {
+            delete inputs;
+        }
 
-void Player::setPosition(sf::Vector2f pos) {
-    position = pos;
-}
+        void Player::run() {
+            //Takes inputs, current speeds and moves accordingly
 
-void Player::draw() {
-    sprite->setPosition(position);
-    window->draw(sprite);
-}
+            position += speed;
 
-void Player::setWindow(WindowManager *window) {
-    this->window = window;
-}
+            jump();
+        }
 
-bool Player::isMoving() {
-    return is_moving;
-}
+        void Player::jump() {
+            if(ground && inputs->isKeyPressed(sf::Keyboard::W)){
+                speed.y = jump_speed;
+            }
+        }
 
-void Player::setSprite(sf::Sprite* sprite) {
-    this->sprite = sprite;
-}
+        //Collision managers precisa rodar essa função all frame pra você não cair pelo chão
+        void Player::setGround(bool on_ground) {
+            ground = on_ground;
+            if(ground){
+                speed.y = 0;
+            }
+        }
 
-void Player::manageInputs() {
+        float Player::moving_speed = 1.5;
+        float Player::jump_speed = 10;
 
-    if(inputs->isKeyPressed(sf::Keyboard::A) && inputs->isKeyPressed(sf::Keyboard::D) || !inputs->isKeyPressed(sf::Keyboard::A) &&
-    !inputs->isKeyPressed(sf::Keyboard::D)){
-        is_moving = false;
     }
-    else if(inputs->isKeyPressed(sf::Keyboard::A)){
-        is_moving = true;
-        moving_speed = -0.1;
-    }
-    else if(inputs->isKeyPressed(sf::Keyboard::D)){
-        is_moving = true;
-        moving_speed = 0.1;
-    }
-
-    //Fazer o atirar e andar
-
-}
-
-void Player::runPhysics() {
-
-    manageInputs();
-
-    //if(is_moving){
-        position.x += moving_speed;
-        sprite->setPosition(position);
-        window->draw(sprite);
-    //}
 
 }

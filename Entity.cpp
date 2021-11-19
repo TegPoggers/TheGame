@@ -4,54 +4,39 @@
 
 #include "Entity.h"
 
-Entity::Entity() :
-position(0, 0),
-sprite(nullptr),
-window(nullptr)
-{}
+namespace entities{
 
-Entity::Entity(WindowManager *window):
-position(0, 0),
-sprite(nullptr),
-window(window) {
-    if(window == nullptr){
-        cout << "Foi passada uma janela nula a entidade" << endl;
+    Entity::Entity() :
+    sprite(nullptr),
+    position(0, 0),
+    Being()
+    {}
+
+    Entity::~Entity() {}
+
+
+    void Entity::setSprite(sf::Sprite *sprite) {
+        this->sprite = sprite;
     }
-}
 
-Entity::~Entity() {
-    window = nullptr;
-    sprite = nullptr;
-    position.x = position.y = 0;
-}
-
-void Entity::draw() {
-    window->draw(sprite);
-}
-
-sf::Vector2f Entity::getPosition() {
-    return position;
-}
-
-void Entity::setPosition(sf::Vector2f position) {
-    this->position = position;
-}
-
-void Entity::setSprite(sf::Sprite* sprite) {
-    this->sprite = sprite;
-}
-
-void Entity::setWindow(WindowManager *window) {
-    this->window = window;
-    if(this->window == nullptr){
-        cout << "Foi passada uma janela nula a entidade" << endl;
+    void Entity::setPosition(sf::Vector2f position) {
+        this->position = position;
     }
+
+    void Entity::setPosition(float x, float y) {
+        position.x = x;
+        position.y = y;
+    }
+
+    sf::Vector2f Entity::getPosition() {
+        return position;
+    }
+
+    sf::Sprite *Entity::getSprite() {
+        return sprite;
+    }
+
 }
-
-
-
-
-
 
 
 
