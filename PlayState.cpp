@@ -25,6 +25,7 @@ void PlayState::loadState() {
     //display->insertSprite(*assets["failed_tex"]);
 
 
+
     sf::Texture texture;
     texture.loadFromFile("../Resources/Textures/bolinha.png");
     sf::Sprite sprite;

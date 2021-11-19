@@ -40,4 +40,5 @@ namespace entities {
         float Player::jump_speed = 10;
 
     }
+
 }
