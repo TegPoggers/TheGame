@@ -12,24 +12,36 @@
 
 
 class AssetManager {
-private:
-    std::map<std::string, sf::Sprite> sprites;
-    std::map<std::string, sf::Font*> fonts;
-    std::map<std::string, sf::Texture> textures;
 
-    sf::Texture texture;
+private:
+
+    std::map<std::string, sf::Sprite*> sprites;
+    std::map<std::string, sf::Font*> fonts;
+    std::map<std::string, sf::Texture*> textures;
+
+    std::map<std::string, sf::Sprite*>::iterator itS;
+    std::map<std::string, sf::Font*>::iterator itF;
+    std::map<std::string, sf::Texture*>::iterator itT;
+
+    sf::Texture* texture;
     sf::Font* font;
-    sf::Sprite sprite;
+    sf::Sprite* sprite;
 
 public:
+
     AssetManager();
+
     ~AssetManager();
 
     void LoadSprite(std::string path = "../Resources/Textures/Failed.jpg", std::string name = "failed");
 
-    sf::Sprite GetSprite(std::string name = "failed");
+    sf::Sprite* getSprite(std::string name = "failed");
 
-    sf::Sprite operator[](std::string name);
+    sf::Sprite* operator[](std::string name);
+
+    void setScale(std::string name, sf::Vector2f absolute_multiplyer);
+
+    void scale(std::string name, sf::Vector2f multiplier);
 
 };
 

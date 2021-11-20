@@ -21,27 +21,31 @@ PlayState::~PlayState() {//Esvaziar a window manager list
 void PlayState::loadState() {
     //É pra pegar a textura de erro mesmo
 
-    assets.LoadSprite("../Resources/Textures/Failed.jpg","failed_tex");
+    assets.LoadSprite("../Resources/Textures/bolinha.png","bolinha");
     //display->insertSprite(*assets["failed_tex"]);
-
-
-    sf::Texture texture;
-    texture.loadFromFile("../Resources/Textures/bolinha.png");
-    sf::Sprite sprite;
-    sprite.setTexture(texture);
 
     sf::RenderWindow window;
     window.create(sf::VideoMode(1280, 720), "Teste");
 
+    Player p1;
+
+    p1.setSprite(assets["bolinha"]);
+    p1.getSprite()->setScale(0.5, 0.5);
+    p1.setPosition(0, 500);
+
+
     window.setFramerateLimit(144);
     while(window.isOpen()){
         window.clear();
-        //sf::Sprite* a;
-        //a = assets["failed_tex"];
-        //sf::Vector2f position = teste.getPosition();
-        //sprite.setPosition(position);
-        window.draw(sprite);
-        sprite.move(0.5, 1);
+
+        //Teste de player
+        p1.run();
+        p1.getSprite()->setPosition(p1.getPosition());
+        p1.run();
+        window.draw(*p1.getSprite());
+
+        //Fim do teste
+
         window.display();
     }
 
