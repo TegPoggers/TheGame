@@ -73,4 +73,5 @@ namespace entities {
         float Player::gravity = 0.1;
 
     }
+
 }
