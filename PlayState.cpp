@@ -31,7 +31,7 @@ void PlayState::loadState() {
 
     p1.setSprite(assets["bolinha"]);
     p1.getSprite()->setScale(0.5, 0.5);
-    p1.setPosition(0, 500);
+    p1.setPosition(100, 500);
 
 
     window.setFramerateLimit(144);

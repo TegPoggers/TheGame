@@ -20,7 +20,7 @@ namespace entities {
         protected:
 
             int direction;
-            sf::Vector2f speed;
+
             int lives;
 
         public:
@@ -35,19 +35,11 @@ namespace entities {
 
             void move(sf::Vector2f amount);
 
-            int getDirection();
-
             void setLives(int life);
 
             void loseLives();
 
             int getLives();
-
-            const sf::Vector2f getSpeed() const;
-
-            void setSpeed(sf::Vector2f speed);
-
-            void addSpeed(sf::Vector2f acceleration);
 
         };
     }

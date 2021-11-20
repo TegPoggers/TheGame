@@ -10,7 +10,8 @@ namespace entities {
         health(100),
         speed(0, 0),
         ground(true),
-        inputs(nullptr) {
+        inputs(nullptr),
+        points(0){
 
             inputs = new InputManager();
 
@@ -44,7 +45,14 @@ namespace entities {
         }
 
         void Player::attack() {
-            //projétil goes brrrrr
+
+            if(inputs->isKeyPressed(sf::Keyboard::Space)){
+                Projectile* fire = new Projectile();
+
+                fire->setCreator(this);
+                //Setar para ir pra lista de entidades
+                //level->push(static_cast<Entity*>(fire));
+            }
         }
 
         void Player::jump() {
@@ -66,6 +74,10 @@ namespace entities {
             if (ground) {
                 speed.y = 0;
             }
+        }
+
+        void Player::score(int points) {
+            this->points += points;
         }
 
         float Player::moving_speed = 3;

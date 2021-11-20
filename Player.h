@@ -9,6 +9,8 @@
 #include <SFML/Graphics.hpp>
 #include "WindowManager.h"
 #include "MovingEntity.h"
+#include "Projectile.h"
+//#include "Level.h"
 
 namespace entities{
     namespace characters {
@@ -22,7 +24,8 @@ namespace entities{
             int health;
             sf::Vector2f speed;
             bool ground;
-
+            int points;
+            //Level* level;
 
         public:
 
@@ -37,6 +40,8 @@ namespace entities{
             void run();
 
             void attack();
+
+            void score(int points);
 
         };
     }
