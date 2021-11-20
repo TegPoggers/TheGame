@@ -17,11 +17,12 @@ namespace entities{
         private:
             static float moving_speed;//1.5 é um bom número pra 144 fps
             static float jump_speed;
+            static float gravity;
             InputManager *inputs;
             int health;
             sf::Vector2f speed;
             bool ground;
-            
+
 
         public:
 
@@ -34,6 +35,8 @@ namespace entities{
             void jump();
 
             void run();
+
+            void attack();
 
         };
     }

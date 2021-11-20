@@ -8,9 +8,11 @@ namespace entities {
     namespace characters {
 
         MovingEntity::MovingEntity() :
-                Entity(),
-                direction(),
-                lives(1) {}
+        Entity(),
+        direction(),
+        lives(1) {}
+
+        MovingEntity::~MovingEntity() {}
 
         int MovingEntity::getDirection() {
             return direction;
@@ -38,6 +40,10 @@ namespace entities {
 
         void MovingEntity::setSpeed(sf::Vector2f speed) {
             this->speed = speed;
+        }
+
+        void MovingEntity::move(sf::Vector2f amount) {
+            position += amount;
         }
     }
 }

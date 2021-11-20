@@ -6,12 +6,12 @@
 
 
 AssetManager::AssetManager():
-sprite(nullptr),
-texture(nullptr),
-font(nullptr),
-sprites(),
-textures(),
-fonts()
+        sprite(nullptr),
+        texture(nullptr),
+        font(nullptr),
+        sprites(),
+        textures(),
+        fonts()
 {}
 AssetManager::~AssetManager() {
 

@@ -11,6 +11,8 @@
 
 
 #include "InputManager.h"
+#include "Player.h"
+using namespace entities::characters;
 
 
 
