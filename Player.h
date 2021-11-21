@@ -9,8 +9,9 @@
 #include <SFML/Graphics.hpp>
 #include "WindowManager.h"
 #include "MovingEntity.h"
-#include "Projectile.h"
 //#include "Level.h"
+
+class Projectile;
 
 namespace entities{
     namespace characters {
