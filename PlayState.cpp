@@ -33,20 +33,29 @@ void PlayState::loadState() {
     p1.getSprite()->setScale(0.5, 0.5);
     p1.setPosition(100, 500);
 
+    //Teste do define
+    assets.LoadSprite(PLAYER_ORB_PATH, "playerOrb");
+    Player p2;
+    p2.setSprite(assets["playerOrb"]);
+
+    p2.getSprite()->setScale(0.5, 0.5);
+    p2.setPosition(50,100);
+
 
     window.setFramerateLimit(144);
     while(window.isOpen()){
         window.clear();
 
         //Teste de player
-        p1.run();
+        p2.run(); // Define
+        p2.getSprite()->setPosition(p1.getPosition()); // Define
         p1.getSprite()->setPosition(p1.getPosition());
         p1.run();
         for (int i = 0; i < level.entityList->eList.getLen(); i++){
             printf("Salvou o player amém\n");
         }
         window.draw(*p1.getSprite());
-
+        window.draw(*p2.getSprite()); //Define
         //Fim do teste
 
         window.display();
