@@ -14,7 +14,9 @@
 #include "Player.h"
 using namespace entities::characters;
 
-
+//Modificações aqui
+#include "Level.h"
+using namespace levels;
 
 class PlayState {
 

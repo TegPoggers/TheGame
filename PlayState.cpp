@@ -28,7 +28,7 @@ void PlayState::loadState() {
     window.create(sf::VideoMode(1280, 720), "Teste");
 
     Player p1;
-
+    Level level(&p1);
     p1.setSprite(assets["bolinha"]);
     p1.getSprite()->setScale(0.5, 0.5);
     p1.setPosition(100, 500);
@@ -42,6 +42,9 @@ void PlayState::loadState() {
         p1.run();
         p1.getSprite()->setPosition(p1.getPosition());
         p1.run();
+        for (int i = 0; i < level.entityList->eList.getLen(); i++){
+            printf("Salvou o player amém\n");
+        }
         window.draw(*p1.getSprite());
 
         //Fim do teste
