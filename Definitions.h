@@ -13,13 +13,13 @@
 
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures"
 
-#define HEALTHY_FOREST_PATH "Assets/Backgrounds/HealthyForest.png"
-#define INFECTED_FOREST_PATH "Assets/Backgrounds/InfectedForest.png"
-#define FIRE_PIT_PATH "Assets/Obstacles/FirePit.png"
-#define POINTY_BUSH_PATH "Assets/Obstacles/PointyBush.png"
-#define SPIKES_PATH "Assets/Obstacles/Spikes.png"
-#define DARK_ENERGY_ORB_PATH "Assets/Projectiles/DarkEnergyOrb.png"
-#define PLAYER_ORB_PATH "Assets/Projectiles/PlayerOrb.png"
+#define HEALTHY_FOREST_PATH "../Assets/Backgrounds/HealthyForest.png"
+#define INFECTED_FOREST_PATH "../Assets/Backgrounds/InfectedForest.png"
+#define FIRE_PIT_PATH "../Assets/Obstacles/FirePit.png"
+#define POINTY_BUSH_PATH "../Assets/Obstacles/PointyBush.png"
+#define SPIKES_PATH "../Assets/Obstacles/Spikes.png"
+#define DARK_ENERGY_ORB_PATH "../Assets/Projectiles/DarkEnergyOrb.png"
+#define PLAYER_ORB_PATH "../Assets/Projectiles/PlayerOrb.png"
 
 
 #endif //JOGO_DEFINITIONS_H
