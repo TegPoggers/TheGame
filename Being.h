@@ -6,6 +6,7 @@
 #define JOGO_BEING_H
 
 #include <SFML/Graphics.hpp>
+#include "Definitions.h"
 
 class Being {
 
