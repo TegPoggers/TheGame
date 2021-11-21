@@ -5,21 +5,30 @@
 #ifndef JOGO_PROJECTILE_H
 #define JOGO_PROJECTILE_H
 
-#include "Player.h"
-using namespace entities::characters;
+#include "Entity.h"
+//#include "Player.h"
+//using namespace entities::characters;
+
+
 
 namespace entities {
+
+    namespace characters{
+        class Player;
+    }
+
     class Projectile : public Entity{
 
     private:
 
         static float speed;
         static int damage;
-        Player* creator;
+        characters::Player* creator;
+        int direction;
 
     public:
 
-        Projectile(Player* creator = nullptr);
+        Projectile(characters::Player* creator = nullptr);
 
         ~Projectile();
 
@@ -29,9 +38,11 @@ namespace entities {
 
         void setDamage(int dmg);
 
-        void setCreator(Player* creator);
+        void setCreator(characters::Player* creator);
 
-        Player* getCreator();
+        characters::Player* getCreator();
+
+        void setDirection(int direction);
 
     };
 }

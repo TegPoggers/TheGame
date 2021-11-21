@@ -10,8 +10,8 @@
 #include "WindowManager.h"
 #include "MovingEntity.h"
 //#include "Level.h"
+#include "Projectile.h"
 
-class Projectile;
 
 namespace entities{
     namespace characters {
