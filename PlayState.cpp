@@ -32,11 +32,16 @@ void PlayState::loadState() {
     p1.setSprite(assets["bolinha"]);
     p1.getSprite()->setScale(0.5, 0.5);
     p1.setPosition(100, 500);
+    p1.setPlayState(this);
+
+    entities::Projectile magic;
+
 
     //Teste do define
     assets.LoadSprite(PLAYER_ORB_PATH, "playerOrb");
     Player p2;
     p2.setSprite(assets["playerOrb"]);
+
 
     p2.getSprite()->setScale(0.5, 0.5);
     p2.setPosition(50,100);
@@ -48,7 +53,7 @@ void PlayState::loadState() {
 
         //Teste de player
         p2.run(); // Define
-        p2.getSprite()->setPosition(p1.getPosition()); // Define
+        p2.getSprite()->setPosition(p2.getPosition()); // Define
         p1.getSprite()->setPosition(p1.getPosition());
         p1.run();
         for (int i = 0; i < level.entityList->eList.getLen(); i++){

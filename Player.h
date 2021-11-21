@@ -12,6 +12,7 @@
 //#include "Level.h"
 #include "Projectile.h"
 
+class PlayState;
 
 namespace entities{
     namespace characters {
@@ -26,7 +27,8 @@ namespace entities{
             sf::Vector2f speed;
             bool ground;
             int points;
-            //Level* level;
+            int direction;
+            PlayState* level;
 
         public:
 
@@ -43,6 +45,8 @@ namespace entities{
             void attack();
 
             void score(int points);
+
+            void setPlayState(PlayState* level);
 
         };
     }

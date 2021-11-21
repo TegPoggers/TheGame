@@ -28,9 +28,11 @@ namespace entities {
             }
             else if(inputs->isKeyPressed(sf::Keyboard::A)){
                 speed.x = -moving_speed;
+                direction = -1;
             }
             else if(inputs->isKeyPressed(sf::Keyboard::D)){
                 speed.x = moving_speed;
+                direction = 1;
             }
             else{
                 speed.x = 0;
@@ -48,7 +50,7 @@ namespace entities {
 
             if(inputs->isKeyPressed(sf::Keyboard::Space)){
                 Projectile* fire = new Projectile();
-
+                fire->setDirection(direction);
                 fire->setCreator(this);
                 //Setar para ir pra lista de entidades
                 //level->push(static_cast<Entity*>(fire));
@@ -78,6 +80,10 @@ namespace entities {
 
         void Player::score(int points) {
             this->points += points;
+        }
+
+        void Player::setPlayState(PlayState *level) {
+            this->level = level;
         }
 
         float Player::moving_speed = 3;
