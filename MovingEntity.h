@@ -20,7 +20,7 @@ namespace entities {
         protected:
 
             int direction;
-
+            int health;
             int lives;
 
         public:
@@ -40,6 +40,10 @@ namespace entities {
             void loseLives();
 
             int getLives();
+
+            int getHealth();
+
+            void loseHealth(int dmg);
 
         };
     }

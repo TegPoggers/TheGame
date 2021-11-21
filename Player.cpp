@@ -86,6 +86,7 @@ namespace entities {
             this->level = level;
         }
 
+
         float Player::moving_speed = 3;
         float Player::jump_speed = -12;
         float Player::gravity = 0.1;
