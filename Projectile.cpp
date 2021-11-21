@@ -28,7 +28,7 @@ namespace entities{
         return damage;
     }
 
-    Entity *Projectile::getCreator() {
+    Player *Projectile::getCreator() {
         return creator;
     }
 

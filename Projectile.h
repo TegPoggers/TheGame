@@ -6,7 +6,7 @@
 #define JOGO_PROJECTILE_H
 
 #include "Player.h"
-using namespace characters;
+using namespace entities::characters;
 
 namespace entities {
     class Projectile : public Entity{
@@ -19,7 +19,7 @@ namespace entities {
 
     public:
 
-        Projectile(Player* creator = NULL);
+        Projectile(Player* creator = nullptr);
 
         ~Projectile();
 
@@ -29,10 +29,9 @@ namespace entities {
 
         void setDamage(int dmg);
 
-        void setCreator(
-                Player* creator);
+        void setCreator(Player* creator);
 
-        Entity* getCreator();
+        Player* getCreator();
 
     };
 }

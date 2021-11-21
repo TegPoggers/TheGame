@@ -33,6 +33,7 @@ namespace entities{
     }
 
     sf::Sprite *Entity::getSprite() {
+        sprite->setPosition(position);
         return sprite;
     }
 
