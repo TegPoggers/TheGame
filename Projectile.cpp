@@ -37,6 +37,6 @@ namespace entities{
     }
 
     int Projectile::damage = 10;
-    float Projectile::speed = 5;
+    float Projectile::speed = 7;
 
 }

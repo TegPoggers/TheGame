@@ -38,7 +38,7 @@ namespace entities {
             else{
                 speed.x = 0;
             }
-            fire = nullptr;;
+            //fire = nullptr;;
 
             attackCounter();
 
@@ -55,11 +55,10 @@ namespace entities {
                 fire = new Projectile(this);
                 fire->setDirection(direction);
                 fire->setPosition(position.x, position.y);
-cout << position.x << "\t\t\t\t" << position.y << endl;
                 float width = sprite->getGlobalBounds().width;
                 float height = sprite->getGlobalBounds().height;
 
-                //fire->setPosition(50 + position.x, 50 + position.y);
+                fire->setPosition(320 + position.x, 200 + position.y);
                 counter = 0;
             }
         }
@@ -90,7 +89,9 @@ cout << position.x << "\t\t\t\t" << position.y << endl;
         }
 
         Entity *Player::getProjectile() {
-            return static_cast<Entity*>(fire);
+            Entity* value = static_cast<Entity*>(fire);
+            fire = nullptr;
+            return value;
         }
 
         void Player::attackCounter() {
@@ -103,7 +104,7 @@ cout << position.x << "\t\t\t\t" << position.y << endl;
             }
         }
 
-        float Player::moving_speed = 3;
+        float Player::moving_speed = 2.5;
         float Player::jump_speed = -12;
         float Player::gravity = 0.1;
 
