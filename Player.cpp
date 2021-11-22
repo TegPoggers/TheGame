@@ -11,7 +11,8 @@ namespace entities {
         speed(0, 0),
         ground(true),
         inputs(nullptr),
-        points(0){
+        points(0),
+        counter(0){
 
             inputs = new InputManager();
 
@@ -28,13 +29,18 @@ namespace entities {
             }
             else if(inputs->isKeyPressed(sf::Keyboard::A)){
                 speed.x = -moving_speed;
+                direction = -1;
             }
             else if(inputs->isKeyPressed(sf::Keyboard::D)){
                 speed.x = moving_speed;
+                direction = 1;
             }
             else{
                 speed.x = 0;
             }
+            fire = nullptr;;
+
+            attackCounter();
 
             attack();
 
@@ -45,13 +51,16 @@ namespace entities {
         }
 
         void Player::attack() {
+            if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
+                fire = new Projectile(this);
+                fire->setDirection(direction);
+                fire->setPosition(position.x, position.y);
+cout << position.x << "\t\t\t\t" << position.y << endl;
+                float width = sprite->getGlobalBounds().width;
+                float height = sprite->getGlobalBounds().height;
 
-            if(inputs->isKeyPressed(sf::Keyboard::Space)){
-                Projectile* fire = new Projectile();
-
-                fire->setCreator(this);
-                //Setar para ir pra lista de entidades
-                //level->push(static_cast<Entity*>(fire));
+                //fire->setPosition(50 + position.x, 50 + position.y);
+                counter = 0;
             }
         }
 
@@ -78,6 +87,20 @@ namespace entities {
 
         void Player::score(int points) {
             this->points += points;
+        }
+
+        Entity *Player::getProjectile() {
+            return static_cast<Entity*>(fire);
+        }
+
+        void Player::attackCounter() {
+            counter++;
+            if(counter < 144){
+                can_attack = false;
+            }
+            else{
+                can_attack = true;
+            }
         }
 
         float Player::moving_speed = 3;
