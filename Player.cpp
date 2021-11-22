@@ -11,7 +11,8 @@ namespace entities {
         speed(0, 0),
         ground(true),
         inputs(nullptr),
-        points(0){
+        points(0),
+        counter(0){
 
             inputs = new InputManager();
 
@@ -37,6 +38,9 @@ namespace entities {
             else{
                 speed.x = 0;
             }
+            //fire = nullptr;;
+
+            attackCounter();
 
             attack();
 
@@ -47,13 +51,15 @@ namespace entities {
         }
 
         void Player::attack() {
-
-            if(inputs->isKeyPressed(sf::Keyboard::Space)){
-                Projectile* fire = new Projectile();
+            if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
+                fire = new Projectile(this);
                 fire->setDirection(direction);
-                fire->setCreator(this);
-                //Setar para ir pra lista de entidades
-                //level->push(static_cast<Entity*>(fire));
+                fire->setPosition(position.x, position.y);
+                float width = sprite->getGlobalBounds().width;
+                float height = sprite->getGlobalBounds().height;
+
+                fire->setPosition(320 + position.x, 200 + position.y);
+                counter = 0;
             }
         }
 
@@ -82,12 +88,23 @@ namespace entities {
             this->points += points;
         }
 
-        void Player::setPlayState(PlayState *level) {
-            this->level = level;
+        Entity *Player::getProjectile() {
+            Entity* value = static_cast<Entity*>(fire);
+            fire = nullptr;
+            return value;
         }
 
+        void Player::attackCounter() {
+            counter++;
+            if(counter < 144){
+                can_attack = false;
+            }
+            else{
+                can_attack = true;
+            }
+        }
 
-        float Player::moving_speed = 3;
+        float Player::moving_speed = 2.5;
         float Player::jump_speed = -12;
         float Player::gravity = 0.1;
 

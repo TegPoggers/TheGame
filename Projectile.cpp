@@ -7,11 +7,7 @@
 namespace entities{
 
     Projectile::Projectile(characters::Player* creator) :
-    creator(creator){
-        //Criar a sprite dele que é um círculo preto ou roxo
-        //Como apenas o player seta um criador então
-        cout << "hello" << endl;
-    }
+    creator(creator){}
 
     Projectile::~Projectile(){}
 
@@ -41,6 +37,6 @@ namespace entities{
     }
 
     int Projectile::damage = 10;
-    float Projectile::speed = 5;
+    float Projectile::speed = 7;
 
 }
