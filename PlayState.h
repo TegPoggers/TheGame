@@ -15,7 +15,8 @@
 using namespace entities::characters;
 
 //Modificações aqui
-#include "Level.h"
+#include "HealthyForest.h"
+#include "InfectedForest.h"
 using namespace levels;
 
 class PlayState {

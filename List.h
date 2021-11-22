@@ -6,6 +6,8 @@
 #define JOGO_LIST_H
 
 #include "Element.h"
+#include <iostream>
+using namespace std;
 
 template <class  TL> class List {
 private:

@@ -21,5 +21,6 @@
 #define DARK_ENERGY_ORB_PATH "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB_PATH "../Assets/Projectiles/PlayerOrb.png"
 
+#define GLOBAL_SCALE 0.7111111
 
 #endif //JOGO_DEFINITIONS_H

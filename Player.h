@@ -12,6 +12,9 @@
 //#include "Level.h"
 #include "Projectile.h"
 
+namespace levels{
+    class Level;
+}
 
 namespace entities{
     namespace characters {
@@ -26,7 +29,10 @@ namespace entities{
             sf::Vector2f speed;
             bool ground;
             int points;
-            //Level* level;
+            levels::Level* level;
+            Projectile* fire;
+            int counter;
+            bool can_attack;
 
         public:
 
@@ -42,7 +48,11 @@ namespace entities{
 
             void attack();
 
+            void attackCounter();
+
             void score(int points);
+
+            Entity* getProjectile();
 
         };
     }
