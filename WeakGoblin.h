@@ -1,7 +1,7 @@
 //
 // Created by segalle on 11/21/21.
 //
-
+/*
 #ifndef JOGO_WEAKGOBLIN_H
 #define JOGO_WEAKGOBLIN_H
 
@@ -35,3 +35,4 @@ namespace entities {
     }
 }
 #endif //JOGO_WEAKGOBLIN_H
+*/

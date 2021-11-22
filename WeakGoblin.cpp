@@ -1,7 +1,7 @@
 //
 // Created by segalle on 11/21/21.
 //
-
+/*
 #include "WeakGoblin.h"
 
 namespace entities{
@@ -37,4 +37,4 @@ namespace entities{
         int WeakGoblin::damage = 5;
 
     }
-}
+}*/
