@@ -10,6 +10,7 @@
 #include "EntityList.h"
 #include "WeakGoblin.h"
 #include "StrongGoblin.h"
+#include "BossGoblin.h"
 
 using namespace entities::characters;
 

@@ -20,7 +20,7 @@ namespace levels {
 
         //Apagar
     private:
-        WeakGoblin* goblin;
+        BossGoblin* goblin;
 
     };
 }
