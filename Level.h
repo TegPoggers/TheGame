@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "AssetManager.h"
 #include "EntityList.h"
+#include "WeakGoblin.h"
 
 using namespace entities::characters;
 
@@ -46,6 +47,7 @@ namespace  levels {
         virtual void initializeElements() = 0; //Deixar como virtual pura
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
+        void shootCurrent(int i);
     };
 }
 

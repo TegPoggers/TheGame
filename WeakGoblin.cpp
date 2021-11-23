@@ -1,7 +1,7 @@
 //
 // Created by segalle on 11/21/21.
 //
-/*
+
 #include "WeakGoblin.h"
 
 namespace entities{
@@ -13,11 +13,13 @@ namespace entities{
         WeakGoblin::~WeakGoblin() {}
 
         void WeakGoblin::attack() {
+
             p_position = player->getPosition();
-            Projectile* fire = NULL;
             fire = new Projectile();
-            if (position.x > p_position.x){
-                //fire left
+            fire->setDamage(damage);
+            fire->setPosition(position.x + 140, position.y + 130);
+
+            if (position.x - 240 > p_position.x){
                 fire->setDirection(-1);
             }
             else{
@@ -37,4 +39,4 @@ namespace entities{
         int WeakGoblin::damage = 5;
 
     }
-}*/
+}

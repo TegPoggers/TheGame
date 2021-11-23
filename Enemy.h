@@ -1,7 +1,7 @@
 //
 // Created by segalle on 11/21/21.
 //
-/*
+
 #ifndef JOGO_ENEMY_H
 #define JOGO_ENEMY_H
 
@@ -37,4 +37,3 @@ namespace entities {
 }
 
 #endif //JOGO_ENEMY_H
-*/

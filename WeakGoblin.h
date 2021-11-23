@@ -1,7 +1,7 @@
 //
 // Created by segalle on 11/21/21.
 //
-/*
+
 #ifndef JOGO_WEAKGOBLIN_H
 #define JOGO_WEAKGOBLIN_H
 
@@ -28,11 +28,8 @@ namespace entities {
 
             void run();
 
-            void walk();
-
         };
 
     }
 }
 #endif //JOGO_WEAKGOBLIN_H
-*/

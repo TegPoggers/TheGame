@@ -6,6 +6,7 @@
 #define JOGO_MOVINGENTITY_H
 
 #include "Entity.h"
+#include "Projectile.h"
 
 namespace entities {
     namespace characters {
@@ -20,8 +21,9 @@ namespace entities {
         protected:
 
             int direction;
-
+            int health;
             int lives;
+            Projectile* fire;
 
         public:
 
@@ -40,6 +42,10 @@ namespace entities {
             void loseLives();
 
             int getLives();
+
+            void takeDamage(int dmg);
+
+            Entity* getProjectile();
 
         };
     }

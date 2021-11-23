@@ -12,7 +12,8 @@ namespace entities {
         ground(true),
         inputs(nullptr),
         points(0),
-        counter(0){
+        counter(0)
+        {
 
             inputs = new InputManager();
 
@@ -86,12 +87,6 @@ namespace entities {
 
         void Player::score(int points) {
             this->points += points;
-        }
-
-        Entity *Player::getProjectile() {
-            Entity* value = static_cast<Entity*>(fire);
-            fire = nullptr;
-            return value;
         }
 
         void Player::attackCounter() {

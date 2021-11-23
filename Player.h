@@ -30,7 +30,7 @@ namespace entities{
             bool ground;
             int points;
             levels::Level* level;
-            Projectile* fire;
+            //Projectile* fire;
             int counter;
             bool can_attack;
 
@@ -52,7 +52,7 @@ namespace entities{
 
             void score(int points);
 
-            Entity* getProjectile();
+            //Entity* getProjectile();
 
         };
     }
