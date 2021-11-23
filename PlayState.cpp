@@ -21,25 +21,26 @@ PlayState::~PlayState() {//Esvaziar a window manager list
 void PlayState::loadState() {
     //É pra pegar a textura de erro mesmo
 
-    assets.LoadSprite("../Assets/Players/player1.png","player1");
-    //display->insertSprite(*assets["failed_tex"]);
-
     sf::RenderWindow window;
     window.create(sf::VideoMode(1366, 768), "Teste");
 
+
     Player p1;
+    assets.LoadSprite("../Assets/Players/player1.png","player1");
+    //display->insertSprite(*assets["failed_tex"]);
     p1.setSprite(assets["player1"]);
     p1.getSprite()->setScale(0.5, 0.5);
     p1.setPosition(100, 380);
+
     //Teste do define
     assets.LoadSprite(PLAYER_ORB_PATH, "playerOrb");
     Player p2;
     p2.setSprite(assets["playerOrb"]);
-
     p2.getSprite()->setScale(0.5, 0.5);
     p2.setPosition(50,100);
+
     //HealthyForest level(&p1, &p2, 2, &assets);
-     InfectedForest level(&p1, &p2, 2, &assets);
+     InfectedForest level(&p1, &p2);
 
 
     window.setFramerateLimit(144);

@@ -6,7 +6,9 @@
 
 namespace levels{
 
-    InfectedForest::InfectedForest(Player* p1, Player* p2, int playersNum, AssetManager* asset) : Level(p1, p2, playersNum, asset){
+    InfectedForest::InfectedForest() : Level(){ }
+
+    InfectedForest::InfectedForest(Player* p1, Player* p2) : Level(p1, p2){
         initializeElements();
     }
 
@@ -15,23 +17,24 @@ namespace levels{
     }
 
     void InfectedForest::run(){
-        window.clear();
+        window->getPWindow()->clear();
         renderBackground();
         for (int i = 0; i < entityList->eList.getLen(); i++){
             entityList->eList.getItem(i)->run();
 
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
-            window.draw(*entityList->eList.getItem(i)->getSprite());
+            window->getPWindow()->draw(*entityList->eList.getItem(i)->getSprite());
         }
 
         entities::Entity* orb = p1->getProjectile();
 
         if(orb != nullptr){
-            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
+            entityList->eList.push(orb);
+            orb->setSprite(assets->operator[]("playerOrb"));
         }
 
         //setView();
-        window.display();
+        window->getPWindow()->display();
     }
 
     void InfectedForest::initializeElements(){

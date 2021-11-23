@@ -20,7 +20,11 @@
 #define SPIKES_PATH "../Assets/Obstacles/Spikes.png"
 #define DARK_ENERGY_ORB_PATH "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB_PATH "../Assets/Projectiles/PlayerOrb.png"
+#define PLAYER_1_PATH "../Assets/Players/player1.png"
+#define PLAYER_2_PATH "../Assets/Players/player2.png"
 
 #define GLOBAL_SCALE 0.7111111
+#define WINDOW_WIDTH 1366
+#define WINDOW_HEIGHT 768
 
 #endif //JOGO_DEFINITIONS_H

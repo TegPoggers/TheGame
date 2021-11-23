@@ -12,7 +12,8 @@ namespace levels{
 
     class HealthyForest : public Level{
     public:
-        HealthyForest(Player* p1, Player* p2, int playersNum = 0, AssetManager* asset = nullptr);
+        HealthyForest();
+        HealthyForest(Player* p1, Player* p2);
         ~HealthyForest();
         void run();
         void initializeElements();

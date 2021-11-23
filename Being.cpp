@@ -19,3 +19,9 @@ const int Being::getId() {
     return id;
 }
 
+WindowManager* Being::getPWindow() {
+    return window;
+}
+
+AssetManager* Being::assets = nullptr;
+WindowManager* Being::window = nullptr;

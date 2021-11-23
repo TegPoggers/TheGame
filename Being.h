@@ -7,12 +7,16 @@
 
 #include <SFML/Graphics.hpp>
 #include "Definitions.h"
+#include "AssetManager.h"
+#include "WindowManager.h"
 
 class Being {
 
-private:
+protected:
 
     int id;
+    static AssetManager* assets;
+    static WindowManager* window;
 
 public:
 
@@ -24,7 +28,13 @@ public:
 
     void setId(int id);
 
+    static void setAssetManager(AssetManager* asset) { assets = asset; }
+
+    static void setWindowManager (WindowManager* wind) { window = wind; }
+
     const int getId();
+
+    static WindowManager* getPWindow();
 
 };
 

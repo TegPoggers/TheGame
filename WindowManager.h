@@ -9,6 +9,7 @@
 #include <SFML/Window.hpp>
 #include <list>
 #include <iostream>
+#include "Definitions.h"
 using namespace std;
 
 
@@ -34,6 +35,8 @@ public:
     bool isOpen();
 
     void draw(sf::Sprite* sprite);
+
+    sf::RenderWindow* getPWindow();
 
 };
 

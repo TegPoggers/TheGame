@@ -11,7 +11,8 @@ namespace levels {
 
     class InfectedForest : public Level{
     public:
-        InfectedForest(Player* p1, Player* p2, int playersNum = 0, AssetManager* asset = nullptr);
+        InfectedForest();
+        InfectedForest(Player* p1, Player* p2);
         ~InfectedForest();
         void run();
         void initializeElements();

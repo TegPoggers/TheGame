@@ -8,10 +8,12 @@
 
 WindowManager::WindowManager() :
 sprites(),
-x(1280),
-y(720),
+x(WINDOW_WIDTH),
+y(WINDOW_HEIGHT),
 window(){
     window.create(sf::VideoMode(x, y), "Save Saps");
+    window.setFramerateLimit(144);
+    cout << "Window manager cons" << endl;
 }
 
 WindowManager::WindowManager(int width, int height) :
@@ -67,4 +69,8 @@ bool WindowManager::isOpen() {
 
 void WindowManager::draw(sf::Sprite* sprite) {
     window.draw(*sprite);
+}
+
+sf::RenderWindow* WindowManager::getPWindow(){
+    return &window;
 }
