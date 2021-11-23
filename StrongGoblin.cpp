@@ -26,7 +26,7 @@ namespace entities{
 
         void StrongGoblin::walk() {
             p_position = player->getPosition();
-            if(p_position.x > position.x){
+            if(p_position.x + 50 > position.x){
                 position.x += walk_speed;
             }
             else{
@@ -36,7 +36,7 @@ namespace entities{
 
         int StrongGoblin::attack_speed = 72;
         int StrongGoblin::damage = 10;
-        float StrongGoblin::walk_speed = 3;
+        float StrongGoblin::walk_speed = 0.7;
 
     }
 }

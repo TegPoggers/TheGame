@@ -17,9 +17,9 @@ namespace entities{
             p_position = player->getPosition();
             fire = new Projectile();
             fire->setDamage(damage);
-            fire->setPosition(position.x + 140, position.y + 130);
+            fire->setPosition(position.x + sprite->getGlobalBounds().width/2 - 20, position.y + sprite->getGlobalBounds().height/2);
 
-            if (position.x - 240 > p_position.x){
+            if (position.x> p_position.x){
                 fire->setDirection(-1);
             }
             else{

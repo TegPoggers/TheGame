@@ -67,7 +67,7 @@ namespace levels{
         goblin = new WeakGoblin();
         goblin->setPlayer(p1);
         goblin->setId(2);
-        goblin->setPosition(500, 500);
+        goblin->setPosition(500, 540);
         goblin->setSprite(assets->getSprite("weakGoblin"));
         entityList->eList.push(goblin);
     }

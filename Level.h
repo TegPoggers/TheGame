@@ -9,6 +9,7 @@
 #include "AssetManager.h"
 #include "EntityList.h"
 #include "WeakGoblin.h"
+#include "StrongGoblin.h"
 
 using namespace entities::characters;
 

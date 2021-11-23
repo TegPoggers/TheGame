@@ -55,11 +55,11 @@ namespace entities {
             if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
                 fire = new Projectile(this);
                 fire->setDirection(direction);
-                fire->setPosition(position.x, position.y);
+                //fire->setPosition(position.x, position.y);
                 float width = sprite->getGlobalBounds().width;
                 float height = sprite->getGlobalBounds().height;
 
-                fire->setPosition(320 + position.x, 200 + position.y);
+                fire->setPosition(sprite->getGlobalBounds().width/2 + position.x - 40, sprite->getGlobalBounds().height/2 + position.y - 20);
                 counter = 0;
             }
         }
