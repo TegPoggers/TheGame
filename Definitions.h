@@ -20,6 +20,10 @@
 #define SPIKES_PATH "../Assets/Obstacles/Spikes.png"
 #define DARK_ENERGY_ORB_PATH "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB_PATH "../Assets/Projectiles/PlayerOrb.png"
+#define WEAK_GOBLIN "../Assets/Enemies/WeakGoblin.png"
+#define PLATFORM "../Assets/Platform/Platform.png"
+
+#define WEAK_GOBLIN_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 
 #define GLOBAL_SCALE 0.7111111
 

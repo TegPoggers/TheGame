@@ -28,9 +28,10 @@ void PlayState::loadState() {
     window.create(sf::VideoMode(1366, 768), "Teste");
 
     Player p1;
+    p1.setId(1);
     p1.setSprite(assets["player1"]);
     p1.getSprite()->setScale(0.5, 0.5);
-    p1.setPosition(100, 380);
+    p1.setPosition(100, 510);
     //Teste do define
     assets.LoadSprite(PLAYER_ORB_PATH, "playerOrb");
     Player p2;

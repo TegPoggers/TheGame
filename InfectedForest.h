@@ -18,6 +18,10 @@ namespace levels {
         void createEnemies();
         void createObstacles();
 
+        //Apagar
+    private:
+        WeakGoblin* goblin;
+
     };
 }
 
