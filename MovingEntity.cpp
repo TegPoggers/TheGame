@@ -9,7 +9,8 @@ namespace entities {
 
         MovingEntity::MovingEntity() :
         Entity(),
-        lives(1) {}
+        lives(1),
+        fire(nullptr){}
 
         MovingEntity::~MovingEntity() {}
 
@@ -27,6 +28,16 @@ namespace entities {
 
         void MovingEntity::move(sf::Vector2f amount) {
             position += amount;
+        }
+
+        void MovingEntity::takeDamage(int dmg) {
+            health -= dmg;
+        }
+
+        Entity *MovingEntity::getProjectile() {
+            Entity* value = static_cast<Entity*>(fire);
+            fire = nullptr;
+            return value;
         }
     }
 }

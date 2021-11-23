@@ -12,7 +12,8 @@ namespace entities {
         ground(true),
         inputs(nullptr),
         points(0),
-        counter(0){
+        counter(0)
+        {
 
             inputs = new InputManager();
 
@@ -54,11 +55,11 @@ namespace entities {
             if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
                 fire = new Projectile(this);
                 fire->setDirection(direction);
-                fire->setPosition(position.x, position.y);
+                //fire->setPosition(position.x, position.y);
                 float width = sprite->getGlobalBounds().width;
                 float height = sprite->getGlobalBounds().height;
 
-                fire->setPosition(320 + position.x, 200 + position.y);
+                fire->setPosition(sprite->getGlobalBounds().width/2 + position.x - 40, sprite->getGlobalBounds().height/2 + position.y - 20);
                 counter = 0;
             }
         }
@@ -86,12 +87,6 @@ namespace entities {
 
         void Player::score(int points) {
             this->points += points;
-        }
-
-        Entity *Player::getProjectile() {
-            Entity* value = static_cast<Entity*>(fire);
-            fire = nullptr;
-            return value;
         }
 
         void Player::attackCounter() {
