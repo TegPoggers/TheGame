@@ -7,9 +7,7 @@
 namespace entities{
 
     Projectile::Projectile(characters::Player* creator) :
-    creator(creator){
-        assets->LoadSprite(PLAYER_ORB_PATH, "playerOrb");
-    }
+    creator(creator){   }
 
     Projectile::~Projectile(){}
 

@@ -8,10 +8,7 @@ namespace entities{
     namespace characters{
 
         StrongGoblin::StrongGoblin() : Enemy(),
-        attack_counter(0){
-            assets->LoadSprite(STRONG_GOBLIN, "strongGoblin");
-            assets->LoadSprite(GENERAL_GOBLIN_ORB, "strongGoblinOrb");
-        }
+        attack_counter(0){   }
 
         StrongGoblin::~StrongGoblin(){}
 

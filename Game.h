@@ -11,6 +11,7 @@
 #include "InputManager.h" */
 //#include "PlayState.h"
 #include "AssetManager.h"
+#include "SpriteLoader.h"
 
 #include "HealthyForest.h"
 #include "InfectedForest.h"
@@ -23,6 +24,7 @@ class Game {
 private:
     WindowManager window;
     AssetManager assets;
+    SpriteLoader spriteLoader;
     Player p1;
     Player p2;
     levels::HealthyForest* healthy;

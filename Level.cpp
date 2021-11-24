@@ -61,14 +61,12 @@ namespace levels{
     }
 
     void Level::renderPlayers(bool onePlayer){
-        assets->LoadSprite(PLAYER_1_PATH,"player1");
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
         p1->setPosition(0, 510);
         entityList->eList.push(p1);
         if (!onePlayer){
-            assets->LoadSprite(PLAYER_2_PATH,"player2");
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);

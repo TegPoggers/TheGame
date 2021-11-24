@@ -47,7 +47,6 @@ namespace levels{
 
     void InfectedForest::initializeElements(){
 
-        assets->LoadSprite(INFECTED_FOREST_PATH, "infectedForest");
         setBackground(assets->operator[]("infectedForest"));
         setPosition(0,0);
 
