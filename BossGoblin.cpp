@@ -9,9 +9,8 @@ namespace entities{
 
         BossGoblin::BossGoblin() : Enemy(),
         attack_counter(0){
-            assets->LoadSprite(BOSS_GOBLIN, "bossGoblin");
-            assets->LoadSprite(BOSS_GOBLIN_ORB, "bossGoblinOrb");
-            id = 3;
+            sprite = assets->getSprite("bossGoblin");
+            setId(10);
         }
 
         BossGoblin::~BossGoblin() {}

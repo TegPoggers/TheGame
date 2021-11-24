@@ -9,8 +9,8 @@ namespace entities{
 
         WeakGoblin::WeakGoblin() : Enemy(),
         attack_counter(0){
-            assets->LoadSprite(WEAK_GOBLIN, "weakGoblin");
-            assets->LoadSprite(GENERAL_GOBLIN_ORB, "weakGoblinOrb");
+            assets->getSprite("weakGoblin");
+            setId(2);
         }
 
         WeakGoblin::~WeakGoblin() {}

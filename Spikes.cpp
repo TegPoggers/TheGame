@@ -8,7 +8,10 @@ namespace entities{
     namespace obstacles{
 
         Spikes::Spikes() :
-        attack_counter(0){}
+        attack_counter(0){
+            sprite = assets->getSprite("spikes");
+            setId(5);
+        }
 
         Spikes::~Spikes() {}
 

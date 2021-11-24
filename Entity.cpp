@@ -12,7 +12,9 @@ namespace entities{
     Being()
     {}
 
-    Entity::~Entity() {}
+    Entity::~Entity() {
+        sprite = assets->getSprite("failedTexture");
+    }
 
 
     void Entity::setSprite(sf::Sprite *sprite) {
