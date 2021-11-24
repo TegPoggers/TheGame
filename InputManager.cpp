@@ -8,6 +8,10 @@ InputManager::InputManager() {}
 
 InputManager::~InputManager() {}
 
+void InputManager::setLayout1() {
+
+}
+
 bool InputManager::isKeyPressed(sf::Keyboard::Key key) {
     if(sf::Keyboard::isKeyPressed(key)){
         return true;
