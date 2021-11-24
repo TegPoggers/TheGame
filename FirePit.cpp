@@ -21,6 +21,9 @@ namespace entities{
                 return collision_damage;
 
             }
+
+            return 0;
+
         }
 
         int FirePit::attack_speed = 14;

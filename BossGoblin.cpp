@@ -57,6 +57,8 @@ namespace entities{
 
             }
 
+            return 0;
+
         }
 
         int BossGoblin::projectile_damage = 40;

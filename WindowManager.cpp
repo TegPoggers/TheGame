@@ -30,6 +30,7 @@ window(){
         y = 720;
         window.create(sf::VideoMode(x, y), "Save Saps");
     }
+    window.setFramerateLimit(144);
 }
 
 WindowManager::~WindowManager(){}

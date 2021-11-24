@@ -23,6 +23,9 @@ namespace entities{
                 return collision_damage;
 
             }
+
+            return 0;
+
         }
 
         int Spikes::collision_damage = 10;
