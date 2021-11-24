@@ -33,7 +33,7 @@ public:
 
     ~AssetManager();
 
-    void LoadSprite(std::string path = "../Resources/Textures/Failed.jpg", std::string name = "failed");
+    void loadSprite(std::string path = "../Resources/Textures/Failed.jpg", std::string name = "failed");
 
     sf::Sprite* getSprite(std::string name = "failed");
 

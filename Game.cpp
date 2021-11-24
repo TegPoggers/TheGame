@@ -4,9 +4,10 @@
 
 #include "Game.h"
 
-Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), p1(), p2(){
+Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), p1(), p2(){
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
+    spriteLoader.run();
     healthy = new levels::HealthyForest(&p1, &p2);
     infected = new levels::InfectedForest(&p1, &p2);
     cout << "Construtora do Game" << endl;

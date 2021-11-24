@@ -43,7 +43,7 @@ AssetManager::~AssetManager() {
 
 }
 
-void AssetManager::LoadSprite(std::string path, std::string name) {
+void AssetManager::loadSprite(std::string path, std::string name) {
 
     texture = new sf::Texture();
 

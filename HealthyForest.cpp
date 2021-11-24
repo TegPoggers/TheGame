@@ -46,7 +46,6 @@ namespace levels{
     //}
 
     void HealthyForest::initializeElements(){
-        assets->LoadSprite(HEALTHY_FOREST_PATH, "healthyForest");
         setBackground(assets->operator[]("healthyForest"));
         setPosition(0,0);
 
@@ -58,7 +57,7 @@ namespace levels{
         //weakGoblin->setPosition(0, 540);
         weakGoblin->setSprite(assets->getSprite("weakGoblin"));
         entityList->eList.push(weakGoblin);
-        assets->getSprite("weakGoblinOrb")->setScale(0.1, 0.1);
+        assets->getSprite("darkEnergyOrb")->setScale(0.1, 0.1);
         assets->getSprite("weakGoblin")->setScale(0.7, 0.7);
 
 
@@ -69,7 +68,6 @@ namespace levels{
         strongGoblin->setPosition(600, 550);
         strongGoblin->setSprite(assets->getSprite("strongGoblin"));
         entityList->eList.push(strongGoblin);
-        assets->getSprite("strongGoblinOrb")->setScale(0.1, 0.1);
         assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
 
     }

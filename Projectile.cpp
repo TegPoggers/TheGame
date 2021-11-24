@@ -6,6 +6,7 @@
 
 namespace entities{
 
+
     Projectile::Projectile() : Entity(),
     damage(0),
     speed(1),
