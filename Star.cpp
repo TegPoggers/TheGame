@@ -26,7 +26,6 @@ namespace entities{
     void Star::initializeStar(){
         damage = 40;
         speed = 7;
-        assets->LoadSprite(PLAYER_ORB_PATH, "playerOrb");
         sprite = assets->getSprite("playerOrb");
     }
 
