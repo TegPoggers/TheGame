@@ -33,11 +33,5 @@ namespace entities {
         void MovingEntity::takeDamage(int dmg) {
             health -= dmg;
         }
-
-        Entity *MovingEntity::getProjectile() {
-            Entity* value = static_cast<Entity*>(fire);
-            fire = nullptr;
-            return value;
-        }
     }
 }

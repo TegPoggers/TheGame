@@ -6,6 +6,7 @@
 #define JOGO_WEAKGOBLIN_H
 
 #include "Enemy.h"
+#include "DarkEnergyOrb.h"
 
 namespace entities {
     namespace characters {
@@ -29,6 +30,8 @@ namespace entities {
             void run();
 
             int getCollisionDamage();
+
+            Entity * getProjectile();
 
         };
 

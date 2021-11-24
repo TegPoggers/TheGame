@@ -7,7 +7,10 @@
 namespace entities{
     namespace obstacles{
 
-        PointyBush::PointyBush() : StaticEntity(){}
+        PointyBush::PointyBush() : StaticEntity(){
+            sprite = assets->getSprite("pointyBush");
+            setId(7);
+        }
 
         PointyBush::~PointyBush() {}
 

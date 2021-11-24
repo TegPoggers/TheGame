@@ -8,14 +8,17 @@ namespace entities{
     namespace characters{
 
         WeakGoblin::WeakGoblin() : Enemy(),
-        attack_counter(0){   }
+        attack_counter(0){
+            assets->getSprite("weakGoblin");
+            setId(2);
+        }
 
         WeakGoblin::~WeakGoblin() {}
 
         void WeakGoblin::attack() {
 
             p_position = player->getPosition();
-            fire = new Projectile();
+            fire = new DarkEnergyOrb();
             fire->setDamage(damage);
             fire->setPosition(position.x + sprite->getGlobalBounds().width/2 - 20, position.y + sprite->getGlobalBounds().height/2);
 
@@ -37,6 +40,12 @@ namespace entities{
 
         int WeakGoblin::getCollisionDamage() {
             return 0;
+        }
+
+        Entity *WeakGoblin::getProjectile() {
+            Entity* aux = static_cast <Entity*> (fire);
+            fire = nullptr;
+            return aux;
         }
 
         int WeakGoblin::attack_speed = 288;

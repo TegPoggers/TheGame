@@ -47,7 +47,7 @@ namespace entities {
 
             void takeDamage(int dmg);
 
-            Entity* getProjectile();
+            virtual Entity* getProjectile() = 0;
 
         };
     }

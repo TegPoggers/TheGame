@@ -8,7 +8,10 @@ namespace entities{
     namespace obstacles{
 
         FirePit::FirePit() :
-        attack_counter(0){}
+        attack_counter(0){
+            sprite = assets->getSprite("firePit");
+            setId(6);
+        }
 
         FirePit::~FirePit() {}
 

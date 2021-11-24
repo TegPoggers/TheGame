@@ -62,14 +62,14 @@ namespace levels{
 
 
         //Fazer Strong Boss direito -> Fire está vazio
-        bossGoblin = new BossGoblin();
+        /*bossGoblin = new BossGoblin();
         bossGoblin->setPlayer(p1);
         bossGoblin->setId(4);
         bossGoblin->setPosition(1000, 410);
         bossGoblin->setSprite(assets->getSprite("bossGoblin"));
         entityList->eList.push(bossGoblin);
         assets->getSprite("bossGoblinOrb")->setScale(0.1, 0.1);
-        assets->getSprite("bossGoblin")->setScale(1.2, 1.2);
+        assets->getSprite("bossGoblin")->setScale(1.2, 1.2);*/
 
     }
 

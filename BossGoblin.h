@@ -6,6 +6,7 @@
 #define JOGO_BOSSGOBLIN_H
 
 #include "Enemy.h"
+#include "EnergyOrb.h"
 
 namespace entities {
 
@@ -33,6 +34,8 @@ namespace entities {
             void walk();
 
             int getCollisionDamage();
+
+            Entity* getProjectile();
 
         };
     }

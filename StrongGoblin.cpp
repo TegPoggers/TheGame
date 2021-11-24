@@ -8,7 +8,10 @@ namespace entities{
     namespace characters{
 
         StrongGoblin::StrongGoblin() : Enemy(),
-        attack_counter(0){   }
+        attack_counter(0){
+            sprite = assets->getSprite("strongGoblin");
+            setId(3);
+        }
 
         StrongGoblin::~StrongGoblin(){}
 
@@ -34,10 +37,17 @@ namespace entities{
                 return collision_damage;
 
             }
+
+            return 0;
+
         }
 
         void StrongGoblin::attack() {
 
+        }
+
+        Entity *StrongGoblin::getProjectile() {
+            return nullptr;
         }
 
         int StrongGoblin::attack_speed = 72;

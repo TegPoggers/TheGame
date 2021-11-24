@@ -16,6 +16,7 @@ namespace entities {
         {
 
             inputs = new InputManager();
+            id = 1;
 
         }
 
@@ -53,7 +54,7 @@ namespace entities {
 
         void Player::attack() {
             if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
-                fire = new Projectile(this);
+                fire = new Star(this);
                 fire->setDirection(direction);
                 //fire->setPosition(position.x, position.y);
                 float width = sprite->getGlobalBounds().width;
@@ -101,6 +102,12 @@ namespace entities {
 
         int Player::getCollisionDamage() {
             return 0;
+        }
+
+        Entity *Player::getProjectile() {
+            Entity* value = static_cast<Entity*>(fire);
+            fire = nullptr;
+            return value;
         }
 
         float Player::moving_speed = 2.5;
