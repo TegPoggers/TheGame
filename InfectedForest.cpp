@@ -57,7 +57,6 @@ namespace levels{
         strongGoblin->setPosition(500, 545);
         strongGoblin->setSprite(assets->getSprite("strongGoblin"));
         entityList->eList.push(strongGoblin);
-        assets->getSprite("strongGoblinOrb")->setScale(0.1, 0.1);
         assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
 
 
