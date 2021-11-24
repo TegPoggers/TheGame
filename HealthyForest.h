@@ -15,11 +15,14 @@ namespace levels{
         HealthyForest();
         HealthyForest(Player* p1, Player* p2);
         ~HealthyForest();
-        void run();
+        //void run();
         void initializeElements();
         void createEnemies();
         void createObstacles();
 
+    private:
+        WeakGoblin* weakGoblin;
+        StrongGoblin* strongGoblin;
     };
 
 }

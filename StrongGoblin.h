@@ -26,6 +26,9 @@ namespace entities {
 
             void run();
 
+            //Metodo vazio
+            void attack();
+
             void walk();
 
             int getCollisionDamage();

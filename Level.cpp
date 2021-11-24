@@ -93,17 +93,20 @@ namespace levels{
     }
 
     void Level::renderPlayers(bool onePlayer){
-        cout << "PLayer 1" << endl;
         assets->LoadSprite(PLAYER_1_PATH,"player1");
+        p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
-        p1->setPosition(110, 380);
+        p1->setPosition(150, 510);
+        entityList->eList.push(p1);
         if (!onePlayer){
-            cout << "PLayer 2" << endl;
             assets->LoadSprite(PLAYER_2_PATH,"player2");
+            p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
-            p2->setPosition(-40, 380);
+            p2->setPosition(2, 510);
+            entityList->eList.push(p2);
+
         }
     }
 
@@ -125,6 +128,35 @@ namespace levels{
                 orb->setSprite(assets->operator[]("weakGoblinOrb"));
             }
         }
+    }
+
+    void Level::run(){
+        window->getPWindow()->clear();
+        renderBackground();
+        for (int i = 0; i < entityList->eList.getLen(); i++){
+            entityList->eList.getItem(i)->run();
+            //Erro aqui (?????)
+            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
+            window->getPWindow()->draw(*entityList->eList.getItem(i)->getSprite());
+            //Verifica que tipo de inimigo que é e atira um projétil se for válido
+            shootCurrent(i);
+
+        }
+
+        /*entities::Entity* orb = p1->getProjectile();
+
+        if(orb != nullptr){
+            entityList->eList.push(orb);
+            orb->setSprite(assets->operator[]("playerOrb"));
+        }
+
+        orb = goblin->getProjectile();
+        if(orb){
+            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
+        }*/
+
+        //setView();
+        window->getPWindow()->display();
     }
 
 }

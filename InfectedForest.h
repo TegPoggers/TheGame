@@ -14,15 +14,15 @@ namespace levels {
         InfectedForest();
         InfectedForest(Player* p1, Player* p2);
         ~InfectedForest();
-        void run();
+        //void run();
         void initializeElements();
         void createEnemies();
         void createObstacles();
 
         //Apagar
     private:
-        BossGoblin* goblin;
-
+        BossGoblin* bossGoblin;
+        StrongGoblin* strongGoblin;
     };
 }
 

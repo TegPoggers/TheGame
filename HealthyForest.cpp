@@ -16,7 +16,7 @@ namespace levels{
     HealthyForest::~HealthyForest(){
 
     }
-    void HealthyForest::run(){
+  /*  void HealthyForest::run(){
         window->getPWindow()->clear();
         renderBackground();
         for (int i = 0; i < entityList->eList.getLen(); i++){
@@ -42,39 +42,34 @@ namespace levels{
         }*/
 
         //setView();
-        window->getPWindow()->display();
-    }
+        //window->getPWindow()->display();
+    //}
 
     void HealthyForest::initializeElements(){
         assets->LoadSprite(HEALTHY_FOREST_PATH, "healthyForest");
-
-        entityList->eList.push(p1);
-        if (!onePlayer)
-            entityList->eList.push(p2);
         setBackground(assets->operator[]("healthyForest"));
-        //setBackground((*assets)["healthyForest"]);
         setPosition(0,0);
 
-        //Fazer weak goblin aletórios
-        assets->LoadSprite(WEAK_GOBLIN, "weakGoblin");
-        assets->LoadSprite(WEAK_GOBLIN_ORB, "weakGoblinOrb");
+        //Fazer weak goblin aleatórios
+        weakGoblin = new WeakGoblin();
+        weakGoblin->setPlayer(p1);
+        weakGoblin->setId(2);
+        weakGoblin->setPosition(750, 540);
+        weakGoblin->setSprite(assets->getSprite("weakGoblin"));
+        entityList->eList.push(weakGoblin);
         assets->getSprite("weakGoblinOrb")->setScale(0.1, 0.1);
         assets->getSprite("weakGoblin")->setScale(0.7, 0.7);
 
-        //Gerar strong goblin
-        assets->LoadSprite(STRONG_GOBLIN, "strongGoblin");
-        assets->LoadSprite(STRONG_GOBLIN_ORB, "strongGoblinOrb");
+
+        //Fazer Strong Goblin aleatórios
+        strongGoblin = new StrongGoblin();
+        strongGoblin->setPlayer(p1);
+        strongGoblin->setId(3);
+        strongGoblin->setPosition(600, 550);
+        strongGoblin->setSprite(assets->getSprite("strongGoblin"));
+        entityList->eList.push(strongGoblin);
         assets->getSprite("strongGoblinOrb")->setScale(0.1, 0.1);
         assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
-
-        //Instanciar Goblin temporário
-        //DE ONDE VEM O GOBLIN???
-        goblin = new WeakGoblin();
-        goblin->setPlayer(p1);
-        goblin->setId(2);
-        goblin->setPosition(500, 540);
-        goblin->setSprite(assets->getSprite("weakGoblin"));
-        entityList->eList.push(goblin);
 
     }
 

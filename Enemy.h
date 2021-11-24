@@ -25,6 +25,7 @@ namespace entities {
 
             ~Enemy();
 
+            //Arrumar para dois players
             void setPlayer(Player* player);
 
             virtual void run() = 0;

@@ -8,7 +8,10 @@ namespace entities{
     namespace characters{
 
         BossGoblin::BossGoblin() : Enemy(),
-        attack_counter(0){}
+        attack_counter(0){
+            assets->LoadSprite(BOSS_GOBLIN, "bossGoblin");
+            assets->LoadSprite(BOSS_GOBLIN_ORB, "bossGoblinOrb");
+        }
 
         BossGoblin::~BossGoblin() {}
 

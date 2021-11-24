@@ -39,6 +39,7 @@ namespace  levels {
         Level(Player* p1, Player* p2);
         ~Level();
 
+        void run();
         void renderPlayers(bool onePlayer);
         void loadGame(); // Roda a fase
         void renderBackground();
