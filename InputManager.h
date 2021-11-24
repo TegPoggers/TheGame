@@ -23,9 +23,9 @@ public:
 
     ~InputManager();
 
-    void setLayout1();
+    Actions setLayout1();
 
-    void setLayout2();
+    Actions setLayout2();
 
     virtual bool isKeyPressed(sf::Keyboard::Key key);
 

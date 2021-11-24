@@ -26,14 +26,14 @@ namespace entities {
 
         void Player::run() {
             //Takes inputs, current speeds and moves accordingly
-            if(inputs->isKeyPressed(sf::Keyboard::A) && inputs->isKeyPressed(sf::Keyboard::D)){
+            if(inputs->isKeyPressed(actions.left) && inputs->isKeyPressed(actions.right)){
                 speed.x = 0;
             }
-            else if(inputs->isKeyPressed(sf::Keyboard::A)){
+            else if(inputs->isKeyPressed(actions.left)){
                 speed.x = -moving_speed;
                 direction = -1;
             }
-            else if(inputs->isKeyPressed(sf::Keyboard::D)){
+            else if(inputs->isKeyPressed(actions.right)){
                 speed.x = moving_speed;
                 direction = 1;
             }
@@ -53,7 +53,7 @@ namespace entities {
         }
 
         void Player::attack() {
-            if(can_attack && inputs->isKeyPressed(sf::Keyboard::Space)){
+            if(can_attack && inputs->isKeyPressed(actions.shoot)){
                 fire = new Star(this);
                 fire->setDirection(direction);
                 //fire->setPosition(position.x, position.y);
@@ -66,7 +66,7 @@ namespace entities {
         }
 
         void Player::jump() {
-            if (ground && inputs->isKeyPressed(sf::Keyboard::W)) {
+            if (ground && inputs->isKeyPressed(actions.jump)) {
                 speed.y = jump_speed;
                 ground = false;
             }
@@ -108,6 +108,10 @@ namespace entities {
             Entity* value = static_cast<Entity*>(fire);
             fire = nullptr;
             return value;
+        }
+
+        void Player::setMapping(Actions actions) {
+            this->actions = actions;
         }
 
         float Player::moving_speed = 2.5;

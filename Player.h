@@ -33,6 +33,7 @@ namespace entities{
             Star* fire;
             int counter;
             bool can_attack;
+            Actions actions;
 
         public:
 
@@ -55,6 +56,8 @@ namespace entities{
             int getCollisionDamage();
 
             Entity* getProjectile();
+
+            void setMapping(Actions actions);
 
         };
     }
