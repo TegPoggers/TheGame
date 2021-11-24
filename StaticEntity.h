@@ -11,8 +11,6 @@ namespace entities {
 
     class StaticEntity : public Entity {
 
-    private:
-
     public:
 
         StaticEntity();

@@ -13,7 +13,6 @@ namespace entities {
 
         private:
 
-            int can_attack;
             int attack_counter;
             static int attack_speed;
             static int collision_damage;

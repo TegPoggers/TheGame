@@ -32,6 +32,7 @@ namespace entities{
                 attack_counter = 0;
             }
             attack_counter++;
+            walk();
         }
 
         void BossGoblin::walk(){
@@ -58,7 +59,7 @@ namespace entities{
         int BossGoblin::projectile_damage = 40;
         int BossGoblin::collision_damage = 70;
         int BossGoblin::attack_speed = 976;
-        float BossGoblin::walk_speed = 1;
+        float BossGoblin::walk_speed = 0.5;
 
     }
 }
