@@ -31,6 +31,8 @@ namespace entities {
 
             virtual void attack() = 0;
 
+            virtual int getCollisionDamage() = 0;
+
         };
 
     }

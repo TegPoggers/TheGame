@@ -33,6 +33,8 @@ namespace entities {
 
             virtual void run() = 0;
 
+            virtual int getCollisionDamage() = 0;
+
             virtual void attack() = 0;
 
             void move(sf::Vector2f amount);

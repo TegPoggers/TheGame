@@ -1,28 +1,32 @@
 //
-// Created by segalle on 11/22/21.
+// Created by segalle on 11/23/21.
 //
 
-#ifndef JOGO_STRONGGOBLIN_H
-#define JOGO_STRONGGOBLIN_H
+#ifndef JOGO_BOSSGOBLIN_H
+#define JOGO_BOSSGOBLIN_H
 
 #include "Enemy.h"
 
 namespace entities {
+
     namespace characters {
-        class StrongGoblin : public Enemy {
+        class BossGoblin : public Enemy {
 
         private:
 
             int attack_counter;
             static int attack_speed;
+            static int projectile_damage;
             static int collision_damage;
             static float walk_speed;
 
         public:
 
-            StrongGoblin();
+            BossGoblin();
 
-            ~StrongGoblin();
+            ~BossGoblin();
+
+            void attack();
 
             void run();
 
@@ -33,4 +37,6 @@ namespace entities {
         };
     }
 }
-#endif //JOGO_STRONGGOBLIN_H
+
+
+#endif //JOGO_BOSSGOBLIN_H

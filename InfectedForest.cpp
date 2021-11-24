@@ -65,7 +65,7 @@ namespace levels{
         setPosition(0,0);
 
         //Apagar
-        goblin = new WeakGoblin();
+        goblin = new BossGoblin();
         goblin->setPlayer(p1);
         goblin->setId(2);
         goblin->setPosition(500, 540);

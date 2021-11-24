@@ -26,6 +26,8 @@ namespace entities {
 
         virtual void run() = 0;
 
+        virtual int getCollisionDamage() = 0;
+
         sf::Vector2f getPosition();
 
         void setPosition(sf::Vector2f position);
