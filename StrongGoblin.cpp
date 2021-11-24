@@ -37,6 +37,9 @@ namespace entities{
                 return collision_damage;
 
             }
+
+            return 0;
+
         }
 
         void StrongGoblin::attack() {

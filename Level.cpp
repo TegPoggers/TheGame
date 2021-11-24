@@ -137,7 +137,7 @@ namespace levels{
             entityList->eList.getItem(i)->run();
             //Erro aqui (?????)
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
-            window->getPWindow()->draw(*entityList->eList.getItem(i)->getSprite());
+            window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             shootCurrent(i);
 

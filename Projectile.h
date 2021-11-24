@@ -10,25 +10,19 @@
 //using namespace entities::characters;
 
 
-
 namespace entities {
-
-    namespace characters{
-        class Player;
-    }
 
     class Projectile : public Entity{
 
-    private:
+    protected:
 
-        static float speed;
-        static int damage;
-        characters::Player* creator;
+        float speed;
+        int damage;
         int direction;
 
     public:
 
-        Projectile(characters::Player* creator = nullptr);
+        Projectile();
 
         ~Projectile();
 
@@ -38,16 +32,11 @@ namespace entities {
 
         void setDamage(int dmg);
 
-        void setCreator(characters::Player* creator);
-
-        characters::Player* getCreator();
-
         void setDirection(int direction);
 
         int getCollisionDamage();
 
     };
 }
-
 
 #endif //JOGO_PROJECTILE_H

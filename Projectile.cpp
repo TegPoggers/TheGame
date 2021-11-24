@@ -6,10 +6,10 @@
 
 namespace entities{
 
-    Projectile::Projectile(characters::Player* creator) :
-    creator(creator){
-        assets->LoadSprite(PLAYER_ORB_PATH, "playerOrb");
-    }
+    Projectile::Projectile() : Entity(),
+    damage(0),
+    speed(1),
+    direction(1){}
 
     Projectile::~Projectile(){}
 
@@ -22,16 +22,8 @@ namespace entities{
         return damage;
     }
 
-    characters::Player* Projectile::getCreator() {
-        return creator;
-    }
-
-    void Projectile::setCreator(characters::Player* creator) {
-        this->creator = creator;
-    }
-
     void Projectile::run() {
-        position.x += speed * direction;
+        position.x += speed * (float)direction;
     }
 
     void Projectile::setDirection(int direction) {
@@ -41,8 +33,5 @@ namespace entities{
     int Projectile::getCollisionDamage() {
         return damage;
     }
-
-    int Projectile::damage = 10;
-    float Projectile::speed = 7;
 
 }

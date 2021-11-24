@@ -10,7 +10,7 @@
 #include "WindowManager.h"
 #include "MovingEntity.h"
 //#include "Level.h"
-#include "Projectile.h"
+#include "Star.h"
 
 namespace levels{
     class Level;
@@ -30,7 +30,7 @@ namespace entities{
             bool ground;
             int points;
             levels::Level* level;
-            //Projectile* fire;
+            Star* fire;
             int counter;
             bool can_attack;
 
@@ -54,7 +54,7 @@ namespace entities{
 
             int getCollisionDamage();
 
-            //Entity* getProjectile();
+            Entity* getProjectile();
 
         };
     }

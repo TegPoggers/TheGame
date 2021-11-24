@@ -52,25 +52,25 @@ namespace levels{
         setPosition(0,0);
 
         //Fazer Strong Goblin aleatórios -> Fire vazio
-        strongGoblin = new StrongGoblin();
+        /*strongGoblin = new StrongGoblin();
         strongGoblin->setPlayer(p1);
         strongGoblin->setId(3);
         strongGoblin->setPosition(500, 545);
         strongGoblin->setSprite(assets->getSprite("strongGoblin"));
         entityList->eList.push(strongGoblin);
         assets->getSprite("strongGoblinOrb")->setScale(0.1, 0.1);
-        assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
+        assets->getSprite("strongGoblin")->setScale(0.7, 0.7);*/
 
 
         //Fazer Strong Boss direito -> Fire está vazio
-        bossGoblin = new BossGoblin();
+        /*bossGoblin = new BossGoblin();
         bossGoblin->setPlayer(p1);
         bossGoblin->setId(4);
         bossGoblin->setPosition(1000, 410);
         bossGoblin->setSprite(assets->getSprite("bossGoblin"));
         entityList->eList.push(bossGoblin);
         assets->getSprite("bossGoblinOrb")->setScale(0.1, 0.1);
-        assets->getSprite("bossGoblin")->setScale(1.2, 1.2);
+        assets->getSprite("bossGoblin")->setScale(1.2, 1.2);*/
 
     }
 
