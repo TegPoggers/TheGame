@@ -43,53 +43,21 @@ namespace levels{
 
     }
 
-/*
-    void Level::initializeElements(){
-        cout << "Initialize" << endl;
-        entityList->eList.push(p1);
-        if (playersNum == 2)
-            entityList->eList.push(p2);
-        assets->LoadSprite(HEALTHY_FOREST_PATH, "healthyForest");
-        setBackground(assets->operator[]("healthyForest"));
-        //setBackground(assets["healthyForest"]);
-        setPosition(0,0);
-    }
-*/
     void Level::loadGame(){
 
     }
 
     void Level::renderBackground(){
-        for (int i = 0; i < 10; i++){
+        for (int i = -1; i < 10; i++){
             background->setPosition(i * 1920 * GLOBAL_SCALE, 0);
             window->getPWindow()->draw(*background);
         }
-        window->getPWindow()->setView(sf::View(sf::FloatRect(0, 0, 1366, 768)));
     }
 
- /*   void Level::run(){
-        window.clear();
-        renderBackground();
-        for (int i = 0; i < entityList->eList.getLen(); i++){
-            entityList->eList.getItem(i)->run();
-            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
-            window.draw(*entityList->eList.getItem(i)->getSprite());
-        }
-        entities::Entity* orb = p1->getProjectile();
-
-        if(orb != nullptr){
-            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
-        }
-
-        //setView();
-        window.display();
-    }
-*/
     void Level::setView() {
-        float radius_left = 130 - (1920 * GLOBAL_SCALE)/2;
-        float radius_right = 130 + (1920 * GLOBAL_SCALE)/2;
-        //window.setView(sf::View(sf::FloatRect (p1->getPosition().x - radius_left, 0, p1->getPosition().x + radius_right, 768)));
-        window->getPWindow()->setView(sf::View(sf::FloatRect(2000, 0, 3366, 768)));
+        sf::View view(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
+        view.setCenter((p1->getPosition().x + p1->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+        window->getPWindow()->setView(view);
     }
 
     void Level::renderPlayers(bool onePlayer){
@@ -97,14 +65,14 @@ namespace levels{
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
-        p1->setPosition(150, 510);
+        p1->setPosition(0, 510);
         entityList->eList.push(p1);
         if (!onePlayer){
             assets->LoadSprite(PLAYER_2_PATH,"player2");
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
-            p2->setPosition(2, 510);
+            p2->setPosition(-160, 510);
             entityList->eList.push(p2);
 
         }
@@ -135,7 +103,6 @@ namespace levels{
         renderBackground();
         for (int i = 0; i < entityList->eList.getLen(); i++){
             entityList->eList.getItem(i)->run();
-            //Erro aqui (?????)
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
@@ -155,7 +122,7 @@ namespace levels{
             entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
         }*/
 
-        //setView();
+        setView();
         window->getPWindow()->display();
     }
 
