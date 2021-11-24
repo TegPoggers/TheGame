@@ -52,6 +52,8 @@ namespace entities{
 
             void score(int points);
 
+            int getCollisionDamage();
+
             //Entity* getProjectile();
 
         };

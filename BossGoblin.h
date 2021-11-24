@@ -32,6 +32,8 @@ namespace entities {
 
             void walk();
 
+            int getCollisionDamage();
+
         };
     }
 }

@@ -35,6 +35,10 @@ namespace entities{
             attack_counter++;
         }
 
+        int WeakGoblin::getCollisionDamage() {
+            return 0;
+        }
+
         int WeakGoblin::attack_speed = 288;
         int WeakGoblin::damage = 5;
 

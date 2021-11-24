@@ -13,15 +13,8 @@ namespace entities{
         StrongGoblin::~StrongGoblin(){}
 
         void StrongGoblin::run() {
-            attack();
             walk();
-        }
-
-        void StrongGoblin::attack() {
-            p_position = player->getPosition();
-            if(p_position.x < position.x + 150 && p_position.x > position.x - 150 && p_position.y < p_position.x - 100){
-                player->takeDamage(damage);
-            }
+            attack_counter++;
         }
 
         void StrongGoblin::walk() {
@@ -34,8 +27,17 @@ namespace entities{
             }
         }
 
+        int StrongGoblin::getCollisionDamage() {
+            if(attack_counter > attack_speed) {
+
+                attack_counter = 0;
+                return collision_damage;
+
+            }
+        }
+
         int StrongGoblin::attack_speed = 72;
-        int StrongGoblin::damage = 10;
+        int StrongGoblin::collision_damage = 10;
         float StrongGoblin::walk_speed = 0.7;
 
     }

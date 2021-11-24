@@ -9,7 +9,19 @@
 
 namespace entities {
 
-    class StaticEntity {
+    class StaticEntity : public Entity {
+
+    private:
+
+    public:
+
+        StaticEntity();
+
+        ~StaticEntity();
+
+        virtual void run() = 0;
+
+        virtual int getCollisionDamage() = 0;
 
     };
 

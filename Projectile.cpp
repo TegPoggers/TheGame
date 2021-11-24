@@ -36,6 +36,10 @@ namespace entities{
         this->direction = direction;
     }
 
+    int Projectile::getCollisionDamage() {
+        return damage;
+    }
+
     int Projectile::damage = 10;
     float Projectile::speed = 7;
 

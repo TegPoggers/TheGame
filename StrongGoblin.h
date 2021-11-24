@@ -13,9 +13,10 @@ namespace entities {
 
         private:
 
+            int can_attack;
             int attack_counter;
             static int attack_speed;
-            static int damage;
+            static int collision_damage;
             static float walk_speed;
 
         public:
@@ -24,11 +25,11 @@ namespace entities {
 
             ~StrongGoblin();
 
-            void attack();
-
             void run();
 
             void walk();
+
+            int getCollisionDamage();
 
         };
     }

@@ -3,3 +3,11 @@
 //
 
 #include "StaticEntity.h"
+
+namespace entities {
+
+    StaticEntity::StaticEntity() : Entity() {}
+
+    StaticEntity::~StaticEntity() {}
+
+}
