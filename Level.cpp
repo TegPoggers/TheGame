@@ -80,22 +80,21 @@ namespace levels{
 
     void Level::shootCurrent(int i) {
         int id = entityList->eList.getItem(i)->getId();
-        if(id == 1){
-            MovingEntity* shooter = static_cast<Player*>(entityList->eList.getItem(i));
-            entities::Entity* orb = shooter->getProjectile();
+        if(id >= 1 && id <= 4) {
+            MovingEntity* shooter = dynamic_cast<MovingEntity*>(entityList->eList.getItem(i));
+            entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
             if(orb != nullptr){
                 entityList->eList.push(orb);
-                orb->setSprite(assets->operator[]("playerOrb"));
             }
         }
-        if(id == 2){
+        /*if(id == 2){
             MovingEntity* shooter = static_cast<WeakGoblin*>(entityList->eList.getItem(i));
             entities::Entity* orb = shooter->getProjectile();
             if(orb != nullptr){
                 entityList->eList.push(orb);
                 orb->setSprite(assets->operator[]("weakGoblinOrb"));
             }
-        }
+        }*/
     }
 
     void Level::run(){

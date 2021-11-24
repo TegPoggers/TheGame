@@ -15,6 +15,8 @@ namespace entities{
     void EnergyOrb::initializeStar() {
         speed = 2;
         damage = 30;
+        sprite = assets->getSprite("strongGoblin");
+        setId(10);
     }
 
 }

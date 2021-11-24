@@ -11,13 +11,14 @@ namespace entities{
         attack_counter(0){
             assets->LoadSprite(BOSS_GOBLIN, "bossGoblin");
             assets->LoadSprite(BOSS_GOBLIN_ORB, "bossGoblinOrb");
+            id = 3;
         }
 
         BossGoblin::~BossGoblin() {}
 
         void BossGoblin::attack() {
             p_position = player->getPosition();
-            fire = new Projectile();
+            fire = new EnergyOrb();
             fire->setDamage(projectile_damage);
             fire->setPosition(position.x + sprite->getGlobalBounds().width/2 - 20, position.y + sprite->getGlobalBounds().height/2);
 
@@ -59,6 +60,12 @@ namespace entities{
 
             return 0;
 
+        }
+
+        Entity* BossGoblin::getProjectile() {
+            Entity* aux = static_cast <Entity*> (fire);
+            fire = nullptr;
+            return aux;
         }
 
         int BossGoblin::projectile_damage = 40;

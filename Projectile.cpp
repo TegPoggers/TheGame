@@ -23,7 +23,7 @@ namespace entities{
     }
 
     void Projectile::run() {
-        position.x += speed * (float)direction;
+        position.x += speed * (float)direction; if (id == 10){cout <<"ué"<<endl;}
     }
 
     void Projectile::setDirection(int direction) {

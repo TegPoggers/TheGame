@@ -33,13 +33,10 @@ namespace entities{
     }
 
     sf::Sprite *Entity::getSprite() {
-        //Teste porque a sprite do orb tá ficando nula
-       if (sprite == nullptr){
-            sprite = assets->getSprite("playerOrb");
-        }
 
         sprite->setPosition(position);
         return sprite;
+
     }
 
 }

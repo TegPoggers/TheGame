@@ -15,6 +15,7 @@ namespace entities{
     void DarkEnergyOrb::initializeStar() {
         speed = 5;
         damage = 5;
+        sprite = assets->getSprite("darkEnergyOrb");
     }
 
 }

@@ -11,6 +11,7 @@ namespace entities{
         attack_counter(0){
             assets->LoadSprite(STRONG_GOBLIN, "strongGoblin");
             assets->LoadSprite(GENERAL_GOBLIN_ORB, "strongGoblinOrb");
+            id = 3;
         }
 
         StrongGoblin::~StrongGoblin(){}
@@ -44,6 +45,10 @@ namespace entities{
 
         void StrongGoblin::attack() {
 
+        }
+
+        Entity *StrongGoblin::getProjectile() {
+            return nullptr;
         }
 
         int StrongGoblin::attack_speed = 72;

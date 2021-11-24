@@ -34,6 +34,8 @@ namespace entities {
 
             virtual int getCollisionDamage() = 0;
 
+            virtual Entity* getProjectile() = 0;
+
         };
 
     }
