@@ -36,12 +36,23 @@ namespace entities{
 
         void BossGoblin::walk(){
             p_position = player->getPosition();
-            if(p_position.x + 50 > position.x){
+            if(p_position.x + 50 > position.x){//Esse + 50 vai mudar em função do tamanho do boss (talvez não pois não se pode andar no boss)
                 position.x += walk_speed;
             }
             else{
                 position.x -= walk_speed;
             }
+        }
+
+        int BossGoblin::getCollisionDamage() {
+
+            if(attack_counter > attack_speed) {
+
+                attack_counter = 0;
+                return collision_damage;
+
+            }
+
         }
 
         int BossGoblin::projectile_damage = 40;

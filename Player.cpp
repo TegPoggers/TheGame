@@ -99,6 +99,10 @@ namespace entities {
             }
         }
 
+        int Player::getCollisionDamage() {
+            return 0;
+        }
+
         float Player::moving_speed = 2.5;
         float Player::jump_speed = -12;
         float Player::gravity = 0.1;

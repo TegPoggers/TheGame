@@ -28,6 +28,8 @@ namespace entities {
 
             void run();
 
+            int getCollisionDamage();
+
         };
 
     }

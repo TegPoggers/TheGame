@@ -44,6 +44,8 @@ namespace entities {
 
         void setDirection(int direction);
 
+        int getCollisionDamage();
+
     };
 }
 
