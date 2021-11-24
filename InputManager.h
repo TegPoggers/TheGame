@@ -8,14 +8,24 @@
 #include <SFML/Graphics.hpp>
 //#include <SFML/Window.hpp>
 
+typedef struct {
+    sf::Keyboard::Key jump;
+    sf::Keyboard::Key left;
+    sf::Keyboard::Key right;
+    sf::Keyboard::Key shoot;
+}Actions;
+
 class InputManager {
-protected:
 
 public:
 
     InputManager();
 
     ~InputManager();
+
+    Actions setLayout1();
+
+    Actions setLayout2();
 
     virtual bool isKeyPressed(sf::Keyboard::Key key);
 

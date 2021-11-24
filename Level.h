@@ -11,6 +11,7 @@
 #include "WeakGoblin.h"
 #include "StrongGoblin.h"
 #include "BossGoblin.h"
+#include "InputManager.h"
 
 using namespace entities::characters;
 
