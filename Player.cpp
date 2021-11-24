@@ -39,7 +39,7 @@ namespace entities {
             else{
                 speed.x = 0;
             }
-            //fire = nullptr;;
+            fire = nullptr;;
 
             attackCounter();
 

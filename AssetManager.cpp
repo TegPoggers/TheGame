@@ -12,7 +12,9 @@ AssetManager::AssetManager():
         sprites(),
         textures(),
         fonts()
-{}
+{
+    printf("to no Assets"); // Teste da textura (23/11)
+}
 AssetManager::~AssetManager() {
 
     for(itF = fonts.begin();itF != fonts.end(); itF++){

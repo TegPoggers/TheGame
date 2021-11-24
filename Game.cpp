@@ -4,22 +4,28 @@
 
 #include "Game.h"
 
-Game::Game() {}
+Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), p1(), p2(){
+    Being::setAssetManager(&assets);
+    Being::setWindowManager(&window);
+    healthy = new levels::HealthyForest(&p1, &p2);
+    infected = new levels::InfectedForest(&p1, &p2);
+    cout << "Construtora do Game" << endl;
 
-Game::~Game() {}
+    run();
+}
+
+Game::~Game() {
+
+}
 
 void Game::run(){
 
-    WindowManager window(1280, 720);
-
-    PlayState state(&window);
-
-    //Remover
-    InputManager test;
-
+    //while(Being::getPWindow()->isOpen()){
     while(window.isOpen()){
-        window.render();
-        if(test.isKeyPressed(sf::Keyboard::A)){cout << "a";}
-        if(test.isKeyPressed(sf::Keyboard::S)){cout << "s";}
+
+        //Rodar o menu
+        //Por enquanto chama a healthy
+        healthy->run();
+        //infected->run();
     }
 }

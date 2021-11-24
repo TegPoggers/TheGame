@@ -25,8 +25,7 @@ namespace  levels {
     protected:
         EntityList* entityList;
         int playersNum;
-        AssetManager* assets;
-        sf::RenderWindow window;
+        bool onePlayer;
         Player* p1;
         Player* p2;
         sf::Sprite* background;
@@ -36,10 +35,12 @@ namespace  levels {
         //2 obstacles (nas filhas) - Pelo meenos 3 com número aleatório
 
     public:
-        Level(Player* p1, Player* p2, int playersNum = 0, AssetManager* asset = nullptr);
+        Level();
+        Level(Player* p1, Player* p2);
         ~Level();
 
-        //void run(); // Pode apagar depois pq esta no being
+        void run();
+        void renderPlayers(bool onePlayer);
         void loadGame(); // Roda a fase
         void renderBackground();
         void setPosition(float x, float y);

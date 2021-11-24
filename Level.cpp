@@ -6,16 +6,22 @@
 
 namespace levels{
 
+    Level::Level() : Being() { }
+
     //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
-    Level::Level(Player* p1, Player* p2, int playersNum, AssetManager* asset) : Being(), background(nullptr), backPosition(), assets(asset){
+    Level::Level(Player* p1, Player* p2) : Being(), background(nullptr), backPosition(){
         this->p1 = p1;
         this->p2 = p2;
-        this->playersNum = playersNum;
+        onePlayer = true;
         entityList = new EntityList();
-        window.create(sf::VideoMode(1366, 768), "Fase");
-        window.setFramerateLimit(144);
+
+        if (this->p1 && this->p2)
+            onePlayer = false;
+        else if (!this->p1)
+            p1 = new Player();
+
+        renderPlayers(onePlayer);
         //Aloca inimigos
-        //initializeElements();
     }
 
     Level::~Level(){
@@ -56,9 +62,9 @@ namespace levels{
     void Level::renderBackground(){
         for (int i = 0; i < 10; i++){
             background->setPosition(i * 1920 * GLOBAL_SCALE, 0);
-            window.draw(*background);
+            window->getPWindow()->draw(*background);
         }
-        window.setView(sf::View(sf::FloatRect(0, 0, 1366, 768)));
+        window->getPWindow()->setView(sf::View(sf::FloatRect(0, 0, 1366, 768)));
     }
 
  /*   void Level::run(){
@@ -83,7 +89,25 @@ namespace levels{
         float radius_left = 130 - (1920 * GLOBAL_SCALE)/2;
         float radius_right = 130 + (1920 * GLOBAL_SCALE)/2;
         //window.setView(sf::View(sf::FloatRect (p1->getPosition().x - radius_left, 0, p1->getPosition().x + radius_right, 768)));
-        window.setView(sf::View(sf::FloatRect(2000, 0, 3366, 768)));
+        window->getPWindow()->setView(sf::View(sf::FloatRect(2000, 0, 3366, 768)));
+    }
+
+    void Level::renderPlayers(bool onePlayer){
+        assets->LoadSprite(PLAYER_1_PATH,"player1");
+        p1->setId(1);
+        p1->setSprite(assets->operator[]("player1"));
+        p1->getSprite()->setScale(0.5, 0.5);
+        p1->setPosition(150, 510);
+        entityList->eList.push(p1);
+        if (!onePlayer){
+            assets->LoadSprite(PLAYER_2_PATH,"player2");
+            p2->setId(1);
+            p2->setSprite(assets->operator[]("player2"));
+            p2->getSprite()->setScale(0.5, 0.5);
+            p2->setPosition(2, 510);
+            entityList->eList.push(p2);
+
+        }
     }
 
     void Level::shootCurrent(int i) {
@@ -104,6 +128,35 @@ namespace levels{
                 orb->setSprite(assets->operator[]("weakGoblinOrb"));
             }
         }
+    }
+
+    void Level::run(){
+        window->getPWindow()->clear();
+        renderBackground();
+        for (int i = 0; i < entityList->eList.getLen(); i++){
+            entityList->eList.getItem(i)->run();
+            //Erro aqui (?????)
+            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
+            window->getPWindow()->draw(*entityList->eList.getItem(i)->getSprite());
+            //Verifica que tipo de inimigo que é e atira um projétil se for válido
+            shootCurrent(i);
+
+        }
+
+        /*entities::Entity* orb = p1->getProjectile();
+
+        if(orb != nullptr){
+            entityList->eList.push(orb);
+            orb->setSprite(assets->operator[]("playerOrb"));
+        }
+
+        orb = goblin->getProjectile();
+        if(orb){
+            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
+        }*/
+
+        //setView();
+        window->getPWindow()->display();
     }
 
 }

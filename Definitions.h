@@ -20,11 +20,18 @@
 #define SPIKES_PATH "../Assets/Obstacles/Spikes.png"
 #define DARK_ENERGY_ORB_PATH "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB_PATH "../Assets/Projectiles/PlayerOrb.png"
+#define PLAYER_1_PATH "../Assets/Players/player1.png"
+#define PLAYER_2_PATH "../Assets/Players/player2.png"
 #define WEAK_GOBLIN "../Assets/Enemies/WeakGoblin.png"
+#define STRONG_GOBLIN "../Assets/Enemies/StrongGoblin.png"
+#define BOSS_GOBLIN "../Assets/Enemies/BossGoblin.png"
 #define PLATFORM "../Assets/Platform/Platform.png"
 
-#define WEAK_GOBLIN_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
+#define GENERAL_GOBLIN_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
+#define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 
 #define GLOBAL_SCALE 0.7111111
+#define WINDOW_WIDTH 1366
+#define WINDOW_HEIGHT 768
 
 #endif //JOGO_DEFINITIONS_H

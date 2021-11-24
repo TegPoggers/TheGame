@@ -5,19 +5,28 @@
 #ifndef JOGO_GAME_H
 #define JOGO_GAME_H
 
-#include <SFML/Window.hpp>
+/*#include <SFML/Window.hpp> //Precisa desse?
 #include <SFML/Graphics.hpp>
-//#include "AssetManager.h"
 #include "WindowManager.h"
-#include "PlayState.h"
+#include "InputManager.h" */
+//#include "PlayState.h"
+#include "AssetManager.h"
 
-
-#include "InputManager.h"
-
+#include "HealthyForest.h"
+#include "InfectedForest.h"
+#include "Player.h"
+using namespace entities::characters;
+//Incluir menu
 
 class Game {
 
 private:
+    WindowManager window;
+    AssetManager assets;
+    Player p1;
+    Player p2;
+    levels::HealthyForest* healthy;
+    levels::InfectedForest* infected;
 
 public:
     Game();
