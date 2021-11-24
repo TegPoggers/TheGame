@@ -23,8 +23,10 @@
 #define PLAYER_1_PATH "../Assets/Players/player1.png"
 #define PLAYER_2_PATH "../Assets/Players/player2.png"
 #define WEAK_GOBLIN "../Assets/Enemies/WeakGoblin.png"
+#define STRONG_GOBLIN " "
 #define PLATFORM "../Assets/Platform/Platform.png"
 
+#define STRONG_GOBLIN_ORB " "
 #define WEAK_GOBLIN_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 
 #define GLOBAL_SCALE 0.7111111

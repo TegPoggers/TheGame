@@ -8,7 +8,7 @@ Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), p1(), p2(){
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
     healthy = new levels::HealthyForest(&p1, &p2);
-    infected = nullptr;
+    infected = new levels::InfectedForest(&p1, &p2);
     cout << "Construtora do Game" << endl;
 
     run();
@@ -31,6 +31,7 @@ void Game::run(){
         //Rodar o menu
         //Por enquanto chama a healthy
         cout << "Estou no Game" << endl;
-        healthy->run();
+        //healthy->run();
+        infected->run();
     }
 }

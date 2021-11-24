@@ -48,9 +48,8 @@ namespace levels{
     void InfectedForest::initializeElements(){
 
         assets->LoadSprite(INFECTED_FOREST_PATH, "infectedForest");
-
+        //Mudar para o Boss
         assets->LoadSprite(WEAK_GOBLIN, "weakGoblin");
-
         assets->LoadSprite(WEAK_GOBLIN_ORB, "weakGoblinOrb");
         assets->getSprite("weakGoblinOrb")->setScale(0.1, 0.1);
 
