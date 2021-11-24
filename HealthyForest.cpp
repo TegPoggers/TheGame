@@ -50,11 +50,12 @@ namespace levels{
         setBackground(assets->operator[]("healthyForest"));
         setPosition(0,0);
 
-        //Fazer weak goblin aleatórios
+        //Fazer weak goblin aleatórios //Fazer classe template com 3 parâmetros
         weakGoblin = new WeakGoblin();
-        weakGoblin->setPlayer(p1);
-        weakGoblin->setId(2);
-        weakGoblin->setPosition(750, 540);
+        weakGoblin->setPlayer(p1); //Fazer try catch para ver se tem outro player
+        weakGoblin->setId(2); //COnstrutora
+        weakGoblin->setPosition(1060, 540);
+        //weakGoblin->setPosition(0, 540);
         weakGoblin->setSprite(assets->getSprite("weakGoblin"));
         entityList->eList.push(weakGoblin);
         assets->getSprite("weakGoblinOrb")->setScale(0.1, 0.1);
