@@ -61,17 +61,19 @@ namespace levels{
         assets->getSprite("weakGoblin")->setScale(0.7, 0.7);*/
 
         levelMaker.createWeakGoblin();
-
+        cout << "Criou goblins " << endl;
 
         //Fazer Strong Goblin aleatórios
-        strongGoblin = new StrongGoblin();
+        /*strongGoblin = new StrongGoblin();
         strongGoblin->setPlayer(p1);
         strongGoblin->setId(3);
         strongGoblin->setPosition(600, 550);
         strongGoblin->setSprite(assets->getSprite("strongGoblin"));
         entityList->eList.push(strongGoblin);
         assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
-
+*/
+        levelMaker.createStrongGoblin();
+        levelMaker.renderObstacles();
     }
 
     void HealthyForest::createEnemies(){

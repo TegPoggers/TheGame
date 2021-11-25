@@ -29,7 +29,9 @@ namespace levels{
         Player* player;
         EntityList* entityList;
         AssetManager* assets;
-        WeakGoblin *weakGoblin;
+        int max_entities;
+        float Xposition;
+
     public:
         LevelMaker();
         LevelMaker(Player* p, EntityList* list, AssetManager* asset);
@@ -43,7 +45,7 @@ namespace levels{
         void createSpikes();
         void createFirePit();
         void createPointyBush();
-
+        void renderObstacles();
     };
 
 }

@@ -9,11 +9,10 @@ namespace levels{
     Level::Level() : Being() { }
 
     //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
-    Level::Level(Player* p1, Player* p2) : Being(), background(nullptr), backPosition(), levelMaker(p1, entityList, assets){
+    Level::Level(Player* p1, Player* p2) : Being(), entityList(new EntityList()), background(nullptr), backPosition(), levelMaker(p1, entityList, assets){
         this->p1 = p1;
         this->p2 = p2;
         onePlayer = true;
-        entityList = new EntityList();
 
         if (this->p1 && this->p2)
             onePlayer = false;
@@ -48,7 +47,7 @@ namespace levels{
     }
 
     void Level::renderBackground(){
-        for (int i = -1; i < 10; i++){
+        for (int i = -1; i < 12; i++){
             background->setPosition(i * 1920 * GLOBAL_SCALE, 0);
             window->getPWindow()->draw(*background);
         }
@@ -114,7 +113,7 @@ namespace levels{
             window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             shootCurrent(i);
-
+            cout << "PLayer " << entityList->eList.getItem(0)->getPosition().x << endl;
         }
 
         /*entities::Entity* orb = p1->getProjectile();
