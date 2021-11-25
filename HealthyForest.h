@@ -11,6 +11,10 @@
 namespace levels{
 
     class HealthyForest : public Level{
+    private:
+        WeakGoblin* weakGoblin;
+        StrongGoblin* strongGoblin;
+
     public:
         HealthyForest();
         HealthyForest(Player* p1, Player* p2);
@@ -20,9 +24,6 @@ namespace levels{
         void createEnemies();
         void createObstacles();
 
-    private:
-        WeakGoblin* weakGoblin;
-        StrongGoblin* strongGoblin;
     };
 
 }

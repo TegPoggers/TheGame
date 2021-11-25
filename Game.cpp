@@ -26,7 +26,7 @@ void Game::run(){
 
         //Rodar o menu
         //Por enquanto chama a healthy
-        healthy->run();
-        //infected->run();
+        //healthy->run();
+        infected->run();
     }
 }
