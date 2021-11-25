@@ -10,7 +10,7 @@ namespace entities{
         FirePit::FirePit() :
         attack_counter(0){
             sprite = assets->getSprite("firePit");
-            setId(6);
+            setId(fire_pit_id);
         }
 
         FirePit::~FirePit() {}
