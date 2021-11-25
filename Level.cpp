@@ -71,14 +71,14 @@ namespace levels{
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
-        p1->setPosition(0, 510);
+        p1->setPosition(0);
         entityList->eList.push(p1);
         p1->setMapping(inputs.setLayout1());
         if (!onePlayer){
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
-            p2->setPosition(-160, 510);
+            p2->setPosition(-160);
             entityList->eList.push(p2);
             p2->setMapping(inputs.setLayout2());
 

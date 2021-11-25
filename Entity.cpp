@@ -10,7 +10,9 @@ namespace entities{
     sprite(nullptr),
     position(0, 0),
     Being()
-    {}
+    {
+        //setFeetPosition(725);
+    }
 
     Entity::~Entity() {
         sprite = assets->getSprite("failedTexture");

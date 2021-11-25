@@ -32,7 +32,6 @@ namespace managers{
             entities::characters::Player* player = static_cast<entities::characters::Player*>(entity);
             if(player->getFeetPosition() > 725){
                 player->setGround(true);
-                player->setPosition(player->getPosition().x, 725 - player->getSprite()->getGlobalBounds().height);
             }
             else{
                 player->setGround(false);
