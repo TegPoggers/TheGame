@@ -10,7 +10,8 @@ namespace entities {
         MovingEntity::MovingEntity() :
         Entity(),
         lives(1),
-        fire(nullptr){}
+        fire(nullptr),
+        health(100){}
 
         MovingEntity::~MovingEntity() {}
 
@@ -32,6 +33,10 @@ namespace entities {
 
         void MovingEntity::takeDamage(int dmg) {
             health -= dmg;
+        }
+
+        int MovingEntity::getHealth() {
+            return health;
         }
     }
 }

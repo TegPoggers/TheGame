@@ -49,6 +49,8 @@ namespace entities {
 
             virtual Entity* getProjectile() = 0;
 
+            int getHealth();
+
         };
     }
 }

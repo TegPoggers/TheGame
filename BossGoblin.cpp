@@ -10,7 +10,7 @@ namespace entities{
         BossGoblin::BossGoblin() : Enemy(),
         attack_counter(0){
             sprite = assets->getSprite("bossGoblin");
-            setId(10);
+            setId(boss_goblin_id);
         }
 
         BossGoblin::~BossGoblin() {}
@@ -70,7 +70,7 @@ namespace entities{
         int BossGoblin::projectile_damage = 40;
         int BossGoblin::collision_damage = 70;
         int BossGoblin::attack_speed = 976;
-        float BossGoblin::walk_speed = 0.5;
+        float BossGoblin::walk_speed = 0.35;
 
     }
 }

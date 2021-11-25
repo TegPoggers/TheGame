@@ -20,7 +20,7 @@ public:
     ~List();
 
     int getLen(){ return len; }
-    TL* getItem( int pos);
+    TL* getItem(int pos);
     void push(TL* item);
     void pop(TL* item);
 

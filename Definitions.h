@@ -26,11 +26,15 @@
 #define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 
 #define GLOBAL_SCALE 0.7111111
+
 #define WINDOW_WIDTH 1366
 #define WINDOW_HEIGHT 768
+
 #define POSITION_MAX 13300
 #define POSITION_MIN 800
+
 #define RAND_ENTITIES 3
+
 #define BOSS_POSITION 14100
 #define DOOR_POSITION 15100
 
