@@ -9,7 +9,8 @@ namespace entities{
     Entity::Entity() :
     sprite(nullptr),
     position(0, 0),
-    Being()
+    Being(),
+    alive(true)
     {}
 
     Entity::~Entity() {
@@ -47,6 +48,14 @@ namespace entities{
 
     void Entity::setFeetPosition(float feet_position) {
         position.y = feet_position - sprite->getGlobalBounds().height;
+    }
+
+    void Entity::die() {
+        alive = false;
+    }
+
+    bool Entity::isAlive(){
+        return alive;
     }
 
 }

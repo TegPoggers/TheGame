@@ -14,16 +14,46 @@ namespace managers{
         entity_list = entities;
     }
 
-    void CollisionManager::runPhysics() {
+    bool CollisionManager::runEntities() {
         for (int i = 0; i < entity_list->eList.getLen(); i++){
+
             entity_list->eList.getItem(i)->run();
             entity_list->eList.getItem(i)->getSprite()->setPosition(entity_list->eList.getItem(i)->getPosition()); // Define
+
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entity_list->eList.getItem(i));
+            shootCurrent(i);
 
-            //if(i != 0)
-                //collide.detectCollisions(p1, entityList->eList.getItem(i));
+        }
+    }
 
+    void CollisionManager::runPhysics() {
+
+        searchCollisions();
+        removeDead();
+
+    }
+
+    void CollisionManager::removeDead() {
+        for (int i = 0; i < entity_list->eList.getLen(); i++){
+
+            //Tem que ver esse delete
+            /*if(!entity_list->eList.getItem(i)->isAlive()){
+                entities::Entity* remove = entity_list->eList.getItem(i);
+                entity_list->eList.pop(remove);
+                delete remove;
+            }*/
+
+        }
+    }
+
+    void CollisionManager::shootCurrent(int i) {
+        int id = entity_list->eList.getItem(i)->getId();
+        if(id >= 1 && id <= 4) {
+            entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->eList.getItem(i));
+            entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
+            if(orb != nullptr){
+                entity_list->eList.push(orb);
+            }
         }
     }
 
@@ -36,6 +66,14 @@ namespace managers{
             }
             else{
                 player->setGround(false);
+            }
+        }
+    }
+
+    void CollisionManager::searchCollisions(){
+        for (int i = 0; i < entity_list->eList.getLen(); i++){
+            for(int j = 0; j < entity_list->eList.getLen(); j++){
+                detectCollisions(entity_list->eList.getItem(i), entity_list->eList.getItem(j));
             }
         }
     }

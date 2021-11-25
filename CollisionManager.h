@@ -40,16 +40,23 @@ namespace managers {
         void setEntityList(EntityList* entities);
 
         //retorna false se não tiver mais jogadores
-        bool runPlayers();
+        bool runEntities();
 
         void runPhysics();
+
+        void shootCurrent(int i);
+
+        //Retira os mortos da lista e os desaloca
+        void removeDead();
 
         //Detecta se está no ar e seja canJump como falso, seta como true caso contrário
         void flying(entities::Entity* entity);
 
-        void detectCollisions(entities::Entity* object1, entities::Entity* object2);
+        void searchCollisions();
 
-        void analyzeCollision(entities::Entity* object1, entities::Entity* object2);
+        static void detectCollisions(entities::Entity* object1, entities::Entity* object2);
+
+        static void analyzeCollision(entities::Entity* object1, entities::Entity* object2);
 
 
 

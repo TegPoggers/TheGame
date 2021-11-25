@@ -14,6 +14,7 @@ namespace levels{
         this->p2 = p2;
         onePlayer = true;
         entityList = new EntityList();
+        physics.setEntityList(entityList);
 
         if (this->p1 && this->p2)
             onePlayer = false;
@@ -101,7 +102,8 @@ namespace levels{
     void Level::run(){
         window->getPWindow()->clear();
         renderBackground();
-        for (int i = 0; i < entityList->eList.getLen(); i++){
+
+        /*for (int i = 0; i < entityList->eList.getLen(); i++){
             entityList->eList.getItem(i)->run();
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
@@ -111,7 +113,15 @@ namespace levels{
             if(i != 0)
                 collide.detectCollisions(p1, entityList->eList.getItem(i));
 
+        }*/
+
+        physics.runEntities();
+
+        for (int i = 0; i < entityList->eList.getLen(); i++){
+            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
+            window->draw(entityList->eList.getItem(i)->getSprite());
         }
+
 
         /*entities::Entity* orb = p1->getProjectile();
 

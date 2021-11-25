@@ -17,6 +17,7 @@ namespace entities {
 
         sf::Vector2f position;
         sf::Sprite* sprite;
+        bool alive;
 
     public:
 
@@ -40,6 +41,10 @@ namespace entities {
         float getFeetPosition();
 
         void setFeetPosition(float feet_position = 725);
+
+        void die();
+
+        bool isAlive();
 
     };
 
