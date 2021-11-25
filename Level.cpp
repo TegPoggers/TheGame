@@ -113,7 +113,10 @@ namespace levels{
             window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             shootCurrent(i);
-            cout << "PLayer " << entityList->eList.getItem(0)->getPosition().x << endl;
+            managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
+
+            if(i != 0)
+                collide.detectCollisions(p1, entityList->eList.getItem(i));
         }
 
         /*entities::Entity* orb = p1->getProjectile();

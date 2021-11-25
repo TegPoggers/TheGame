@@ -13,6 +13,7 @@
 #include "BossGoblin.h"
 #include "InputManager.h"
 #include "LevelMaker.h"
+#include "CollisionManager.h"
 
 using namespace entities::characters;
 
@@ -32,9 +33,6 @@ namespace  levels {
         Player* p2;
         sf::Sprite* background;
         sf::Vector2f backPosition;
-        //EnemyList enemies; //Número aleatório de instâncias (pelo menos 3 por tipo)
-        //Boss* boss;
-        //2 obstacles (nas filhas) - Pelo meenos 3 com número aleatório
 
     public:
         Level();

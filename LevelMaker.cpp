@@ -28,7 +28,6 @@ namespace levels{
 
     void LevelMaker::createWeakGoblin(){
         max_entities = rand() % RAND_ENTITIES;
-        cout << "O maximo de weak eh " << max_entities + 3 << endl;
         for (int i = 0; i < (3 + max_entities); i++){
             Xposition = (rand() % POSITION_MAX) + POSITION_MIN; //De 800 até 11,200 (x)
             cout << Xposition << endl;
@@ -49,7 +48,6 @@ namespace levels{
 
     void LevelMaker::createStrongGoblin(){
         max_entities = rand() % RAND_ENTITIES;
-        cout << "O maximo do strong eh " << max_entities + 3 << endl;
         for (int i = 0; i < (3 + max_entities); i++){
             Xposition = (rand() % POSITION_MAX) + POSITION_MIN; //De 800 até 11,200 (x)
             cout << Xposition << endl;
@@ -84,7 +82,6 @@ namespace levels{
 
     void LevelMaker::createSpikes(){
         max_entities = rand() % RAND_ENTITIES;
-        cout << "Spikes " << max_entities + 3 << endl;
         for (int i = 0; i < (3 + max_entities); i++){
             Xposition = (rand() % POSITION_MAX) + POSITION_MIN;
             //Ver se teve colisão com alguma coisa
@@ -102,7 +99,6 @@ namespace levels{
 
     void LevelMaker::createFirePit(){
         max_entities = rand() % RAND_ENTITIES;
-        cout << "Fire Pit " << max_entities + 3 << endl;
         for (int i = 0; i < (3 + max_entities); i++){
             Xposition = (rand() % POSITION_MAX) + POSITION_MIN;
             //Ver se teve colisão com alguma coisa
@@ -111,7 +107,7 @@ namespace levels{
             firePit->setSprite(assets->getSprite("firePit"));
             if (entityList && assets){
                 entityList->eList.push(static_cast<entities::Entity*>(firePit));
-                assets->getSprite("spikes")->setScale(0.7, 0.7);
+                assets->getSprite("firePit")->setScale(1.5, 1.5);
             } else {
                 cout << "Asset Manager or Entity List pointer is null" << endl;
             }
@@ -120,7 +116,6 @@ namespace levels{
 
     void LevelMaker::createPointyBush(){
         max_entities = rand() % RAND_ENTITIES;
-        cout << "Pointy Bush " << max_entities + 3 << endl;
         for (int i = 0; i < (3 + max_entities); i++){
             Xposition = (rand() % POSITION_MAX) + POSITION_MIN;
             //Ver se teve colisão com alguma coisa
