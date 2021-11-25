@@ -20,6 +20,8 @@ SpriteLoader::~SpriteLoader() {
 
 void SpriteLoader::run() {
 
+    loadFailedTexture();
+
     loadBackgrounds();
 
     loadEnemies();
@@ -30,6 +32,10 @@ void SpriteLoader::run() {
 
     loadProjectiles();
 
+}
+
+void SpriteLoader::loadFailedTexture(){
+    assets->loadSprite(FAILED_TEXTURE, "failedTexture");
 }
 
 void SpriteLoader::loadBackgrounds() {
