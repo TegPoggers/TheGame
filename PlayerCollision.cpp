@@ -80,9 +80,9 @@ namespace managers {
         }
         else if(id == spikes_id){
             player->setFallSpeed(0);
-            if(player->getPosition().x > obstacle->getPosition().x + 10 && player->getPosition().x + player->getSprite()->getGlobalBounds().width <
-                    obstacle->getPosition().x + obstacle->getSprite()->getGlobalBounds().width - 10){
-                player->setFeetPosition(obstacle->getPosition().y - 1);
+            if(player->getPosition().x < obstacle->getPosition().x + obstacle->getSprite()->getGlobalBounds().width && player->getPosition().x +
+            player->getSprite()->getGlobalBounds().width > obstacle->getPosition().x){
+                player->setFeetPosition(obstacle->getPosition().y);
             }
         }
         player->takeDamage(obstacle->getCollisionDamage());

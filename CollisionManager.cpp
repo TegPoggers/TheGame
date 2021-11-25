@@ -25,6 +25,10 @@ namespace managers{
             flying(entity_list->eList.getItem(i));
 
         }
+        if(entity_list->eList.getItem(0)->getId() == 1){
+            return true;
+        }
+        return false;
     }
 
     void CollisionManager::runPhysics() {

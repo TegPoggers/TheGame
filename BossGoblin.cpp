@@ -10,7 +10,7 @@ namespace entities{
         BossGoblin::BossGoblin() : Enemy(),
         attack_counter(0){
             sprite = assets->getSprite("bossGoblin");
-            setId(10);
+            setId(boss_goblin_id);
         }
 
         BossGoblin::~BossGoblin() {}
