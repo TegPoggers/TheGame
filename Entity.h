@@ -31,11 +31,15 @@ namespace entities {
         sf::Vector2f getPosition();
 
         void setPosition(sf::Vector2f position);
-        void setPosition(float x, float y);
+        void setPosition(float x, float y = 0);
 
         sf::Sprite* getSprite();
 
         void setSprite(sf::Sprite* sprite);
+
+        float getFeetPosition();
+
+        void setFeetPosition(float feet_position = 725);
 
     };
 

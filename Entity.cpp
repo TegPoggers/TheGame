@@ -41,6 +41,14 @@ namespace entities{
 
     }
 
+    float Entity::getFeetPosition() {
+        return sprite->getPosition().y + sprite->getGlobalBounds().height;
+    }
+
+    void Entity::setFeetPosition(float feet_position) {
+        position.y = feet_position - sprite->getGlobalBounds().height;
+    }
+
 }
 
 

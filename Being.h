@@ -10,6 +10,20 @@
 #include "AssetManager.h"
 #include "WindowManager.h"
 
+enum id{
+    player_id = 1,
+    weak_goblin_id = 2,
+    strong_goblin_id = 3,
+    boss_goblin_id = 4,
+    spikes_id = 5,
+    fire_pit_id = 6,
+    bush_id = 7,
+    star_id = 8,
+    dark_energy_orb_id = 9,
+    energy_orb_id = 10,
+    menu_id = 10
+};
+
 class Being {
 
 protected:
