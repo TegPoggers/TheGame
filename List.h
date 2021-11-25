@@ -85,7 +85,7 @@ void List<TL>::pop(TL* item){
     }
 
     if (temp = pFirst){
-        pFirst = temp->getNext();
+        pFirst = temp->getPNext();
     }
     else if (temp = pLast){
         previous->setNext(nullptr);

@@ -9,7 +9,7 @@ namespace levels{
     Level::Level() : Being() { }
 
     //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
-    Level::Level(Player* p1, Player* p2) : Being(), background(nullptr), backPosition(){
+    Level::Level(Player* p1, Player* p2) : Being(), background(nullptr), backPosition(), levelMaker(p1, entityList, assets){
         this->p1 = p1;
         this->p2 = p2;
         onePlayer = true;
@@ -54,9 +54,16 @@ namespace levels{
         }
     }
 
+    //Teste com a lista ao invés do p1
+    //Lembrar de testar quando o player1 morre, se a view funciona com o player 2
     void Level::setView() {
         sf::View view(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
-        view.setCenter((p1->getPosition().x + p1->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+        if (entityList){
+            entities::Entity* entity = entityList->eList.getItem(0);
+            if (entity && entity->getId() == 1){
+                view.setCenter((entity->getPosition().x + entity->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+            }
+        }
         window->getPWindow()->setView(view);
     }
 

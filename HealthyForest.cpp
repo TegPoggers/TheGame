@@ -50,7 +50,7 @@ namespace levels{
         setPosition(0,0);
 
         //Fazer weak goblin aleatórios //Fazer classe template com 3 parâmetros
-        weakGoblin = new WeakGoblin();
+        /*weakGoblin = new WeakGoblin();
         weakGoblin->setPlayer(p1); //Fazer try catch para ver se tem outro player
         weakGoblin->setId(2); //COnstrutora
         weakGoblin->setPosition(1060, 540);
@@ -58,7 +58,9 @@ namespace levels{
         weakGoblin->setSprite(assets->getSprite("weakGoblin"));
         entityList->eList.push(weakGoblin);
         assets->getSprite("darkEnergyOrb")->setScale(0.1, 0.1);
-        assets->getSprite("weakGoblin")->setScale(0.7, 0.7);
+        assets->getSprite("weakGoblin")->setScale(0.7, 0.7);*/
+
+        levelMaker.createWeakGoblin();
 
 
         //Fazer Strong Goblin aleatórios

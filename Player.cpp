@@ -41,7 +41,7 @@ namespace entities {
                 speed.x = 0;
             }
             fire = nullptr;;
-
+            cout << this->getPosition().x << endl;
             attackCounter();
 
             attack();
