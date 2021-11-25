@@ -12,6 +12,7 @@
 #include "StrongGoblin.h"
 #include "BossGoblin.h"
 #include "InputManager.h"
+#include "LevelMaker.h"
 #include "CollisionManager.h"
 
 using namespace entities::characters;
@@ -26,8 +27,8 @@ namespace  levels {
 
     protected:
         EntityList* entityList;
-        int playersNum;
         bool onePlayer;
+        LevelMaker levelMaker;
         Player* p1;
         Player* p2;
         sf::Sprite* background;

@@ -13,6 +13,7 @@ public:
     //SpriteLoader(AssetManager* assets, WindowManager* window);
     ~SpriteLoader();
     void run();
+    void loadFailedTexture();
     void loadBackgrounds();
     void loadEnemies();
     void loadObstacles();

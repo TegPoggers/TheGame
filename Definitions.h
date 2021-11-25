@@ -20,6 +20,7 @@
 #define STRONG_GOBLIN "../Assets/Enemies/StrongGoblin.png"
 #define BOSS_GOBLIN "../Assets/Enemies/BossGoblin.png"
 #define PLATFORM "../Assets/Platform/Platform.png"
+#define FAILED_TEXTURE "../Assets/Failed/FailedTexture.jpg"
 
 #define ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 #define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
@@ -27,5 +28,10 @@
 #define GLOBAL_SCALE 0.7111111
 #define WINDOW_WIDTH 1366
 #define WINDOW_HEIGHT 768
+#define POSITION_MAX 13300
+#define POSITION_MIN 800
+#define RAND_ENTITIES 3
+#define BOSS_POSITION 14100
+#define DOOR_POSITION 15100
 
 #endif //JOGO_DEFINITIONS_H

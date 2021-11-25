@@ -9,11 +9,10 @@ namespace levels{
     Level::Level() : Being() { }
 
     //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
-    Level::Level(Player* p1, Player* p2) : Being(), background(nullptr), backPosition(){
+    Level::Level(Player* p1, Player* p2) : Being(), entityList(new EntityList()), background(nullptr), backPosition(), levelMaker(p1, entityList, assets){
         this->p1 = p1;
         this->p2 = p2;
         onePlayer = true;
-        entityList = new EntityList();
         physics.setEntityList(entityList);
 
         if (this->p1 && this->p2)
@@ -49,15 +48,22 @@ namespace levels{
     }
 
     void Level::renderBackground(){
-        for (int i = -1; i < 10; i++){
+        for (int i = -1; i < 12; i++){
             background->setPosition(i * 1920 * GLOBAL_SCALE, 0);
             window->getPWindow()->draw(*background);
         }
     }
 
+    //Teste com a lista ao invés do p1
+    //Lembrar de testar quando o player1 morre, se a view funciona com o player 2
     void Level::setView() {
         sf::View view(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
-        view.setCenter((p1->getPosition().x + p1->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+        if (entityList){
+            entities::Entity* entity = entityList->eList.getItem(0);
+            if (entity && entity->getId() == 1){
+                view.setCenter((entity->getPosition().x + entity->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+            }
+        }
         window->getPWindow()->setView(view);
     }
 
@@ -66,14 +72,14 @@ namespace levels{
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
-        p1->setPosition(0, 510);
+        p1->setPosition(0);
         entityList->eList.push(p1);
         p1->setMapping(inputs.setLayout1());
         if (!onePlayer){
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
-            p2->setPosition(-160, 510);
+            p2->setPosition(-160);
             entityList->eList.push(p2);
             p2->setMapping(inputs.setLayout2());
 
@@ -108,13 +114,30 @@ namespace levels{
         physics.searchCollisions();
 
         for (int i = 0; i < entityList->eList.getLen(); i++){
+            entityList->eList.getItem(i)->run();
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
+            //Verifica que tipo de inimigo que é e atira um projétil se for válido
+            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
+
+
+
         }
+
+        /*entities::Entity* orb = p1->getProjectile();
+
+        if(orb != nullptr){
+            entityList->eList.push(orb);
+            orb->setSprite(assets->operator[]("playerOrb"));
+        }
+
+        orb = goblin->getProjectile();
+        if(orb){
+            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
+        }*/
 
         setView();
         window->getPWindow()->display();
-
     }
 
 }
