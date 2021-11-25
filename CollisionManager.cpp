@@ -22,6 +22,7 @@ namespace managers{
 
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             shootCurrent(i);
+            flying(entity_list->eList.getItem(i));
 
         }
     }
@@ -76,6 +77,7 @@ namespace managers{
                 detectCollisions(entity_list->eList.getItem(i), entity_list->eList.getItem(j));
             }
         }
+        removeDead();
     }
 
     void CollisionManager::detectCollisions(entities::Entity *object1, entities::Entity *object2) {
@@ -111,7 +113,7 @@ namespace managers{
             object2 = aux;
         }
         if(object1->getId() == player_id){
-            //Testar o id dos outros e rodar colisão de acordo com isso
+            //analyzePlayerCollision(dynamic_cast<entities::characters::Player*> (object1), object2);
         }
 
     }

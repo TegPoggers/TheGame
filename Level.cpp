@@ -103,40 +103,18 @@ namespace levels{
         window->getPWindow()->clear();
         renderBackground();
 
-        /*for (int i = 0; i < entityList->eList.getLen(); i++){
-            entityList->eList.getItem(i)->run();
-            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
-            window->draw(entityList->eList.getItem(i)->getSprite());
-            //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
-
-            if(i != 0)
-                collide.detectCollisions(p1, entityList->eList.getItem(i));
-
-        }*/
-
         physics.runEntities();
+
+        physics.searchCollisions();
 
         for (int i = 0; i < entityList->eList.getLen(); i++){
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
         }
 
-
-        /*entities::Entity* orb = p1->getProjectile();
-
-        if(orb != nullptr){
-            entityList->eList.push(orb);
-            orb->setSprite(assets->operator[]("playerOrb"));
-        }
-
-        orb = goblin->getProjectile();
-        if(orb){
-            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
-        }*/
-
         setView();
         window->getPWindow()->display();
+
     }
 
 }
