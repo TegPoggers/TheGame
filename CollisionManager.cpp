@@ -113,7 +113,7 @@ namespace managers{
             object2 = aux;
         }
         if(object1->getId() == player_id){
-            //analyzePlayerCollision(dynamic_cast<entities::characters::Player*> (object1), object2);
+            player_collisions.analyzePlayerCollision(dynamic_cast<entities::characters::Player*>(object1), object2);
         }
 
     }

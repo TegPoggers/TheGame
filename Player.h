@@ -59,6 +59,8 @@ namespace entities{
 
             void setMapping(Actions actions);
 
+            void setFallSpeed(float speed);
+
         };
     }
 }

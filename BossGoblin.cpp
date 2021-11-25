@@ -70,7 +70,7 @@ namespace entities{
         int BossGoblin::projectile_damage = 40;
         int BossGoblin::collision_damage = 70;
         int BossGoblin::attack_speed = 976;
-        float BossGoblin::walk_speed = 0.5;
+        float BossGoblin::walk_speed = 0.35;
 
     }
 }
