@@ -20,6 +20,7 @@
 #define STRONG_GOBLIN "../Assets/Enemies/StrongGoblin.png"
 #define BOSS_GOBLIN "../Assets/Enemies/BossGoblin.png"
 #define PLATFORM "../Assets/Platform/Platform.png"
+#define FAILED_TEXTURE "../Assets/Failed/FailedTexture.jpg"
 
 #define ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 #define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
