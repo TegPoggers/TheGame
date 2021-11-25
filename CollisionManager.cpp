@@ -55,7 +55,7 @@ namespace managers{
         int id = entity_list->eList.getItem(i)->getId();
         if(id >= 1 && id <= 4) {
             entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->eList.getItem(i));
-            entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
+            entities::Entity* orb = shooter->getProjectile();
             if(orb != nullptr){
                 entity_list->eList.push(orb);
             }
