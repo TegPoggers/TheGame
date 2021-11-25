@@ -106,7 +106,10 @@ namespace levels{
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            shootCurrent(i);
+            shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
+
+            if(i != 0)
+                collide.detectCollisions(p1, entityList->eList.getItem(i));
 
         }
 

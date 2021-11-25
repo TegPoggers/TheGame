@@ -12,6 +12,7 @@
 #include "StrongGoblin.h"
 #include "BossGoblin.h"
 #include "InputManager.h"
+#include "CollisionManager.h"
 
 using namespace entities::characters;
 

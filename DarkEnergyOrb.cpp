@@ -16,6 +16,7 @@ namespace entities{
         speed = 5;
         damage = 5;
         sprite = assets->getSprite("darkEnergyOrb");
+        id = 9;
     }
 
 }
