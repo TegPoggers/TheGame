@@ -24,7 +24,9 @@ using namespace std;
 
 #include "EntityList.h"
 
+#include "HorizontalPureCollision.h"
 #include "PlayerCollision.h"
+#include "EnemyCollision.h"
 
 namespace managers {
 
@@ -36,11 +38,15 @@ namespace managers {
 
         PlayerCollision player_collisions;
 
+        HorizontalPureCollision creator_collision;
+
     public:
 
         CollisionManager();
 
         ~CollisionManager();
+
+        void mapCreatorCollision();
 
         void setEntityList(EntityList* entities);
 
@@ -67,12 +73,6 @@ namespace managers {
         void analyzeObstacleCollision(entities::StaticEntity* obstacle, entities::Entity* object);
 
         void ObstacleEnemyCollision(entities::StaticEntity* obstacle, entities::characters::Enemy* enemy);
-
-
-        void analyzeEnemyCollision(entities::characters::Enemy* enemy1, entities::Entity* enemy2);
-
-        //Tem que ser id de projétil de player (Star)
-        void enemyProjectileCollision(entities::characters::Enemy* enemy, entities::Projectile projectile);
 
     };
 

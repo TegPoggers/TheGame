@@ -36,7 +36,7 @@ public:
 
     Being();
 
-    ~Being();
+    virtual ~Being();
 
     virtual void run() = 0;
 

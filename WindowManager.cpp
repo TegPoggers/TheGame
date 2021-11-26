@@ -52,7 +52,6 @@ void WindowManager::render() {
             window.draw(*it);
             sf::Vector2f pos;
             pos.x = 0.1; pos.y = 0.1;
-            it->move(pos);cout << sprites.begin()->getPosition().x << endl;
         }
 
         //Event manager

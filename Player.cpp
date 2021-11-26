@@ -40,8 +40,7 @@ namespace entities {
             else{
                 speed.x = 0;
             }
-            fire = nullptr;;
-            cout << this->getPosition().x << endl;
+            fire = nullptr;
             attackCounter();
 
             attack();

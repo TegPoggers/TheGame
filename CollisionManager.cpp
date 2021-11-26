@@ -10,6 +10,21 @@ namespace managers{
 
     CollisionManager::~CollisionManager() {}
 
+    void CollisionManager::mapCreatorCollision() {
+        bool done = false;
+        while(!done) {
+            done = false;
+            for (int i = 0; i < entity_list->getLen(); i++) {
+                for (int j = 0; j < entity_list->getLen(); j++) {
+                    bool aux = creator_collision.findCollision(entity_list->getItem(i), entity_list->getItem(j));
+                    if(!done) {
+                        done = aux;
+                    }
+                }
+            }
+        }
+    }
+
     void CollisionManager::setEntityList(EntityList *entities) {
         entity_list = entities;
     }
@@ -42,11 +57,9 @@ namespace managers{
         for (int i = 0; i < entity_list->getLen(); i++){
 
             //Tem que ver esse delete
-            /*if(!entity_list->eList.getItem(i)->isAlive()){
-                entities::Entity* remove = entity_list->eList.getItem(i);
-                entity_list->eList.pop(remove);
-                delete remove;
-            }*/
+            if(!entity_list->getItem(i)->isAlive()){
+                entity_list->pop(entity_list->getItem(i));
+            }
 
         }
     }
@@ -55,7 +68,7 @@ namespace managers{
         int id = entity_list->getItem(i)->getId();
         if(id >= 1 && id <= 4) {
             entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->getItem(i));
-            entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
+            entities::Entity* orb = shooter->getProjectile();
             if(orb != nullptr){
                 entity_list->push(orb);
             }

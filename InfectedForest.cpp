@@ -20,9 +20,9 @@ namespace levels{
 
         setBackground(assets->operator[]("infectedForest"));
         setPosition(0,0);
-        //levelMaker.createStrongGoblin();
-        //levelMaker.createWeakGoblin();
-        //levelMaker.createBossGoblin();
+        levelMaker.createStrongGoblin();
+        levelMaker.createWeakGoblin();
+        levelMaker.createBossGoblin();
         levelMaker.renderObstacles();
         for (int i = 0; i < entityList->getLen(); i++){
             entityList->getItem(i)->setFeetPosition(725);

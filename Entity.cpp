@@ -58,6 +58,10 @@ namespace entities{
         return alive;
     }
 
+    void Entity::move(sf::Vector2f amount) {
+        position += amount;
+    }
+
 }
 
 

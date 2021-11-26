@@ -23,7 +23,7 @@ namespace entities {
 
             Enemy();
 
-            ~Enemy();
+            virtual ~Enemy();
 
             //Arrumar para dois players
             void setPlayer(Player* player);
