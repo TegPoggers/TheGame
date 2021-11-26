@@ -20,6 +20,7 @@ private:
     list<sf::Sprite>::iterator it;
     int x, y;
     sf::RenderWindow window;
+    sf::View view;
 
 public:
     WindowManager();
@@ -36,7 +37,17 @@ public:
 
     void draw(sf::Sprite* sprite);
 
-    sf::RenderWindow* getPWindow();
+    bool isOnView(sf::Sprite* sprite);
+
+    sf::View &getView();
+
+    void createView();
+
+    void setView(const sf::View view);
+
+    void clear();
+
+    void display();
 
 };
 

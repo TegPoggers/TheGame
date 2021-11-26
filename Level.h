@@ -34,9 +34,6 @@ namespace  levels {
         sf::Sprite* background;
         sf::Vector2f backPosition;
         managers::CollisionManager physics;
-        //EnemyList enemies; //Número aleatório de instâncias (pelo menos 3 por tipo)
-        //Boss* boss;
-        //2 obstacles (nas filhas) - Pelo meenos 3 com número aleatório
 
     public:
         Level();
@@ -51,7 +48,7 @@ namespace  levels {
         void setBackground(sf::Sprite* background);
         sf::Vector2f getPosition();
         void setView();
-        virtual void initializeElements() = 0; //Deixar como virtual pura
+        virtual void initializeElements() = 0;
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
