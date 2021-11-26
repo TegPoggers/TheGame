@@ -50,21 +50,22 @@ namespace levels{
     void Level::renderBackground(){
         for (int i = -1; i < 12; i++){
             background->setPosition(i * 1920 * GLOBAL_SCALE, 0);
-            window->getPWindow()->draw(*background);
+            window->draw(background);
         }
     }
 
     //Teste com a lista ao invés do p1
     //Lembrar de testar quando o player1 morre, se a view funciona com o player 2
     void Level::setView() {
-        sf::View view(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
-        if (entityList){
-            entities::Entity* entity = entityList->eList.getItem(0);
+        if (entityList != nullptr){
+            entities::Entity* entity = entityList->getItem(0);
             if (entity && entity->getId() == 1){
-                view.setCenter((entity->getPosition().x + entity->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+                window->getView().setCenter((entity->getPosition().x + entity->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
+                cout << "POs " << window->getView().getCenter().x << endl;
+                cout << "ent x " << entity->getPosition().x << endl;
             }
         }
-        window->getPWindow()->setView(view);
+        window->setView(window->getView());
     }
 
     void Level::renderPlayers(bool onePlayer){
@@ -73,52 +74,52 @@ namespace levels{
         p1->setSprite(assets->operator[]("player1"));
         p1->getSprite()->setScale(0.5, 0.5);
         p1->setPosition(0);
-        entityList->eList.push(p1);
+        entityList->push(p1);
         p1->setMapping(inputs.setLayout1());
         if (!onePlayer){
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
             p2->setPosition(-160);
-            entityList->eList.push(p2);
+            entityList->push(p2);
             p2->setMapping(inputs.setLayout2());
 
         }
     }
 
     void Level::shootCurrent(int i) {
-        int id = entityList->eList.getItem(i)->getId();
+        int id = entityList->getItem(i)->getId();
         if(id >= 1 && id <= 4) {
-            MovingEntity* shooter = dynamic_cast<MovingEntity*>(entityList->eList.getItem(i));
+            MovingEntity* shooter = dynamic_cast<MovingEntity*>(entityList->getItem(i));
             entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
             if(orb != nullptr){
-                entityList->eList.push(orb);
+                entityList->push(orb);
             }
         }
         /*if(id == 2){
-            MovingEntity* shooter = static_cast<WeakGoblin*>(entityList->eList.getItem(i));
+            MovingEntity* shooter = static_cast<WeakGoblin*>(entityList->getItem(i));
             entities::Entity* orb = shooter->getProjectile();
             if(orb != nullptr){
-                entityList->eList.push(orb);
+                entityList->push(orb);
                 orb->setSprite(assets->operator[]("weakGoblinOrb"));
             }
         }*/
     }
 
     void Level::run(){
-        window->getPWindow()->clear();
+        window->clear();
         renderBackground();
 
         physics.runEntities();
 
         physics.searchCollisions();
 
-        for (int i = 0; i < entityList->eList.getLen(); i++){
-            entityList->eList.getItem(i)->run();
-            entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
-            window->draw(entityList->eList.getItem(i)->getSprite());
+        for (int i = 0; i < entityList->getLen(); i++){
+            entityList->getItem(i)->run();
+            entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition()); // Define
+            window->draw(entityList->getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
+            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->getItem(i));
 
 
 
@@ -127,17 +128,22 @@ namespace levels{
         /*entities::Entity* orb = p1->getProjectile();
 
         if(orb != nullptr){
-            entityList->eList.push(orb);
+            entityList->push(orb);
             orb->setSprite(assets->operator[]("playerOrb"));
         }
 
         orb = goblin->getProjectile();
         if(orb){
-            entityList->eList.push(orb);orb->setSprite(assets->operator[]("playerOrb"));
+            entityList->push(orb);orb->setSprite(assets->operator[]("playerOrb"));
         }*/
 
         setView();
-        window->getPWindow()->display();
+        if (window->isOnView(entityList->getItem(0)->getSprite())){
+            cout << "Player 1 está na view" << endl;
+        } else {
+            cout << "PLayer 1 não está na view" << endl;
+        }
+        window->display();
     }
 
 }

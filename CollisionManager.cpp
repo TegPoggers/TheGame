@@ -15,17 +15,17 @@ namespace managers{
     }
 
     bool CollisionManager::runEntities() {
-        for (int i = 0; i < entity_list->eList.getLen(); i++){
+        for (int i = 0; i < entity_list->getLen(); i++){
 
-            entity_list->eList.getItem(i)->run();
-            entity_list->eList.getItem(i)->getSprite()->setPosition(entity_list->eList.getItem(i)->getPosition()); // Define
+            entity_list->getItem(i)->run();
+            entity_list->getItem(i)->getSprite()->setPosition(entity_list->getItem(i)->getPosition()); // Define
 
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             shootCurrent(i);
-            flying(entity_list->eList.getItem(i));
+            flying(entity_list->getItem(i));
 
         }
-        if(entity_list->eList.getItem(0)->getId() == 1){
+        if(entity_list->getItem(0)->getId() == 1){
             return true;
         }
         return false;
@@ -39,7 +39,7 @@ namespace managers{
     }
 
     void CollisionManager::removeDead() {
-        for (int i = 0; i < entity_list->eList.getLen(); i++){
+        for (int i = 0; i < entity_list->getLen(); i++){
 
             //Tem que ver esse delete
             /*if(!entity_list->eList.getItem(i)->isAlive()){
@@ -52,12 +52,12 @@ namespace managers{
     }
 
     void CollisionManager::shootCurrent(int i) {
-        int id = entity_list->eList.getItem(i)->getId();
+        int id = entity_list->getItem(i)->getId();
         if(id >= 1 && id <= 4) {
-            entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->eList.getItem(i));
+            entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->getItem(i));
             entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
             if(orb != nullptr){
-                entity_list->eList.push(orb);
+                entity_list->push(orb);
             }
         }
     }
@@ -75,9 +75,9 @@ namespace managers{
     }
 
     void CollisionManager::searchCollisions(){
-        for (int i = 0; i < entity_list->eList.getLen(); i++){
-            for(int j = 0; j < entity_list->eList.getLen(); j++){
-                detectCollisions(entity_list->eList.getItem(i), entity_list->eList.getItem(j));
+        for (int i = 0; i < entity_list->getLen(); i++){
+            for(int j = 0; j < entity_list->getLen(); j++){
+                detectCollisions(entity_list->getItem(i), entity_list->getItem(j));
             }
         }
         removeDead();

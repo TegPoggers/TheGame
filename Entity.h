@@ -46,6 +46,8 @@ namespace entities {
 
         bool isAlive();
 
+        bool isOnTheView();
+
     };
 
 }

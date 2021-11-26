@@ -37,7 +37,7 @@ namespace levels{
             weakGoblin->setSprite(assets->getSprite("weakGoblin"));
             weakGoblin->setPosition(Xposition);
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(weakGoblin));
+                entityList->push(static_cast<entities::Entity*>(weakGoblin));
                 assets->getSprite("darkEnergyOrb")->setScale(0.1, 0.1);
                 assets->getSprite("weakGoblin")->setScale(0.7, 0.7);
             } else {
@@ -57,7 +57,7 @@ namespace levels{
             strongGoblin->setPosition(Xposition);
             strongGoblin->setSprite(assets->getSprite("strongGoblin"));
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(strongGoblin));
+                entityList->push(static_cast<entities::Entity*>(strongGoblin));
                 assets->getSprite("strongGoblin")->setScale(0.7, 0.7);
             } else {
                 cout << "Asset Manager or Entity List pointer is null" << endl;
@@ -72,7 +72,7 @@ namespace levels{
             bossGoblin->setPosition(BOSS_POSITION);
             bossGoblin->setSprite(assets->getSprite("bossGoblin"));
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(bossGoblin));
+                entityList->push(static_cast<entities::Entity*>(bossGoblin));
                 assets->getSprite("energyOrb")->setScale(0.1, 0.1);
                 assets->getSprite("bossGoblin")->setScale(2, 2);
             } else {
@@ -89,7 +89,7 @@ namespace levels{
             spikes->setPosition(Xposition);
             spikes->setSprite(assets->getSprite("spikes"));
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(spikes));
+                entityList->push(static_cast<entities::Entity*>(spikes));
                 assets->getSprite("spikes")->setScale(0.7, 0.7);
             } else {
                 cout << "Asset Manager or Entity List pointer is null" << endl;
@@ -106,7 +106,7 @@ namespace levels{
             firePit->setPosition(Xposition);
             firePit->setSprite(assets->getSprite("firePit"));
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(firePit));
+                entityList->push(static_cast<entities::Entity*>(firePit));
                 assets->getSprite("firePit")->setScale(1.5, 1.5);
             } else {
                 cout << "Asset Manager or Entity List pointer is null" << endl;
@@ -123,7 +123,7 @@ namespace levels{
             pointyBush->setPosition(Xposition);
             pointyBush->setSprite(assets->getSprite("pointyBush"));
             if (entityList && assets){
-                entityList->eList.push(static_cast<entities::Entity*>(pointyBush));
+                entityList->push(static_cast<entities::Entity*>(pointyBush));
                 assets->getSprite("pointyBush")->setScale(0.7, 0.7);
             } else {
                 cout << "Asset Manager or Entity List pointer is null" << endl;

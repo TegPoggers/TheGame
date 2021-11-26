@@ -24,10 +24,10 @@ namespace levels{
         //levelMaker.createWeakGoblin();
         //levelMaker.createBossGoblin();
         levelMaker.renderObstacles();
-        for (int i = 0; i < entityList->eList.getLen(); i++){
-            entityList->eList.getItem(i)->setFeetPosition(725);
-            if (entityList->eList.getItem(i)->getId() == fire_pit_id){
-                entityList->eList.getItem(i)->setFeetPosition(775);
+        for (int i = 0; i < entityList->getLen(); i++){
+            entityList->getItem(i)->setFeetPosition(725);
+            if (entityList->getItem(i)->getId() == fire_pit_id){
+                entityList->getItem(i)->setFeetPosition(775);
             }
         }
     }
