@@ -24,6 +24,10 @@ namespace entities {
             int health;
             int lives;
             Projectile* fire;
+            sf::Vector2f speed;
+            bool ground;
+            static float gravity;
+
 
         public:
 
@@ -50,6 +54,12 @@ namespace entities {
             virtual Entity* getProjectile() = 0;
 
             int getHealth();
+
+            void fall();
+
+            void setGround(bool on_ground);
+
+            void setFallSpeed(float speed);
 
         };
     }

@@ -16,7 +16,6 @@ namespace entities {
             int attack_counter;
             static int attack_speed;
             static int collision_damage;
-            static float walk_speed;
 
         public:
 

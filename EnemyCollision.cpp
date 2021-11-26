@@ -3,6 +3,7 @@
 //
 
 #include "EnemyCollision.h"
+#include "PlayerCollision.h"
 
 namespace managers{
 
@@ -23,6 +24,11 @@ namespace managers{
         if(id == star_id){
             enemyProjectileCollision(enemy, dynamic_cast<entities::Projectile*>(object));
         }
+
+        if(id == spikes_id) {
+            enemyObstacleCollision(enemy, dynamic_cast<entities::StaticEntity*> (object));
+        }
+
         enemyIsAlive(enemy);
     }
 
@@ -32,4 +38,20 @@ namespace managers{
 
     }
 
+    void EnemyCollision::enemyObstacleCollision(entities::characters::Enemy *enemy, entities::StaticEntity *obstacle) {
+
+        enemy->setFallSpeed(0);
+        if (enemy->getPosition().x < obstacle->getPosition().x + obstacle->getSprite()->getGlobalBounds().width - 10 && enemy->getPosition().x +
+        enemy->getSprite()->getGlobalBounds().width > obstacle->getPosition().x + 10) {
+            enemy->setFeetPosition(obstacle->getPosition().y);
+            enemy->setGround(true);
+        }
+        else if (enemy->getPosition().x > obstacle->getPosition().x) {
+            enemy->move(sf::Vector2f(0.1, 0));
+        }
+        else if (enemy->getPosition().x < obstacle->getPosition().x) {
+            enemy->move(sf::Vector2f(-0.1, 0));
+        }
+    }
 }
+

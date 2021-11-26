@@ -37,6 +37,8 @@ namespace entities{
                 attack_counter = 0;
             }
             attack_counter++;
+            fall();
+            position.y += speed.y;
         }
 
         int WeakGoblin::getCollisionDamage() {
