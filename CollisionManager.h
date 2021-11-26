@@ -24,6 +24,7 @@ using namespace std;
 
 #include "EntityList.h"
 
+#include "HorizontalPureCollision.h"
 #include "PlayerCollision.h"
 #include "EnemyCollision.h"
 
@@ -37,11 +38,15 @@ namespace managers {
 
         PlayerCollision player_collisions;
 
+        HorizontalPureCollision creator_collision;
+
     public:
 
         CollisionManager();
 
         ~CollisionManager();
+
+        void mapCreatorCollision();
 
         void setEntityList(EntityList* entities);
 

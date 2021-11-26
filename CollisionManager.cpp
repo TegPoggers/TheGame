@@ -10,6 +10,21 @@ namespace managers{
 
     CollisionManager::~CollisionManager() {}
 
+    void CollisionManager::mapCreatorCollision() {
+        bool done = false;
+        while(!done) {
+            done = false;
+            for (int i = 0; i < entity_list->eList.getLen(); i++) {
+                for (int j = 0; j < entity_list->eList.getLen(); j++) {
+                    bool aux = creator_collision.findCollision(entity_list->eList.getItem(i), entity_list->eList.getItem(j));
+                    if(!done) {
+                        done = aux;
+                    }
+                }
+            }
+        }
+    }
+
     void CollisionManager::setEntityList(EntityList *entities) {
         entity_list = entities;
     }

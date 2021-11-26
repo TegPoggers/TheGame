@@ -37,7 +37,7 @@ namespace entities {
 
             virtual void attack() = 0;
 
-            void move(sf::Vector2f amount);
+
 
             void setLives(int life);
 

@@ -46,6 +46,8 @@ namespace entities {
 
         bool isAlive();
 
+        void move(sf::Vector2f amount);
+
     };
 
 }
