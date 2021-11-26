@@ -69,6 +69,8 @@ void SpriteLoader::loadPlayers(){
 
 void SpriteLoader::loadProjectiles(){
     assets->loadSprite(PLAYER_ORB, "playerOrb");
+    assets->getSprite("playerOrb")->setScale(0.5, 0.5);
+
     assets->loadSprite(DARK_ENERGY_ORB, "darkEnergyOrb");
     assets->loadSprite(ENERGY_ORB, "energyOrb");
 }

@@ -38,34 +38,6 @@ window(){
 
 WindowManager::~WindowManager(){}
 
-void WindowManager::insertSprite(sf::Sprite sprite) {
-    if(sprite.getTexture() != NULL){
-        sprites.push_back(sprite);
-    }
-}
-
-void WindowManager::render() {
-    window.clear();
-
-    if(!sprites.empty()){
-        for(it = sprites.begin(); it != sprites.end(); it++){
-            window.draw(*it);
-            sf::Vector2f pos;
-            pos.x = 0.1; pos.y = 0.1;
-        }
-
-        //Event manager
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-        }
-    }
-    window.display();
-}
-
 bool WindowManager::isOpen() {
     return window.isOpen();
 }
@@ -80,7 +52,7 @@ bool WindowManager::isOnView(sf::Sprite* sprite){
     float viewMin = viewCenter - halfExtents;
     float viewMax = viewCenter + halfExtents;
 
-    if ((sprite->getPosition().x >= viewMin)  && (sprite->getPosition().x <= viewMax)){
+    if ((sprite->getPosition().x + sprite->getGlobalBounds().width >= viewMin)  && (sprite->getPosition().x <= viewMax)){
         return true;
     }
     return false;
@@ -126,4 +98,8 @@ void WindowManager::menuEvents(sf::Event* event) {
         default:
             break;
     }
+}
+
+bool WindowManager::pollEvent(sf::Event* event) {
+    return window.pollEvent(*event);
 }

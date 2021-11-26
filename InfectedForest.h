@@ -18,11 +18,6 @@ namespace levels {
         void initializeElements();
         void createEnemies();
         void createObstacles();
-
-        //Apagar
-    private:
-        BossGoblin* bossGoblin;
-        StrongGoblin* strongGoblin;
     };
 }
 

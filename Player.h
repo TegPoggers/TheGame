@@ -25,11 +25,9 @@ namespace entities{
             static float jump_speed;
             static float gravity;
             InputManager *inputs;
-            int health;
             sf::Vector2f speed;
             bool ground;
             int points;
-            levels::Level* level;
             Star* fire;
             int counter;
             bool can_attack;

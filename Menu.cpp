@@ -14,10 +14,11 @@ namespace menus {
 
     }
 
-    void Menu::run() {
+   /* void Menu::run(sf::Event* event) {
        // window->draw(background);
        // renderGlobalMenu();
 
+        cout << "To no run " << endl;
 
         // switch (event.type) {
           //   case sf::Event::Closed:
@@ -28,7 +29,7 @@ namespace menus {
 
 
 
-    }
+    }*/
 
     void Menu::setBackground(sf::Sprite* background){
         this->background = background;
@@ -77,9 +78,9 @@ namespace menus {
         text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 20 + text[3].getGlobalBounds().height);
     }
 
-    void Menu::renderGlobalMenu(){
+    void Menu::renderMenu(int items){
         window->draw(background);
-        for (int i = 0; i < MENU_ITENS; i++){
+        for (int i = 0; i < items; i++){
             window->draw(text[i]);
         }
     }

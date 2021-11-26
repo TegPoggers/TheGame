@@ -10,7 +10,8 @@ namespace entities{
         WeakGoblin::WeakGoblin() : Enemy(),
         attack_counter(0){
             assets->getSprite("weakGoblin");
-            setId(2);
+            setId(weak_goblin_id);
+            health = 30;
         }
 
         WeakGoblin::~WeakGoblin() {}

@@ -10,8 +10,8 @@
 
 namespace menus{
 
-    class Menu : Being{
-    private:
+    class Menu : public Being{
+    protected:
         int selectedItem;
         sf::Text text[MENU_ITENS];
         sf::Sprite* background;
@@ -24,12 +24,11 @@ namespace menus{
 
         void moveUp();
         void moveDown();
-        void run();
         void setBackground(sf::Sprite* background);
         void setPosition(float x, float y);
         sf::Vector2f getPosition();
         void initialize();
-        void renderGlobalMenu();
+        void renderMenu(int items);
         void renderPlayersMenu();
         void loadFont();
 

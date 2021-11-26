@@ -7,7 +7,6 @@ namespace entities {
     namespace characters {
 
         Player::Player() : MovingEntity(),
-        health(100),
         speed(0, 0),
         ground(true),
         inputs(nullptr),
@@ -117,9 +116,9 @@ namespace entities {
             this->speed.y = speed;
         }
 
-        float Player::moving_speed = 2.5;
-        float Player::jump_speed = -10;
-        float Player::gravity = 0.1;
+        float Player::moving_speed = 5;
+        float Player::jump_speed = -14;
+        float Player::gravity = 0.2;
 
     }
 

@@ -38,7 +38,11 @@ namespace managers {
 
         PlayerCollision player_collisions;
 
+        EnemyCollision enemy_collision;
+
         HorizontalPureCollision creator_collision;
+
+        WindowManager* window;
 
     public:
 
@@ -52,8 +56,6 @@ namespace managers {
 
         //retorna false se não tiver mais jogadores
         bool runEntities();
-
-        void runPhysics();
 
         void shootCurrent(int i);
 
@@ -73,6 +75,8 @@ namespace managers {
         void analyzeObstacleCollision(entities::StaticEntity* obstacle, entities::Entity* object);
 
         void ObstacleEnemyCollision(entities::StaticEntity* obstacle, entities::characters::Enemy* enemy);
+
+        void setWindow(WindowManager* window);
 
     };
 

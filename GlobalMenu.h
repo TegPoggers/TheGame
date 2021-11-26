@@ -10,14 +10,23 @@
 namespace menus{
 
     class GlobalMenu : public Menu {
-    private:
-
 
     public:
+
         GlobalMenu();
+
         ~GlobalMenu();
-        void run();
+
+        //void run(sf::Event* event);
+
         void initialize();
+
+        void run();
+
+       // void run(sf::Event* event);
+
+
+
     };
 
 

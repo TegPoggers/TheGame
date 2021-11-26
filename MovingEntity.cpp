@@ -15,17 +15,6 @@ namespace entities {
 
         MovingEntity::~MovingEntity() {}
 
-        void MovingEntity::setLives(int life) {
-            this->lives = life;
-        }
-
-        int MovingEntity::getLives() {
-            return lives;
-        }
-
-        void MovingEntity::loseLives() {
-            lives--;
-        }
 
         void MovingEntity::takeDamage(int dmg) {
             health -= dmg;

@@ -28,8 +28,6 @@ namespace entities {
 
         void run();
 
-        int getDamage();
-
         void setDamage(int dmg);
 
         void setDirection(int direction);

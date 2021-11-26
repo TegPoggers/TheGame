@@ -29,10 +29,6 @@ public:
 
     ~WindowManager();
 
-    void insertSprite(sf::Sprite texture);
-
-    void render();
-
     bool isOpen();
 
     void draw(sf::Sprite* sprite);
@@ -43,7 +39,7 @@ public:
 
     void createView();
 
-    void setView(const sf::View view);
+    void setView(sf::View view);
 
     void clear();
 
@@ -54,6 +50,8 @@ public:
     void draw(sf::Text font);
 
     void menuEvents(sf::Event* event);
+
+    bool pollEvent(sf::Event* event);
 
 };
 

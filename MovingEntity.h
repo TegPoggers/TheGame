@@ -37,14 +37,6 @@ namespace entities {
 
             virtual void attack() = 0;
 
-
-
-            void setLives(int life);
-
-            void loseLives();
-
-            int getLives();
-
             void takeDamage(int dmg);
 
             virtual Entity* getProjectile() = 0;

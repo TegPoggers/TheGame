@@ -42,9 +42,11 @@ namespace levels{
         void createWeakGoblin();
         void createStrongGoblin();
         void createBossGoblin();
+
         void createSpikes();
         void createFirePit();
         void createPointyBush();
+
         void renderObstacles();
     };
 

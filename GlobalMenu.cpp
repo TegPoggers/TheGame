@@ -6,17 +6,24 @@
 
 namespace menus{
 
-  /*  GlobalMenu::GlobalMenu() : Menu(){  }
+    GlobalMenu::GlobalMenu() : Menu(){  }
 
     GlobalMenu::~GlobalMenu(){   }
 
-    void GlobalMenu::run(){
+    /*void GlobalMenu::run(sf::Event* event){
 
-
+    cout << "To no run " << endl;
         //switch (event.type) {
           //   case :
          //}
 
+
+    }*/
+
+    void GlobalMenu::run(){
+        //Receber um ponteiro pro evento
+
+        cout << "Tô no run " << endl;
 
     }
 
@@ -51,10 +58,5 @@ namespace menus{
         text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 20 + text[3].getGlobalBounds().height);
     }
 
-    void GlobalMenu::renderGlobalMenu(){
-        for (int i = 0; i < MENU_ITENS; i++){
-            window->draw(text[i]);
-        }
-    }
-*/
+
 }

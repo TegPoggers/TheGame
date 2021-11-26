@@ -12,7 +12,7 @@
 //#include "PlayState.h"
 #include "AssetManager.h"
 #include "SpriteLoader.h"
-#include "Menu.h"
+#include "GlobalMenu.h"
 #include "HealthyForest.h"
 #include "InfectedForest.h"
 #include "Player.h"
@@ -25,7 +25,7 @@ private:
     WindowManager window;
     AssetManager assets;
     SpriteLoader spriteLoader;
-    menus::Menu menu;
+    menus::GlobalMenu menu;
     Player p1;
     Player p2;
     levels::HealthyForest* healthy;
