@@ -6,16 +6,16 @@
 
 namespace menus{
 
-    GlobalMenu::GlobalMenu() : Menu(){  }
+  /*  GlobalMenu::GlobalMenu() : Menu(){  }
 
     GlobalMenu::~GlobalMenu(){   }
 
     void GlobalMenu::run(){
 
 
-        /*switch (event.type) {
-             case :
-         }*/
+        //switch (event.type) {
+          //   case :
+         //}
 
 
     }
@@ -56,5 +56,5 @@ namespace menus{
             window->draw(text[i]);
         }
     }
-
+*/
 }

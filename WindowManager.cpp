@@ -109,3 +109,21 @@ void WindowManager::display() {
 void WindowManager::draw(sf::Text font){
     window.draw(font);
 }
+
+void WindowManager::close() {
+    window.close();
+}
+
+void WindowManager::menuEvents(sf::Event* event) {
+
+    switch (event->type) {
+        // window closed
+        case sf::Event::Closed:
+            window.close();
+            break;
+
+            // we don't process other types of events
+        default:
+            break;
+    }
+}

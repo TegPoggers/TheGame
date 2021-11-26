@@ -22,7 +22,7 @@ namespace levels{
         setPosition(0,0);
         //levelMaker.createStrongGoblin();
         //levelMaker.createWeakGoblin();
-        //levelMaker.createBossGoblin();
+        levelMaker.createBossGoblin();
         levelMaker.renderObstacles();
         for (int i = 0; i < entityList->getLen(); i++){
             entityList->getItem(i)->setFeetPosition(725);

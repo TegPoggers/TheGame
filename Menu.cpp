@@ -19,10 +19,11 @@ namespace menus {
        // renderGlobalMenu();
 
 
-         switch (event.type) {
-             //case sf::Event::Closed:
-                 //window->close();
-         }
+        // switch (event.type) {
+          //   case sf::Event::Closed:
+            //     window->close();
+              //   break;
+        // }
 
 
 
@@ -109,7 +110,7 @@ namespace menus {
         }
     }
 
-    sf::Event* Menu::event = nullptr;
+   // sf::Event* Menu::event = nullptr;
 
 }
 

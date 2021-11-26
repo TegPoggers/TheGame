@@ -27,7 +27,7 @@
 #define PLATFORM "../Assets/Platform/Platform.png"
 #define FAILED_TEXTURE "../Assets/Failed/FailedTexture.jpg"
 
-#define ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
+#define ENERGY_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 #define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 
 #define GLOBAL_SCALE 0.7111111

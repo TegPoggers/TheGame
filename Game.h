@@ -25,7 +25,7 @@ private:
     WindowManager window;
     AssetManager assets;
     SpriteLoader spriteLoader;
-    Menu menu;
+    menus::Menu menu;
     Player p1;
     Player p2;
     levels::HealthyForest* healthy;

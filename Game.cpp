@@ -28,9 +28,9 @@ void Game::run(){
         //Rodar o menu
 
         //Se algo foi pressionado
-        menu.run();
-        /*healthy->run();
-        infected->run();*/
+       menu.run();
+        /*healthy->run();*/
+        //infected->run();
 
 
         window.menuEvents(&event);

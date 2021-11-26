@@ -114,7 +114,7 @@ namespace levels{
         physics.searchCollisions();
 
         for (int i = 0; i < entityList->getLen(); i++){
-            entityList->getItem(i)->run();
+            //entityList->getItem(i)->run();
             entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition()); // Define
             window->draw(entityList->getItem(i)->getSprite());
 
