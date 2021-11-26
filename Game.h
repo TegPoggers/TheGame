@@ -19,6 +19,7 @@
 using namespace entities::characters;
 //Incluir menu
 
+
 class Game {
 
 private:
@@ -31,8 +32,10 @@ private:
     levels::HealthyForest* healthy;
     levels::InfectedForest* infected;
     sf::Event event;
+    bool onePlayer;
 
 public:
+
     Game();
 
     ~Game();

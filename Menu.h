@@ -6,6 +6,7 @@
 #define JOGO_MENU_H
 
 #include "Being.h"
+#include "InputManager.h"
 #include <SFML/Graphics.hpp>
 
 namespace menus{
@@ -17,6 +18,8 @@ namespace menus{
         sf::Sprite* background;
         sf::Vector2f backPosition;
         sf::Event event;
+        InputManager *inputs;
+
 
     public:
         Menu();
@@ -31,6 +34,8 @@ namespace menus{
         void renderMenu(int items);
         void renderPlayersMenu();
         void loadFont();
+        int getMenuState();
+
 
     };
 

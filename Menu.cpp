@@ -6,8 +6,9 @@
 
 namespace menus {
 
-    Menu::Menu() : Being() , text(), background(), backPosition(){
+    Menu::Menu() : Being() , text(), background(), backPosition(), inputs(nullptr){
         selectedItem = 1;
+        inputs = new InputManager();
     }
 
     Menu::~Menu(){
@@ -110,6 +111,7 @@ namespace menus {
             text[selectedItem].setFillColor(sf::Color::Red);
         }
     }
+
 
    // sf::Event* Menu::event = nullptr;
 

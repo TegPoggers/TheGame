@@ -21,9 +21,17 @@ namespace menus{
     }*/
 
     void GlobalMenu::run(){
+        renderMenu(GLOBAL_MENU_ITENS);
         //Receber um ponteiro pro evento
 
         cout << "Tô no run " << endl;
+      //menu_state = st_run_healthy_forest_p2;
+       // cout << "State " << Being::setMenuState << endl;
+
+        //if (inputs->isKeyPressed(contro))
+
+
+
 
     }
 
