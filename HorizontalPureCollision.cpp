@@ -41,6 +41,10 @@ namespace managers{
             object1->move(sf::Vector2f (5, 0));
             object2->move(sf::Vector2f (-5, 0));
         }
+        else{
+            object1->move(sf::Vector2f (-5, 0));
+            object2->move(sf::Vector2f (5, 0));
+        }
     }
 
 }

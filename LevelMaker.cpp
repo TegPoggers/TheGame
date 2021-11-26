@@ -11,7 +11,7 @@ namespace levels{
     // 9010
     // 12765 (porta)
 
-    LevelMaker::LevelMaker() {  }
+    LevelMaker::LevelMaker() {}
 
     LevelMaker::LevelMaker(Player* p, EntityList* list, AssetManager* asset) :
     player(p),

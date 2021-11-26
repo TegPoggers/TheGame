@@ -52,6 +52,8 @@ namespace  levels {
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
+
+        void fixTouchingSpawn();
     };
 }
 
