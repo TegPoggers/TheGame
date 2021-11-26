@@ -6,14 +6,29 @@
 #define JOGO_MENU_H
 
 #include "Being.h"
-
+#include <SFML/Graphics.hpp>
 
 class Menu : Being{
 private:
     int selectedItem;
-    //sf::font
+    sf::Text text[MENU_ITENS];
+    sf::Sprite* background;
+    sf::Vector2f backPosition;
 
 public:
+    Menu();
+    ~Menu();
+
+    void moveUp();
+    void moveDown();
+    void run();
+    void setBackground(sf::Sprite* background);
+    void setPosition(float x, float y);
+    sf::Vector2f getPosition();
+    void initialize();
+    void renderGlobalMenu();
+    void renderPlayersMenu();
+    void loadFont();
 
 };
 

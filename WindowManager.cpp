@@ -105,3 +105,7 @@ void WindowManager::clear() {
 void WindowManager::display() {
     window.display();
 }
+
+void WindowManager::draw(sf::Text font){
+    window.draw(font);
+}

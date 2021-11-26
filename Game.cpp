@@ -4,10 +4,11 @@
 
 #include "Game.h"
 
-Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), p1(), p2(){
+Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), menu(), p1(), p2(){
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
     spriteLoader.run();
+    menu.initialize();
     healthy = new levels::HealthyForest(&p1, &p2);
     infected = new levels::InfectedForest(&p1, &p2);
     cout << "Construtora do Game" << endl;
@@ -21,12 +22,13 @@ Game::~Game() {
 
 void Game::run(){
 
-    //while(Being::getPWindow()->isOpen()){
     while(window.isOpen()){
-
+        window.clear();
         //Rodar o menu
+        menu.run();
         //Por enquanto chama a healthy
         //healthy->run();
-        infected->run();
+        //infected->run();
+        window.display();
     }
 }

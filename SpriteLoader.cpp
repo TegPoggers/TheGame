@@ -41,6 +41,8 @@ void SpriteLoader::loadFailedTexture(){
 void SpriteLoader::loadBackgrounds() {
     assets->loadSprite(HEALTHY_FOREST, "healthyForest");
     assets->loadSprite(INFECTED_FOREST, "infectedForest");
+    assets->loadSprite(MENU_BACKGROUND, "menu");
+
 }
 
 void SpriteLoader::loadEnemies(){

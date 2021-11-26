@@ -49,6 +49,8 @@ public:
 
     void display();
 
+    void draw(sf::Text font);
+
 };
 
 

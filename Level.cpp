@@ -107,7 +107,6 @@ namespace levels{
     }
 
     void Level::run(){
-        window->clear();
         renderBackground();
 
         physics.runEntities();
@@ -142,7 +141,6 @@ namespace levels{
         } else {
             cout << "PLayer 1 não está na view" << endl;
         }
-        window->display();
     }
 
 }
