@@ -23,7 +23,7 @@ namespace entities {
 
         Entity();
 
-        ~Entity();
+        virtual ~Entity();
 
         virtual void run() = 0;
 
@@ -45,6 +45,8 @@ namespace entities {
         void die();
 
         bool isAlive();
+
+        void move(sf::Vector2f amount);
 
     };
 

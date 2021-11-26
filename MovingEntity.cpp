@@ -27,10 +27,6 @@ namespace entities {
             lives--;
         }
 
-        void MovingEntity::move(sf::Vector2f amount) {
-            position += amount;
-        }
-
         void MovingEntity::takeDamage(int dmg) {
             health -= dmg;
         }

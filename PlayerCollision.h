@@ -23,12 +23,13 @@ namespace managers {
 
     class PlayerCollision {
 
-
     public:
 
         PlayerCollision();
 
         ~PlayerCollision();
+
+        void playerIsAlive(entities::characters::Player *player);
 
         void analyzePlayerCollision(entities::characters::Player *player, entities::Entity *object);
 

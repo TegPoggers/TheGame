@@ -83,26 +83,27 @@ void List<TL>::pop(TL* item){
     Element<TL>* temp = pFirst;
     Element<TL>* previous = nullptr;
 
-    while (temp && temp->getItem() != item){
+    while (temp != nullptr && temp->getItem() != item){
         previous = temp;
         temp = temp->getPNext();
     }
 
-    if (temp = pFirst){
+    if (temp == pFirst){
         pFirst = temp->getPNext();
     }
-    else if (temp = pLast){
+    else if (temp == pLast){
         previous->setNext(nullptr);
         pLast = previous;
     }
-    else if (temp){
+    else if (temp != nullptr){
         previous->setNext(temp->getPNext());
     }
 
-    if (temp){
+    if (temp != nullptr){
         len--;
     }
     delete temp;
+    //delete item;
 }
 
 template <class TL>
