@@ -17,9 +17,11 @@ public:
     void loadBackgrounds();
     void loadEnemies();
     void loadObstacles();
-    void loadPlatforms();
     void loadPlayers();
     void loadProjectiles();
+
+
+    void loadPlatforms();
 };
 
 

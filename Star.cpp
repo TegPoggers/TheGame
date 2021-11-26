@@ -27,6 +27,7 @@ namespace entities{
         damage = 40;
         speed = 7;
         sprite = assets->getSprite("playerOrb");
+        id = star_id;
     }
 
 }
