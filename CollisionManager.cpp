@@ -72,13 +72,13 @@ namespace managers{
     }
 
     void CollisionManager::flying(entities::Entity *entity) {
-        if(entity->getId() == 1){
-            entities::characters::Player* player = dynamic_cast<entities::characters::Player*>(entity);
-            if(player->getFeetPosition() > 725){
-                player->setGround(true);
+        if(entity->getId() == player_id || entity->getId() == strong_goblin_id || entity->getId() == weak_goblin_id || entity->getId() == boss_goblin_id){
+            entities::characters::MovingEntity* faller = dynamic_cast<entities::characters::MovingEntity*>(entity);
+            if(faller->getFeetPosition() > 725){
+                faller->setGround(true);
             }
             else{
-                player->setGround(false);
+                faller->setGround(false);
             }
         }
     }

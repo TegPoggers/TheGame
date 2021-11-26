@@ -12,6 +12,7 @@ namespace entities{
             sprite = assets->getSprite("strongGoblin");
             setId(strong_goblin_id);
             health = 75;
+            speed.x = 1;
         }
 
         StrongGoblin::~StrongGoblin(){}
@@ -24,11 +25,13 @@ namespace entities{
         void StrongGoblin::walk() {
             p_position = player->getPosition();
             if(p_position.x + 50 > position.x){
-                position.x += walk_speed;
+                position.x += speed.x;
             }
             else{
-                position.x -= walk_speed;
+                position.x -= speed.x;
             }
+            fall();
+            position.y += speed.y;
         }
 
         int StrongGoblin::getCollisionDamage() {
@@ -53,7 +56,6 @@ namespace entities{
 
         int StrongGoblin::attack_speed = 72;
         int StrongGoblin::collision_damage = 10;
-        float StrongGoblin::walk_speed = 1;
 
     }
 }
