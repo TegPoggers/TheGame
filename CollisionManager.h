@@ -57,8 +57,6 @@ namespace managers {
         //retorna false se não tiver mais jogadores
         bool runEntities();
 
-        void runPhysics();
-
         void shootCurrent(int i);
 
         //Retira os mortos da lista e os desaloca

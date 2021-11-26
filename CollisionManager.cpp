@@ -47,13 +47,6 @@ namespace managers{
         return false;
     }
 
-    void CollisionManager::runPhysics() {
-
-        searchCollisions();
-        removeDead();
-
-    }
-
     void CollisionManager::removeDead() {
         for (int i = 0; i < entity_list->getLen(); i++){
 

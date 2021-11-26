@@ -31,7 +31,7 @@ namespace entities{
 
         }
 
-        int Spikes::collision_damage = 25;
+        int Spikes::collision_damage = 10;
         int Spikes::attack_speed = 144;
 
     }
