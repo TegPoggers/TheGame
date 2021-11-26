@@ -114,13 +114,12 @@ namespace levels{
         physics.searchCollisions();
 
         for (int i = 0; i < entityList->eList.getLen(); i++){
+
             entityList->eList.getItem(i)->run();
             entityList->eList.getItem(i)->getSprite()->setPosition(entityList->eList.getItem(i)->getPosition()); // Define
             window->draw(entityList->eList.getItem(i)->getSprite());
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
             //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->eList.getItem(i));
-
-
 
         }
 

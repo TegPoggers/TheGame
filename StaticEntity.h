@@ -15,7 +15,7 @@ namespace entities {
 
         StaticEntity();
 
-        ~StaticEntity();
+        virtual ~StaticEntity();
 
         virtual void run() = 0;
 

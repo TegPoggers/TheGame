@@ -20,29 +20,33 @@ namespace managers {
 
         int id = object->getId();
 
-        switch(id){
+        switch(id) {
             case player_id:
-                playerPlayerCollision(player, dynamic_cast<entities::characters::Player*>(object));
-            break;
+                playerPlayerCollision(player, dynamic_cast<entities::characters::Player *>(object));
+                break;
 
-            case weak_goblin_id: case strong_goblin_id: case boss_goblin_id:
-                playerEnemyCollision(player, dynamic_cast<entities::characters::Enemy*>(object));
-            break;
+            case weak_goblin_id:
+            case strong_goblin_id:
+            case boss_goblin_id:
+                playerEnemyCollision(player, dynamic_cast<entities::characters::Enemy *>(object));
+                break;
 
-            case energy_orb_id: case dark_energy_orb_id:
-                playerEnemyProjectileCollision(player, dynamic_cast<entities::Projectile*>(object));
-            break;
-            case fire_pit_id: case bush_id: case spikes_id:
-                playerObstacleCollision(player, dynamic_cast<entities::StaticEntity*> (object));
-            break;
+            case energy_orb_id:
+            case dark_energy_orb_id:
+                playerEnemyProjectileCollision(player, dynamic_cast<entities::Projectile *>(object));
+                break;
+            case fire_pit_id:
+            case bush_id:
+            case spikes_id:
+                playerObstacleCollision(player, dynamic_cast<entities::StaticEntity *> (object));
+                break;
 
             default:
                 //não faz nada
-            break;
-
-
+                break;
         }
 
+        playerIsAlive(player);
 
     }
 
@@ -66,8 +70,6 @@ namespace managers {
 
         player->takeDamage(enemy->getCollisionDamage());
 
-        playerIsAlive(player);
-
     }
 
     void PlayerCollision::playerEnemyProjectileCollision(entities::characters::Player *player, entities::Projectile *projectile) {
@@ -75,7 +77,6 @@ namespace managers {
         player->takeDamage(projectile->getCollisionDamage());
         projectile->die();
 
-        playerIsAlive(player);
     }
 
     void PlayerCollision::playerObstacleCollision(entities::characters::Player *player, entities::StaticEntity *obstacle) {
@@ -106,8 +107,6 @@ namespace managers {
         }
 
         player->takeDamage(obstacle->getCollisionDamage());
-
-        playerIsAlive(player);
 
     }
 

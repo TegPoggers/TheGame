@@ -42,11 +42,9 @@ namespace managers{
         for (int i = 0; i < entity_list->eList.getLen(); i++){
 
             //Tem que ver esse delete
-            /*if(!entity_list->eList.getItem(i)->isAlive()){
-                entities::Entity* remove = entity_list->eList.getItem(i);
-                entity_list->eList.pop(remove);
-                delete remove;
-            }*/
+            if(!entity_list->eList.getItem(i)->isAlive()){
+                entity_list->eList.pop(entity_list->eList.getItem(i));
+            }
 
         }
     }

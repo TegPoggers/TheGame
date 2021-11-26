@@ -20,15 +20,16 @@ namespace managers{
 
         int id = object->getId();
 
-       if(id = star_id){
+       if(id == star_id){
            enemyProjectileCollision(enemy, dynamic_cast<entities::Projectile*>(object));
        }
-
+       enemyIsAlive(enemy);
     }
 
     void EnemyCollision::enemyProjectileCollision(entities::characters::Enemy *enemy, entities::Projectile *projectile) {
         enemy->takeDamage(projectile->getCollisionDamage());
         projectile->die();
+
     }
 
 }

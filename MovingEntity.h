@@ -29,7 +29,7 @@ namespace entities {
 
             MovingEntity();
 
-            ~MovingEntity();
+            virtual ~MovingEntity();
 
             virtual void run() = 0;
 

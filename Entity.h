@@ -23,7 +23,7 @@ namespace entities {
 
         Entity();
 
-        ~Entity();
+        virtual ~Entity();
 
         virtual void run() = 0;
 
