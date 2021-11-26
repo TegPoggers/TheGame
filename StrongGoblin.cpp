@@ -53,7 +53,7 @@ namespace entities{
 
         int StrongGoblin::attack_speed = 72;
         int StrongGoblin::collision_damage = 10;
-        float StrongGoblin::walk_speed = 0.7;
+        float StrongGoblin::walk_speed = 1;
 
     }
 }

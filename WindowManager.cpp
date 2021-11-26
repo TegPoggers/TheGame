@@ -80,7 +80,7 @@ bool WindowManager::isOnView(sf::Sprite* sprite){
     float viewMin = viewCenter - halfExtents;
     float viewMax = viewCenter + halfExtents;
 
-    if ((sprite->getPosition().x >= viewMin)  && (sprite->getPosition().x <= viewMax)){
+    if ((sprite->getPosition().x + sprite->getGlobalBounds().width >= viewMin)  && (sprite->getPosition().x <= viewMax)){
         return true;
     }
     return false;

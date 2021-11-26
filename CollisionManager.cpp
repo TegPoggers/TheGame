@@ -32,13 +32,14 @@ namespace managers{
     bool CollisionManager::runEntities() {
         for (int i = 0; i < entity_list->getLen(); i++){
 
-            entity_list->getItem(i)->run();
-            entity_list->getItem(i)->getSprite()->setPosition(entity_list->getItem(i)->getPosition()); // Define
+            if(window->isOnView(entity_list->getItem(i)->getSprite())) {
+                entity_list->getItem(i)->run();
+                entity_list->getItem(i)->getSprite()->setPosition(entity_list->getItem(i)->getPosition()); // Define
 
-            //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            shootCurrent(i);
-            flying(entity_list->getItem(i));
-
+                //Verifica que tipo de inimigo que é e atira um projétil se for válido
+                shootCurrent(i);
+                flying(entity_list->getItem(i));
+            }
         }
         if(entity_list->getItem(0)->getId() == 1){
             return true;
@@ -56,7 +57,9 @@ namespace managers{
     void CollisionManager::removeDead() {
         for (int i = 0; i < entity_list->getLen(); i++){
 
-            //Tem que ver esse delete
+            if(entity_list->getItem(i)->getId() >= 8 && !window->isOnView(entity_list->getItem(i)->getSprite())){
+                entity_list->getItem(i)->die();
+            }
             if(!entity_list->getItem(i)->isAlive()){
                 entity_list->pop(entity_list->getItem(i));
             }
@@ -142,6 +145,10 @@ namespace managers{
            enemy_collision.analyzeEnemyCollision(dynamic_cast<entities::characters::Enemy*>(object1), object2);
         }
 
+    }
+
+    void CollisionManager::setWindow(WindowManager *window) {
+        this->window = window;
     }
 
 }

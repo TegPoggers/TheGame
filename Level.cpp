@@ -9,11 +9,17 @@ namespace levels{
     Level::Level() : Being() { }
 
     //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
-    Level::Level(Player* p1, Player* p2) : Being(), entityList(new EntityList()), background(nullptr), backPosition(), levelMaker(p1, entityList, assets){
+    Level::Level(Player* p1, Player* p2) : Being(),
+    entityList(new EntityList()),
+    background(nullptr),
+    backPosition(),
+    physics(),
+    levelMaker(p1, entityList, assets){
         this->p1 = p1;
         this->p2 = p2;
         onePlayer = true;
         physics.setEntityList(entityList);
+        physics.setWindow(window);
 
         if (this->p1 && this->p2)
             onePlayer = false;
@@ -115,13 +121,8 @@ namespace levels{
         physics.searchCollisions();
 
         for (int i = 0; i < entityList->getLen(); i++){
-            entityList->getItem(i)->run();
-            entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition()); // Define
+            entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition());
             window->draw(entityList->getItem(i)->getSprite());
-
-            //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entityList->getItem(i));
-
         }
 
         /*entities::Entity* orb = p1->getProjectile();

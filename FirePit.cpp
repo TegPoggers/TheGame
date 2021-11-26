@@ -15,7 +15,9 @@ namespace entities{
 
         FirePit::~FirePit() {}
 
-        void FirePit::run() {}
+        void FirePit::run() {
+            attack_counter++;
+        }
 
         int FirePit::getCollisionDamage() {
             if(attack_counter > attack_speed) {
@@ -29,8 +31,8 @@ namespace entities{
 
         }
 
-        int FirePit::attack_speed = 28;
-        int FirePit::collision_damage = 1;
+        int FirePit::collision_damage = 5;
+        int FirePit::attack_speed = 36;
 
     }
 }

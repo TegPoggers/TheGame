@@ -42,6 +42,8 @@ namespace managers {
 
         HorizontalPureCollision creator_collision;
 
+        WindowManager* window;
+
     public:
 
         CollisionManager();
@@ -75,6 +77,8 @@ namespace managers {
         void analyzeObstacleCollision(entities::StaticEntity* obstacle, entities::Entity* object);
 
         void ObstacleEnemyCollision(entities::StaticEntity* obstacle, entities::characters::Enemy* enemy);
+
+        void setWindow(WindowManager* window);
 
     };
 
