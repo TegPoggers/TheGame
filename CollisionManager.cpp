@@ -17,7 +17,7 @@ namespace managers{
             for (int i = 0; i < entity_list->getLen(); i++) {
                 for (int j = 0; j < entity_list->getLen(); j++) {
                     bool aux = creator_collision.findCollision(entity_list->getItem(i), entity_list->getItem(j));
-                    if(!done) {
+                    if(aux) {
                         done = aux;
                     }
                 }
@@ -77,7 +77,7 @@ namespace managers{
 
     void CollisionManager::flying(entities::Entity *entity) {
         if(entity->getId() == 1){
-            entities::characters::Player* player = static_cast<entities::characters::Player*>(entity);
+            entities::characters::Player* player = dynamic_cast<entities::characters::Player*>(entity);
             if(player->getFeetPosition() > 725){
                 player->setGround(true);
             }

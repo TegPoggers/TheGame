@@ -143,4 +143,8 @@ namespace levels{
         }
     }
 
+    void Level::fixTouchingSpawn() {
+        physics.mapCreatorCollision();
+    }
+
 }
