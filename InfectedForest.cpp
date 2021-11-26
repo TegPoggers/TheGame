@@ -21,16 +21,15 @@ namespace levels{
         setBackground(assets->operator[]("infectedForest"));
         setPosition(0,0);
         //levelMaker.createStrongGoblin();
-        //levelMaker.createWeakGoblin();
+        levelMaker.createWeakGoblin();
         //levelMaker.createBossGoblin();
-        levelMaker.renderObstacles();
+        //levelMaker.renderObstacles();
         for (int i = 0; i < entityList->getLen(); i++){
             entityList->getItem(i)->setFeetPosition(725);
             if (entityList->getItem(i)->getId() == fire_pit_id){
                 entityList->getItem(i)->setFeetPosition(775);
             }
         }
-        fixTouchingSpawn();
     }
 
     void InfectedForest::createEnemies(){

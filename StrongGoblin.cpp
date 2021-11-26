@@ -10,7 +10,8 @@ namespace entities{
         StrongGoblin::StrongGoblin() : Enemy(),
         attack_counter(0){
             sprite = assets->getSprite("strongGoblin");
-            setId(3);
+            setId(strong_goblin_id);
+            health = 75;
         }
 
         StrongGoblin::~StrongGoblin(){}

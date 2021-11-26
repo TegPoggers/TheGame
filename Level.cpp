@@ -61,8 +61,6 @@ namespace levels{
             entities::Entity* entity = entityList->getItem(0);
             if (entity && entity->getId() == 1){
                 window->getView().setCenter((entity->getPosition().x + entity->getSprite()->getGlobalBounds().width/2), WINDOW_HEIGHT/2);
-                cout << "POs " << window->getView().getCenter().x << endl;
-                cout << "ent x " << entity->getPosition().x << endl;
             }
         }
         window->setView(window->getView());
@@ -107,10 +105,12 @@ namespace levels{
     }
 
     void Level::run(){
+
         window->clear();
+
         renderBackground();
 
-        physics.runEntities();
+        bool rodando = physics.runEntities();
 
         physics.searchCollisions();
 
@@ -138,9 +138,9 @@ namespace levels{
 
         setView();
         if (window->isOnView(entityList->getItem(0)->getSprite())){
-            cout << "Player 1 está na view" << endl;
+            //cout << "Player 1 está na view" << endl;
         } else {
-            cout << "PLayer 1 não está na view" << endl;
+            //cout << "PLayer 1 não está na view" << endl;
         }
         window->display();
     }

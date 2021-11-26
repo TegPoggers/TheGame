@@ -38,6 +38,8 @@ namespace managers {
 
         PlayerCollision player_collisions;
 
+        EnemyCollision enemy_collision;
+
         HorizontalPureCollision creator_collision;
 
     public:

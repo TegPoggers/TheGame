@@ -13,12 +13,12 @@ namespace managers{
     void CollisionManager::mapCreatorCollision() {
         bool done = false;
         while(!done) {
-            done = false;
+            done = true;
             for (int i = 0; i < entity_list->getLen(); i++) {
                 for (int j = 0; j < entity_list->getLen(); j++) {
                     bool aux = creator_collision.findCollision(entity_list->getItem(i), entity_list->getItem(j));
                     if(aux) {
-                        done = aux;
+                        done = false;
                     }
                 }
             }
@@ -130,6 +130,16 @@ namespace managers{
         }
         if(object1->getId() == player_id){
             player_collisions.analyzePlayerCollision(dynamic_cast<entities::characters::Player*>(object1), object2);
+        }
+
+        if(object1->getId() < weak_goblin_id && object1->getId() > boss_goblin_id && object2->getId() >= weak_goblin_id && object2->getId() <=
+        boss_goblin_id){
+            entities::Entity* aux = object1;
+            object1 = object2;
+            object2 = aux;
+        }
+        if(object1->getId() >= weak_goblin_id && object1->getId() <= boss_goblin_id){
+           enemy_collision.analyzeEnemyCollision(dynamic_cast<entities::characters::Enemy*>(object1), object2);
         }
 
     }

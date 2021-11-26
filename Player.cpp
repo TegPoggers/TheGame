@@ -7,7 +7,7 @@ namespace entities {
     namespace characters {
 
         Player::Player() : MovingEntity(),
-        health(100),
+        health(1000),
         speed(0, 0),
         ground(true),
         inputs(nullptr),
