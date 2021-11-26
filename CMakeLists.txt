@@ -11,6 +11,6 @@ add_executable(jogo main.cpp Game.cpp Game.h AssetManager.cpp AssetManager.h Eve
         HealthyForest.h InfectedForest.cpp InfectedForest.h Enemy.cpp Enemy.h WeakGoblin.cpp WeakGoblin.h StrongGoblin.cpp StrongGoblin.h
         BossGoblin.cpp BossGoblin.h StaticEntity.cpp StaticEntity.h Spikes.cpp Spikes.h FirePit.cpp FirePit.h PointyBush.cpp PointyBush.h
         Star.cpp Star.h DarkEnergyOrb.cpp DarkEnergyOrb.h EnergyOrb.cpp EnergyOrb.h SpriteLoader.cpp SpriteLoader.h CollisionManager.cpp CollisionManager.h PlayerCollision.cpp PlayerCollision.h
-        LevelMaker.cpp LevelMaker.h EnemyCollision.cpp EnemyCollision.h HorizontalPureCollision.cpp HorizontalPureCollision.h Menu.cpp Menu.h)
+        LevelMaker.cpp LevelMaker.h EnemyCollision.cpp EnemyCollision.h HorizontalPureCollision.cpp HorizontalPureCollision.h Menu.cpp Menu.h GlobalMenu.cpp GlobalMenu.h PlayerMenu.cpp PlayerMenu.h)
 
 target_link_libraries(jogo sfml-graphics sfml-audio sfml-window sfml-system)

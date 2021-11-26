@@ -30,6 +30,7 @@ private:
     Player p2;
     levels::HealthyForest* healthy;
     levels::InfectedForest* infected;
+    sf::Event event;
 
 public:
     Game();

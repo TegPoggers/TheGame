@@ -43,6 +43,13 @@
 #define BOSS_POSITION 14100
 #define DOOR_POSITION 15100
 
-#define MENU_ITENS 3
+#define MENU_ITENS 4
+#define GLOBAL_MENU_ITENS 4
+#define PLAYER_MENU_ITENS 4
+
+//States id
+#define RUN_HEALTHY_FOREST 1
+#define RUN_INFECTED_FOREST 2
+
 
 #endif //JOGO_DEFINITIONS_H

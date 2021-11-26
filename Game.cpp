@@ -21,14 +21,20 @@ Game::~Game() {
 }
 
 void Game::run(){
-
     while(window.isOpen()){
         window.clear();
+        menu.renderGlobalMenu();
+
         //Rodar o menu
+
+        //Se algo foi pressionado
         menu.run();
-        //Por enquanto chama a healthy
-        //healthy->run();
-        //infected->run();
+        /*healthy->run();
+        infected->run();*/
+
+
+        window.menuEvents(&event);
+
         window.display();
     }
 }
