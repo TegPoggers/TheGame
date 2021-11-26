@@ -17,12 +17,13 @@ namespace entities {
 
         sf::Vector2f position;
         sf::Sprite* sprite;
+        bool alive;
 
     public:
 
         Entity();
 
-        ~Entity();
+        virtual ~Entity();
 
         virtual void run() = 0;
 
@@ -40,6 +41,14 @@ namespace entities {
         float getFeetPosition();
 
         void setFeetPosition(float feet_position = 725);
+
+        void die();
+
+        bool isAlive();
+
+        bool isOnTheView();
+
+        void move(sf::Vector2f amount);
 
     };
 

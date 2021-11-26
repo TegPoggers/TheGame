@@ -33,6 +33,7 @@ namespace  levels {
         Player* p2;
         sf::Sprite* background;
         sf::Vector2f backPosition;
+        managers::CollisionManager physics;
 
     public:
         Level();
@@ -47,7 +48,7 @@ namespace  levels {
         void setBackground(sf::Sprite* background);
         sf::Vector2f getPosition();
         void setView();
-        virtual void initializeElements() = 0; //Deixar como virtual pura
+        virtual void initializeElements() = 0;
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);

@@ -24,7 +24,7 @@ namespace entities {
 
         Projectile();
 
-        ~Projectile();
+        virtual ~Projectile();
 
         void run();
 

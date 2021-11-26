@@ -21,7 +21,12 @@ using namespace std;
 #include "Spikes.h"
 #include "FirePit.h"
 #include "PointyBush.h"
+
 #include "EntityList.h"
+
+#include "HorizontalPureCollision.h"
+#include "PlayerCollision.h"
+#include "EnemyCollision.h"
 
 namespace managers {
 
@@ -31,49 +36,43 @@ namespace managers {
 
         EntityList* entity_list;
 
+        PlayerCollision player_collisions;
+
+        HorizontalPureCollision creator_collision;
+
     public:
 
         CollisionManager();
 
         ~CollisionManager();
 
+        void mapCreatorCollision();
+
         void setEntityList(EntityList* entities);
 
         //retorna false se não tiver mais jogadores
-        bool runPlayers();
+        bool runEntities();
 
         void runPhysics();
 
+        void shootCurrent(int i);
+
+        //Retira os mortos da lista e os desaloca
+        void removeDead();
+
         //Detecta se está no ar e seja canJump como falso, seta como true caso contrário
         void flying(entities::Entity* entity);
+
+        void searchCollisions();
 
         void detectCollisions(entities::Entity* object1, entities::Entity* object2);
 
         void analyzeCollision(entities::Entity* object1, entities::Entity* object2);
 
 
-
-        void analyzePlayerCollision(entities::characters::Player player, entities::Entity* object);
-
-        void PlayerPlayerCollision(entities::characters::Player player1, entities::characters::Player player2);
-
-        //Tem que ser id de projétil inimigo (Energy e DarkEnergy Ball)
-        void PlayerEnemyProjectileCollision(entities::characters::Player* player, entities::Projectile* projectile);
-
-        void PlayerEnemyCollision(entities::characters::Player player, entities::characters::Enemy* enemy);
-
-        void PlayerObstacleCollision(entities::characters::Player player, entities::StaticEntity* obstacle);
-
-
         void analyzeObstacleCollision(entities::StaticEntity* obstacle, entities::Entity* object);
 
         void ObstacleEnemyCollision(entities::StaticEntity* obstacle, entities::characters::Enemy* enemy);
-
-
-        void analyzeEnemyCollision(entities::characters::Enemy* enemy, entities::Entity*);
-
-        //Tem que ser id de projétil de player (Star)
-        void enemyProjectileCollision(entities::characters::Enemy* enemy, entities::Projectile projectile);
 
     };
 

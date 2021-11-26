@@ -9,7 +9,7 @@ namespace entities{
 
     Projectile::Projectile() : Entity(),
     damage(0),
-    speed(1),
+    speed(0.5),
     direction(1){}
 
     Projectile::~Projectile(){}
@@ -24,7 +24,7 @@ namespace entities{
     }
 
     void Projectile::run() {
-        position.x += speed * (float)direction; if (id == 10){cout <<"ué"<<endl;}
+        position.x += speed * (float)direction;
     }
 
     void Projectile::setDirection(int direction) {

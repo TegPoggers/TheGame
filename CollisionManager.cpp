@@ -10,20 +10,68 @@ namespace managers{
 
     CollisionManager::~CollisionManager() {}
 
+    void CollisionManager::mapCreatorCollision() {
+        bool done = false;
+        while(!done) {
+            done = false;
+            for (int i = 0; i < entity_list->getLen(); i++) {
+                for (int j = 0; j < entity_list->getLen(); j++) {
+                    bool aux = creator_collision.findCollision(entity_list->getItem(i), entity_list->getItem(j));
+                    if(!done) {
+                        done = aux;
+                    }
+                }
+            }
+        }
+    }
+
     void CollisionManager::setEntityList(EntityList *entities) {
         entity_list = entities;
     }
 
-    void CollisionManager::runPhysics() {
-        for (int i = 0; i < entity_list->eList.getLen(); i++){
-            entity_list->eList.getItem(i)->run();
-            entity_list->eList.getItem(i)->getSprite()->setPosition(entity_list->eList.getItem(i)->getPosition()); // Define
+    bool CollisionManager::runEntities() {
+        for (int i = 0; i < entity_list->getLen(); i++){
+
+            entity_list->getItem(i)->run();
+            entity_list->getItem(i)->getSprite()->setPosition(entity_list->getItem(i)->getPosition()); // Define
+
             //Verifica que tipo de inimigo que é e atira um projétil se for válido
-            //shootCurrent(i);  managers::CollisionManager collide; collide.flying(entity_list->eList.getItem(i));
+            shootCurrent(i);
+            flying(entity_list->getItem(i));
 
-            //if(i != 0)
-                //collide.detectCollisions(p1, entityList->eList.getItem(i));
+        }
+        if(entity_list->getItem(0)->getId() == 1){
+            return true;
+        }
+        return false;
+    }
 
+    void CollisionManager::runPhysics() {
+
+        searchCollisions();
+        removeDead();
+
+    }
+
+    void CollisionManager::removeDead() {
+        for (int i = 0; i < entity_list->getLen(); i++){
+
+            //Tem que ver esse delete
+            if(!entity_list->getItem(i)->isAlive()){
+                entity_list->pop(entity_list->getItem(i));
+            }
+
+        }
+    }
+
+    void CollisionManager::shootCurrent(int i) {
+        int id = entity_list->getItem(i)->getId();
+        if(id >= 1 && id <= 4) {
+            entities::characters::MovingEntity* shooter = dynamic_cast<entities::characters::MovingEntity*>(entity_list->getItem(i));
+            entities::Entity* orb = shooter->getProjectile();
+            if(orb != nullptr){
+                entity_list->push(orb);
+            }
         }
     }
 
@@ -37,6 +85,15 @@ namespace managers{
                 player->setGround(false);
             }
         }
+    }
+
+    void CollisionManager::searchCollisions(){
+        for (int i = 0; i < entity_list->getLen(); i++){
+            for(int j = 0; j < entity_list->getLen(); j++){
+                detectCollisions(entity_list->getItem(i), entity_list->getItem(j));
+            }
+        }
+        removeDead();
     }
 
     void CollisionManager::detectCollisions(entities::Entity *object1, entities::Entity *object2) {
@@ -72,7 +129,7 @@ namespace managers{
             object2 = aux;
         }
         if(object1->getId() == player_id){
-            //Testar o id dos outros e rodar colisão de acordo com isso
+            player_collisions.analyzePlayerCollision(dynamic_cast<entities::characters::Player*>(object1), object2);
         }
 
     }

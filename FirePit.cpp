@@ -29,7 +29,7 @@ namespace entities{
 
         }
 
-        int FirePit::attack_speed = 14;
+        int FirePit::attack_speed = 28;
         int FirePit::collision_damage = 1;
 
     }

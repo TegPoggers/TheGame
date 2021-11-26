@@ -13,7 +13,7 @@ namespace entities{
     DarkEnergyOrb::~DarkEnergyOrb() {}
 
     void DarkEnergyOrb::initializeStar() {
-        speed = 5;
+        speed = 2;
         damage = 5;
         sprite = assets->getSprite("darkEnergyOrb");
         id = 9;

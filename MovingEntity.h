@@ -29,7 +29,7 @@ namespace entities {
 
             MovingEntity();
 
-            ~MovingEntity();
+            virtual ~MovingEntity();
 
             virtual void run() = 0;
 
@@ -37,7 +37,7 @@ namespace entities {
 
             virtual void attack() = 0;
 
-            void move(sf::Vector2f amount);
+
 
             void setLives(int life);
 
@@ -48,6 +48,8 @@ namespace entities {
             void takeDamage(int dmg);
 
             virtual Entity* getProjectile() = 0;
+
+            int getHealth();
 
         };
     }
