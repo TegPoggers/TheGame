@@ -11,9 +11,6 @@
 namespace levels{
 
     class HealthyForest : public Level{
-    private:
-        WeakGoblin* weakGoblin;
-        StrongGoblin* strongGoblin;
 
     public:
         HealthyForest();

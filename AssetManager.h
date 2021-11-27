@@ -43,6 +43,11 @@ public:
 
     void scale(std::string name, sf::Vector2f multiplier);
 
+    void loadFont(std::string path, std::string name);
+
+    sf::Font* getFont(std::string name);
+
+
 };
 
 

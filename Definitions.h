@@ -6,6 +6,10 @@
 #ifndef JOGO_DEFINITIONS_H
 #define JOGO_DEFINITIONS_H
 
+#define FONT_1 "../Assets/Fonts/MagicSchoolOne.ttf"
+#define FONT_2 "../Assets/Fonts/MagicSchoolTwo-4n5D.ttf"
+#define FONT_3 "../Assets/Fonts/Metamorphous.ttf"
+
 
 #define HEALTHY_FOREST "../Assets/Backgrounds/HealthyForest.png"
 #define INFECTED_FOREST "../Assets/Backgrounds/InfectedForest.png"
@@ -30,6 +34,7 @@
 
 #define FAILED_TEXTURE "../Assets/Failed/FailedTexture.jpg"
 
+#define MENU_BACKGROUND "../Assets/Backgrounds/Menu.png"
 
 #define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 
@@ -45,5 +50,9 @@
 
 #define BOSS_POSITION 14100
 #define DOOR_POSITION 15100
+
+#define MENU_ITENS 4
+#define GLOBAL_MENU_ITENS 4
+#define PLAYER_MENU_ITENS 4
 
 #endif //JOGO_DEFINITIONS_H

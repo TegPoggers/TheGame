@@ -46,8 +46,6 @@ namespace entities {
 
         bool isAlive();
 
-        bool isOnTheView();
-
         void move(sf::Vector2f amount);
 
     };
