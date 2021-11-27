@@ -20,7 +20,7 @@
 
 #define DARK_ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB "../Assets/Projectiles/PlayerOrb.png"
-#define ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
+#define ENERGY_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
 
 #define PLAYER_1 "../Assets/Players/player1.png"
 #define PLAYER_2 "../Assets/Players/player2.png"
