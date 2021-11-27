@@ -20,6 +20,9 @@ namespace entities {
             static int projectile_damage;
             static int collision_damage;
             static float walk_speed;
+            float jump_counter;
+            static float jump_speed;
+            static float jump_height;
 
         public:
 
@@ -36,6 +39,8 @@ namespace entities {
             int getCollisionDamage();
 
             Entity* getProjectile();
+
+            void jump();
 
         };
     }
