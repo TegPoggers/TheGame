@@ -117,7 +117,7 @@ namespace levels{
 
         renderBackground();
 
-        players_alive = physics.runEntities();
+        players_alive = physics.runEntities();//Teste de colocar na master
 
         isFinished();
 
