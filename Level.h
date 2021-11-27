@@ -34,6 +34,8 @@ namespace  levels {
         sf::Sprite* background;
         sf::Vector2f backPosition;
         managers::CollisionManager physics;
+        static bool won;
+        static bool players_alive;
 
     public:
         Level();
@@ -54,6 +56,14 @@ namespace  levels {
         void shootCurrent(int i);
 
         void fixTouchingSpawn();
+
+        void isFinished();
+
+        bool getfixTouchingSpawn();
+
+        bool getPlayersAlive();
+
+        bool getWon();
     };
 }
 

@@ -76,8 +76,8 @@ void Game::run() {
 
             case st_global_menu:
                 //menu.run();
-                //healthy->run();
-                infected->run();
+                healthy->run();
+                //infected->run();
                 //cout << "State " << Being::getMenuState << endl;
                 break;
 

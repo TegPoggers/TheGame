@@ -35,12 +35,16 @@ namespace managers {
             case dark_energy_orb_id:
                 playerEnemyProjectileCollision(player, dynamic_cast<entities::Projectile *>(object));
                 break;
+
             case fire_pit_id:
             case bush_id:
             case spikes_id:
                 playerObstacleCollision(player, dynamic_cast<entities::StaticEntity *> (object));
                 break;
 
+            case finish_line_id:
+                playerFinishCollision(player, dynamic_cast<entities::FinishLine *> (object));
+                break;
             default:
                 //não faz nada
                 break;
@@ -108,6 +112,10 @@ namespace managers {
 
         player->takeDamage(obstacle->getCollisionDamage());
 
+    }
+
+    void PlayerCollision::playerFinishCollision(entities::characters::Player *player, entities::FinishLine *finish) {
+        player->takeDamage(finish->getCollisionDamage());
     }
 
 }

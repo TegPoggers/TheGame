@@ -36,7 +36,7 @@
 
 #define MENU_BACKGROUND "../Assets/Backgrounds/Menu.png"
 
-#define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
+#define END_LEVEL_CASTLE "../Assets/LevelComplete/EndLevelCastle.png"
 
 #define GLOBAL_SCALE 0.7111111
 

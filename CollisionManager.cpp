@@ -50,7 +50,8 @@ namespace managers{
     void CollisionManager::removeDead() {
         for (int i = 0; i < entity_list->getLen(); i++){
 
-            if(entity_list->getItem(i)->getId() >= 8 && !window->isOnView(entity_list->getItem(i)->getSprite())){
+            if(entity_list->getItem(i)->getId() >= 8 && entity_list->getItem(i)->getId() <= 10 && !window->isOnView(entity_list->getItem(i)->getSprite
+            ())){
                 entity_list->getItem(i)->die();
             }
             if(!entity_list->getItem(i)->isAlive()){
@@ -87,6 +88,9 @@ namespace managers{
     void CollisionManager::searchCollisions(){
         for (int i = 0; i < entity_list->getLen(); i++){
             for(int j = 0; j < entity_list->getLen(); j++){
+                if(entity_list->getItem(i)->getPosition().x < -700){
+                    entity_list->getItem(i)->setPosition(-700, entity_list->getItem(i)->getPosition().y);
+                }
                 detectCollisions(entity_list->getItem(i), entity_list->getItem(j));
             }
         }
