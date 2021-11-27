@@ -23,11 +23,8 @@ namespace entities{
         private:
             static float moving_speed;//1.5 é um bom número pra 144 fps
             static float jump_speed;
-
             InputManager *inputs;
-            int health;
             int points;
-            levels::Level* level;
             Star* fire;
             int counter;
             bool can_attack;

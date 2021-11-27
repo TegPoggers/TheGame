@@ -25,3 +25,4 @@ WindowManager* Being::getPWindow() {
 
 AssetManager* Being::assets = nullptr;
 WindowManager* Being::window = nullptr;
+int Being::menu_state = 1;

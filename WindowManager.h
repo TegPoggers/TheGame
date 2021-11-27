@@ -43,7 +43,15 @@ public:
 
     void clear();
 
+    void close();
+
     void display();
+
+    void draw(sf::Text font);
+
+    void menuEvents(sf::Event* event);
+
+    bool pollEvent(sf::Event* event);
 
 };
 

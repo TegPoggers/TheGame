@@ -18,11 +18,6 @@ namespace entities{
         damage = dmg;
     }
 
-    //Só é chamado quando alguém toma dano
-    int Projectile::getDamage() {
-        return damage;
-    }
-
     void Projectile::run() {
         position.x += speed * (float)direction;
     }

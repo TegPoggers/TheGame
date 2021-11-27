@@ -84,3 +84,21 @@ void AssetManager::scale(std::string name, sf::Vector2f multiplier) {
         sprite->scale(multiplier);
     }
 }
+
+
+void AssetManager::loadFont(std::string path, std::string name){
+    font = new sf::Font();
+
+    if (!font->loadFromFile(path)) {
+        std::cout << "Missing file font" << std::endl;
+        delete font;
+
+    }
+    else {
+        fonts[name] = font;
+    }
+}
+
+sf::Font* AssetManager::getFont(std::string name){
+    return fonts[name];
+}
