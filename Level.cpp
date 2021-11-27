@@ -14,7 +14,8 @@ namespace levels{
     background(nullptr),
     backPosition(),
     physics(),
-    levelMaker(p1, entityList, assets){
+    levelMaker(p1, entityList, assets)
+    {
         this->p1 = p1;
         this->p2 = p2;
         onePlayer = true;
@@ -116,7 +117,9 @@ namespace levels{
 
         renderBackground();
 
-        bool rodando = physics.runEntities();
+        players_alive = physics.runEntities();//Teste de colocar na master
+
+        isFinished();
 
         physics.searchCollisions();
 
@@ -148,5 +151,24 @@ namespace levels{
     void Level::fixTouchingSpawn() {
         physics.mapCreatorCollision();
     }
+
+    void Level::isFinished() {
+
+        if(entityList->getItem(0)->getPosition().x > DOOR_POSITION || entityList->getItem(1)->getPosition().x > DOOR_POSITION){
+            won = true;
+        }
+
+    }
+
+    bool Level::getWon() {
+        return won;
+    }
+
+    bool Level::getPlayersAlive(){
+        return players_alive;
+    }
+
+    bool Level::won = false;
+    bool Level::players_alive = false;
 
 }

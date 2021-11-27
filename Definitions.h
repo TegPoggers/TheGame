@@ -13,22 +13,30 @@
 
 #define HEALTHY_FOREST "../Assets/Backgrounds/HealthyForest.png"
 #define INFECTED_FOREST "../Assets/Backgrounds/InfectedForest.png"
-#define MENU_BACKGROUND "../Assets/Backgrounds/Menu.png"
+
 #define FIRE_PIT "../Assets/Obstacles/FirePit.png"
 #define POINTY_BUSH "../Assets/Obstacles/PointyBush.png"
 #define SPIKES_PATH "../Assets/Obstacles/Spikes.png"
+
 #define DARK_ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
 #define PLAYER_ORB "../Assets/Projectiles/PlayerOrb.png"
+#define ENERGY_ORB "../Assets/Projectiles/DarkEnergyOrb.png"
+
 #define PLAYER_1 "../Assets/Players/player1.png"
 #define PLAYER_2 "../Assets/Players/player2.png"
+
 #define WEAK_GOBLIN "../Assets/Enemies/WeakGoblin.png"
 #define STRONG_GOBLIN "../Assets/Enemies/StrongGoblin.png"
 #define BOSS_GOBLIN "../Assets/Enemies/BossGoblin.png"
+
 #define PLATFORM "../Assets/Platform/Platform.png"
+#define END_LEVEL_CASTLE "../Assets/LevelComplete/EndLevelCastle.png"
+
 #define FAILED_TEXTURE "../Assets/Failed/FailedTexture.jpg"
 
-#define ENERGY_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
-#define BOSS_GOBLIN_ORB "../Assets/Projectiles/BlueEnergyOrb.png"
+#define MENU_BACKGROUND "../Assets/Backgrounds/Menu.png"
+
+#define END_LEVEL_CASTLE "../Assets/LevelComplete/EndLevelCastle.png"
 
 #define GLOBAL_SCALE 0.7111111
 
@@ -46,6 +54,5 @@
 #define MENU_ITENS 4
 #define GLOBAL_MENU_ITENS 4
 #define PLAYER_MENU_ITENS 4
-
 
 #endif //JOGO_DEFINITIONS_H

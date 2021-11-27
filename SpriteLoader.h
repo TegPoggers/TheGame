@@ -19,6 +19,7 @@ public:
     void loadObstacles();
     void loadPlayers();
     void loadProjectiles();
+    void loadFinishLine();
 
 
     void loadPlatforms();
