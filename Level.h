@@ -41,7 +41,8 @@ namespace  levels {
         ~Level();
 
         void run();
-        void renderPlayers(bool onePlayer);
+        void initializePlayers(Player* p1, Player* p2);
+        void renderPlayers(int players);
         void loadGame(); // Roda a fase
         void renderBackground();
         void setPosition(float x, float y);
@@ -52,6 +53,9 @@ namespace  levels {
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
+        void setOnePlayer(bool oneP);
+        bool getOnePlayer();
+
 
         void fixTouchingSpawn();
     };

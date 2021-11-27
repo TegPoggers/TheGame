@@ -25,13 +25,66 @@ namespace menus{
         //Receber um ponteiro pro evento
 
         cout << "Tô no run " << endl;
-      //menu_state = st_run_healthy_forest_p2;
-       // cout << "State " << Being::setMenuState << endl;
+        //setMenuState(st_run_healthy_forest_p2);
+        cout << "State " << Being::getMenuState(0) << endl;
+            //sf::Event event;
+            cout << "Teve evento?" << endl;
 
-        //if (inputs->isKeyPressed(contro))
+            /*if (inputs->isKeyPressed(controls.up)){
+                moveUp();
+            } else if (inputs->isKeyPressed(controls.down)){
+                moveDown();
+            } else if (inputs->isKeyPressed(controls.enter)){
+                switch (selectedItem) {
+                    case 1:
+                        cout << "Case 1" << endl;
+                        setMenuState(st_player_menu, 0);
+                       // setMenuState(st_run_healthy_forest, 1);
+                       //chamar o menu players
+                       break;
+                    case 2:
+                        cout << "Case 2" << endl;
+                        setMenuState(st_player_menu, 0);
+                        //setMenuState(st_run_infected_forest,  1);
+                        break;
+                    case 3:
+                        cout << "Case 3" << endl;
+                        setMenuState(st_quit_game, 0);
+                        break;
+                }
+            }*/
+//Daqui
+           if (menu_counter > menu_speed){// && event.type == sf::Event::KeyReleased){
 
-
-
+                if (inputs->isKeyPressed(controls.up)){
+                    moveUp();
+                    menu_counter = 0;
+                } else if (inputs->isKeyPressed(controls.down)){
+                    moveDown();
+                    menu_counter = 0;
+                } else if (inputs->isKeyPressed(controls.enter)){
+                    switch (selectedItem) {
+                        case 1:
+                            cout << "Case 1" << endl;
+                            setMenuState(st_player_menu, 0);
+                            setMenuState(st_run_healthy_forest, 1);
+                            //chamar o menu players
+                            break;
+                        case 2:
+                            cout << "Case 2" << endl;
+                            setMenuState(st_player_menu, 0);
+                            setMenuState(st_run_infected_forest,  1);
+                            break;
+                        case 3:
+                            cout << "Case 3" << endl;
+                            setMenuState(st_quit_game, 0);
+                            break;
+                    }
+                    menu_counter = 0;
+                }
+           }
+           menu_counter++;
+//Até aqui
 
     }
 
@@ -63,7 +116,7 @@ namespace menus{
         text[3].setFillColor(sf::Color::White);
         text[3].setString("Quit Game");
         text[3].setCharacterSize(50);
-        text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 20 + text[3].getGlobalBounds().height);
+        text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 30 + text[3].getGlobalBounds().height);
     }
 
 

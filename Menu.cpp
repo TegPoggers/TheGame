@@ -6,8 +6,9 @@
 
 namespace menus {
 
-    Menu::Menu() : Being() , text(), background(), backPosition(), inputs(nullptr){
+    Menu::Menu() : Being() , text(), background(), backPosition(), inputs(nullptr), controls(){
         selectedItem = 1;
+        menu_counter = 0;
         inputs = new InputManager();
     }
 
@@ -48,7 +49,7 @@ namespace menus {
     }
 
 
-    void Menu::initialize(){
+   /* void Menu::initialize(){
         setBackground(assets->operator[]("menu"));
         loadFont();
 
@@ -77,7 +78,7 @@ namespace menus {
         text[3].setString("Quit Game");
         text[3].setCharacterSize(50);
         text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 20 + text[3].getGlobalBounds().height);
-    }
+    }*/
 
     void Menu::renderMenu(int items){
         window->draw(background);
@@ -112,8 +113,29 @@ namespace menus {
         }
     }
 
+    int Menu::GetPressedItem(){
+        return selectedItem;
+    }
 
-   // sf::Event* Menu::event = nullptr;
+    void Menu::runEvent(sf::Event* event) {
+        renderMenu(MENU_ITENS);
+        if (event->type == sf::Event::KeyReleased) {
 
+            if (event->key.code == controls.up) {
+                moveUp();
+            } else if (event->key.code == controls.down) {
+                moveDown();
+            } else if (event->key.code == controls.enter) {
+                run();
+            }
+        }
+    }
+    int Menu::menu_speed = 72;
 }
+
+
+
+    // sf::Event* Menu::event = nullptr;
+
+
 

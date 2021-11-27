@@ -19,7 +19,9 @@ namespace menus{
         sf::Vector2f backPosition;
         sf::Event event;
         InputManager *inputs;
-
+        Controls controls;
+        static int menu_speed;
+        int menu_counter;
 
     public:
         Menu();
@@ -30,11 +32,12 @@ namespace menus{
         void setBackground(sf::Sprite* background);
         void setPosition(float x, float y);
         sf::Vector2f getPosition();
-        void initialize();
         void renderMenu(int items);
         void renderPlayersMenu();
         void loadFont();
+        int GetPressedItem();
         int getMenuState();
+        void runEvent(sf::Event* event);
 
 
     };

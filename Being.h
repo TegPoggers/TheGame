@@ -27,14 +27,12 @@ enum id{
 enum states_id{
     st_global_menu = 1,
     st_player_menu = 2,
-    st_run_healthy_forest_p1 = 3,
-    st_run_healthy_forest_p2 = 4,
-    st_run_infected_forest_p1 = 5,
-    st_run_infected_forest_p2 = 6,
-    st_leader_board = 7,
-    st_quit_game = 8,
-    st_load_game = 9,
-    st_return = 10
+    st_run_healthy_forest = 3,
+    st_run_infected_forest = 4,
+    st_leader_board = 5,
+    st_quit_game = 6,
+    st_load_game = 7,
+    st_return = 8
 };
 
 class Being {
@@ -44,7 +42,7 @@ protected:
     int id;
     static AssetManager* assets;
     static WindowManager* window;
-    static int menu_state;
+    static int menu_state[STATES_NUMBER];
 
 public:
 
@@ -64,9 +62,9 @@ public:
 
     static WindowManager* getPWindow();
 
-    static int getMenuState() { return menu_state; }
+    static int getMenuState(int pos);
 
-    static void setMenuState(int st){ menu_state = st; }
+    static void setMenuState(int st, int position);
 
 };
 

@@ -13,6 +13,7 @@
 #include "AssetManager.h"
 #include "SpriteLoader.h"
 #include "GlobalMenu.h"
+#include "PlayerMenu.h"
 #include "HealthyForest.h"
 #include "InfectedForest.h"
 #include "Player.h"
@@ -27,6 +28,7 @@ private:
     AssetManager assets;
     SpriteLoader spriteLoader;
     menus::GlobalMenu menu;
+    menus::PlayerMenu playerMenu;
     Player p1;
     Player p2;
     levels::HealthyForest* healthy;
@@ -41,6 +43,8 @@ public:
     ~Game();
 
     void run();
+
+    void renderLevel();
 
 };
 
