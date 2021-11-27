@@ -8,6 +8,7 @@
 #include "DarkEnergyOrb.h"
 #include "EnergyOrb.h"
 #include "Enemy.h"
+#include "StaticEntity.h"
 
 namespace managers {
 
@@ -25,6 +26,8 @@ namespace managers {
 
         //Tem que ser id de projétil de player (Star)
         void enemyProjectileCollision(entities::characters::Enemy* enemy, entities::Projectile* projectile);
+
+        void enemyObstacleCollision(entities::characters::Enemy *enemy, entities::StaticEntity *obstacle);
 
     };
 

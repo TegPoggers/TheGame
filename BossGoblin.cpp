@@ -46,6 +46,8 @@ namespace entities{
             else{
                 position.x -= walk_speed;
             }
+            fall();
+            position.y += speed.y;
         }
 
         int BossGoblin::getCollisionDamage() {

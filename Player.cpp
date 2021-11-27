@@ -7,8 +7,7 @@ namespace entities {
     namespace characters {
 
         Player::Player() : MovingEntity(),
-        speed(0, 0),
-        ground(true),
+        //health(100),
         inputs(nullptr),
         points(0),
         counter(0)
@@ -16,7 +15,7 @@ namespace entities {
 
             inputs = new InputManager();
             id = 1;
-
+            health = 100;
         }
 
         Player::~Player() {
@@ -68,20 +67,10 @@ namespace entities {
                 speed.y = jump_speed;
                 ground = false;
             }
-            else if(ground){
-                speed.y = 0;
-            }
             else{
-                speed.y += gravity;
+                fall();
             }
-        }
 
-        //Collision managers precisa rodar essa função all frame pra você não cair pelo chão
-        void Player::setGround(bool on_ground) {
-            ground = on_ground;
-            if (ground) {
-                speed.y = 0;
-            }
         }
 
         void Player::score(int points) {
@@ -112,13 +101,8 @@ namespace entities {
             this->actions = actions;
         }
 
-        void Player::setFallSpeed(float speed) {
-            this->speed.y = speed;
-        }
-
         float Player::moving_speed = 5;
         float Player::jump_speed = -14;
-        float Player::gravity = 0.2;
 
     }
 
