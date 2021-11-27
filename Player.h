@@ -25,9 +25,8 @@ namespace entities{
             static float jump_speed;
 
             InputManager *inputs;
-            int health;
+            //int health;
             int points;
-            levels::Level* level;
             Star* fire;
             int counter;
             bool can_attack;

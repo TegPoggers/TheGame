@@ -7,7 +7,7 @@ namespace entities {
     namespace characters {
 
         Player::Player() : MovingEntity(),
-        health(100),
+        //health(100),
         inputs(nullptr),
         points(0),
         counter(0)
@@ -15,6 +15,7 @@ namespace entities {
 
             inputs = new InputManager();
             id = 1;
+            health = 100;
 
         }
 
