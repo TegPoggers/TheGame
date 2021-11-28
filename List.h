@@ -102,8 +102,6 @@ void List<TL>::pop(TL* item){
     if (temp != nullptr){
         len--;
     }
-    delete temp;
-    //delete item;
 }
 
 template <class TL>

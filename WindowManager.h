@@ -53,6 +53,8 @@ public:
 
     bool pollEvent(sf::Event* event);
 
+    sf::RenderWindow* getPtWindow() { return &window; }
+
 };
 
 

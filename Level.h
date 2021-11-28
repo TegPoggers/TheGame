@@ -17,10 +17,6 @@
 
 using namespace entities::characters;
 
-//Monitoria pra entender qual o uso da lista de jogadores, inimigos, etc
-// weak ( atira)
-// strong (anda e soca)
-// Boss (atira)  - Ver oq seria diferente o suficiente
 namespace  levels {
 
     class Level : public Being {
@@ -43,7 +39,8 @@ namespace  levels {
         ~Level();
 
         void run();
-        void renderPlayers(bool onePlayer);
+        void initializePlayers(Player* p1, Player* p2);
+        void renderPlayers(int players);
         void loadGame(); // Roda a fase
         void renderBackground();
         void setPosition(float x, float y);
@@ -54,6 +51,8 @@ namespace  levels {
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
+
+
 
         void fixTouchingSpawn();
 

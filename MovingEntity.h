@@ -53,6 +53,8 @@ namespace entities {
 
             void setFallSpeed(float speed);
 
+            void setHealth(int health);
+
         };
     }
 }

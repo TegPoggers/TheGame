@@ -18,6 +18,25 @@ namespace levels{
     {
         this->p1 = p1;
         this->p2 = p2;
+        //onePlayer = true;
+        physics.setEntityList(entityList);
+        physics.setWindow(window);
+
+       /* if (this->p1 && this->p2)
+            onePlayer = false;
+        else if (!this->p1)
+            p1 = new Player();*/
+
+        renderPlayers(Being::getMenuState(1));
+    }
+
+    Level::~Level(){
+
+    }
+
+    void Level::initializePlayers(Player* p1, Player* p2){
+        this->p1 = p1;
+        this->p2 = p2;
         onePlayer = true;
         physics.setEntityList(entityList);
         physics.setWindow(window);
@@ -26,12 +45,6 @@ namespace levels{
             onePlayer = false;
         else if (!this->p1)
             p1 = new Player();
-
-        renderPlayers(onePlayer);
-        //Aloca inimigos
-    }
-
-    Level::~Level(){
 
     }
 
@@ -73,7 +86,9 @@ namespace levels{
         window->setView(window->getView());
     }
 
-    void Level::renderPlayers(bool onePlayer){
+    //Mudar onePLayer para int
+    void Level::renderPlayers(int players){
+        cout << " -------------------------------------- PLAYERS " << players << endl;
         InputManager inputs;
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
@@ -81,7 +96,7 @@ namespace levels{
         p1->setPosition(0);
         entityList->push(p1);
         p1->setMapping(inputs.setLayout1());
-        if (!onePlayer){
+        if (players == 2){
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
             p2->getSprite()->setScale(0.5, 0.5);
@@ -142,9 +157,9 @@ namespace levels{
 
         setView();
         if (window->isOnView(entityList->getItem(0)->getSprite())){
-            //cout << "Player 1 está na view" << endl;
+            cout << "Player 1 está na view" << endl;
         } else {
-            //cout << "PLayer 1 não está na view" << endl;
+            cout << "PLayer 1 não está na view" << endl;
         }
     }
 

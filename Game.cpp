@@ -4,15 +4,17 @@
 
 #include "Game.h"
 
-Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), menu(), p1(), p2(), event(){
+Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), menu(), p1(), p2(){
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
     spriteLoader.run();
-    onePlayer = true;
     //Chamar initialize dos dois menus
     menu.initialize();
-    healthy = new levels::HealthyForest(&p1, &p2);
-    infected = new levels::InfectedForest(&p1, &p2);
+    playerMenu.initialize();
+    levelMenu.initialize(&p1, &p2);
+    //levelMenu.initialize(&p1, &p2);
+    //healthy = new levels::HealthyForest(&p1, &p2);
+    //infected = new levels::InfectedForest(&p1, &p2);
     cout << "Construtora do Game" << endl;
 
     run();
@@ -22,45 +24,6 @@ Game::~Game() {
 
 }
 
-/*
-void Game::run(){
-
-   while(window.isOpen()){
-        window.clear();
-        //menu.renderMenu(GLOBAL_MENU_ITENS);
-       // &event = window.pollEvent(&event);
-       /* while (window.pollEvent(&event)){
-            switch (event.type) {
-
-                case sf::Event::KeyPressed:
-                    //fechar o menu e mostrar a fase
-                    menu.run();
-                    break;
-
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-
-                default:
-                    //infected->run();
-                    break;
-            }
-        }*/
-
-        //Rodar o menu
-
-        //Se algo foi pressionado
-        //menu.renderMenu(GLOBAL_MENU_ITENS);
-        //menu.run();*/
-        //healthy->run();
-       // infected->run();
-
-
-        //window.menuEvents(&event);
-/*
-        window.display();
-    }
-}*/
 
 void Game::run() {
 
@@ -72,47 +35,52 @@ void Game::run() {
             break;
         }
 
-        switch (Being::getMenuState()) {
+        switch (Being::getMenuState(0)) {
 
             case st_global_menu:
-                //menu.run();
-                //healthy->run();
-                infected->run();
-                //cout << "State " << Being::getMenuState << endl;
+                menu.run();
                 break;
 
             case st_player_menu:
+                playerMenu.run();
                 break;
 
-            case st_run_healthy_forest_p1:
+            case st_level_menu:
+                levelMenu.run();
+                //renderLevel();
                 break;
 
-            case st_run_healthy_forest_p2:
-                break;
-
-            case st_run_infected_forest_p1:
-                break;
-
-            case st_run_infected_forest_p2:
-                //cout << "run da healthy" << endl;
-               // healthy->run();
+            /*case st_run_infected_forest:
+                //healthy->run();
+                //renderLevel();
+                infected->run();
                 break;
 
             case st_leader_board:
-                break;
+                break;*/
 
             case st_quit_game:
+                window.close();
                 break;
 
-            case st_load_game:
-                break;
-
-            case st_return:
-                break;
         }
 
-
-
         window.display();
+
+    }
+
+}
+
+void Game::renderLevel(){
+    if (Being::getMenuState(0) == st_run_healthy_forest){
+
+        healthy->renderPlayers(Being::getMenuState(1)); //Seg fault
+
+    } else if (Being::getMenuState(0) == st_run_infected_forest){
+        (onePlayer) ? infected->initializePlayers(&p1, nullptr) : infected->initializePlayers(&p1, &p2);
+        infected->initializeElements();
+        //infected->run();
     }
 }
+
+sf::Event Game::event = sf::Event();

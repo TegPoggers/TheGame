@@ -28,21 +28,13 @@ Actions InputManager::setLayout2() {
     return key_package;
 }
 
-Controls InputManager::setMenuControls(){
-    Controls key_package;
-    key_package.up = sf::Keyboard::Up;
-    key_package.down = sf::Keyboard::Down;
-    key_package.enter = sf::Keyboard::Enter;
-
-    return key_package;
-}
-
 bool InputManager::isKeyPressed(sf::Keyboard::Key key) {
     if(sf::Keyboard::isKeyPressed(key)){
         return true;
     }
     return false;
 }
+
 
 bool InputManager::isMouseClicked(sf::Mouse::Button click) {
     if(sf::Mouse::isButtonPressed(click)){

@@ -17,9 +17,9 @@ typedef struct {
 }Actions;
 
 typedef struct {
-    sf::Keyboard::Key up;
-    sf::Keyboard::Key enter;
-    sf::Keyboard::Key down;
+    sf::Keyboard::Key up = sf::Keyboard::Up;
+    sf::Keyboard::Key enter = sf::Keyboard::Enter;
+    sf::Keyboard::Key down = sf::Keyboard::Down;
 }Controls;
 
 class InputManager {
@@ -39,8 +39,6 @@ public:
     virtual bool isMouseClicked(sf::Mouse::Button click);
 
     bool isSpriteClicked(sf::Sprite sprite, sf::RenderWindow* window, sf::Mouse::Button button);
-
-    Controls setMenuControls();
 
 };
 

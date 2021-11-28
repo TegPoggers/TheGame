@@ -13,9 +13,11 @@
 #include "AssetManager.h"
 #include "SpriteLoader.h"
 #include "GlobalMenu.h"
+#include "PlayerMenu.h"
 #include "HealthyForest.h"
 #include "InfectedForest.h"
 #include "Player.h"
+#include "LevelMenu.h"
 using namespace entities::characters;
 //Incluir menu
 
@@ -27,20 +29,25 @@ private:
     AssetManager assets;
     SpriteLoader spriteLoader;
     menus::GlobalMenu menu;
+    menus::PlayerMenu playerMenu;
+    menus::LevelMenu levelMenu;
     Player p1;
     Player p2;
     levels::HealthyForest* healthy;
     levels::InfectedForest* infected;
-    sf::Event event;
     bool onePlayer;
 
 public:
+
+    static sf::Event event;
 
     Game();
 
     ~Game();
 
     void run();
+
+    void renderLevel();
 
 };
 

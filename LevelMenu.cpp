@@ -1,16 +1,19 @@
 //
-// Created by viviane on 26/11/2021.
+// Created by viviane on 27/11/2021.
 //
 
-#include "PlayerMenu.h"
+#include "LevelMenu.h"
 
-namespace menus {
+namespace menus{
 
-    PlayerMenu::PlayerMenu(){   }
+    LevelMenu::LevelMenu() : Menu(), p1(), p2(), loadLevels(){
+    }
 
-    PlayerMenu::~PlayerMenu(){  }
+    LevelMenu::~LevelMenu(){
 
-    void PlayerMenu::run(){
+    }
+
+    void LevelMenu::run(){
         renderMenu(PLAYER_MENU_ITENS);
         if (menu_counter > menu_speed) {
             if (inputs->isKeyPressed(controls.up)) {
@@ -22,15 +25,17 @@ namespace menus {
             } else if (inputs->isKeyPressed(controls.enter)) {
                 switch (selectedItem) {
                     case 1:
-                        setMenuState(st_level_menu, 0);
-                        setMenuState(1, 1);
+                        setMenuState(st_run_healthy_forest, 0);
+                        loadLevels.initialize(p1, p2);
                         break;
                     case 2:
-                        setMenuState(st_level_menu, 0);
-                        setMenuState(2, 1);
+                        setMenuState(st_run_infected_forest, 0);
+                        //renderLevels();
+                        loadLevels.initialize(p1, p2);
+                        //infected->run();
                         break;
                     case 3:
-                        setMenuState(st_global_menu, 0);
+                        setMenuState(st_player_menu, 0);
                         break;
                 }
                 menu_counter = 0;
@@ -39,10 +44,12 @@ namespace menus {
         menu_counter++;
     }
 
-    void PlayerMenu::initialize(){
+    void LevelMenu::initialize(Player* p1, Player* p2){
         setBackground(assets->operator[]("menu"));
         loadFont();
 
+        this->p1 = p1;
+        this->p2 = p2;
         selectedItem = 1;
 
         text[0].setFont(*assets->getFont("fontOne"));
@@ -53,13 +60,13 @@ namespace menus {
 
         text[1].setFont(*assets->getFont("fontThree"));
         text[1].setFillColor(sf::Color::Red);
-        text[1].setString("One player");
+        text[1].setString("Level One");
         text[1].setCharacterSize(50);
         text[1].setPosition((WINDOW_WIDTH/2 - text[1].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) - 30 - text[1].getGlobalBounds().height);
 
         text[2].setFont(*assets->getFont("fontThree"));
         text[2].setFillColor(sf::Color::White);
-        text[2].setString("Two players");
+        text[2].setString("Level Two");
         text[2].setCharacterSize(50);
         text[2].setPosition((WINDOW_WIDTH/2 - text[2].getGlobalBounds().width/2 ), WINDOW_HEIGHT/2);
 

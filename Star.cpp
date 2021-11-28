@@ -30,4 +30,8 @@ namespace entities{
         id = star_id;
     }
 
+    characters::Player *Star::getCreator() {
+        return creator;
+    }
+
 }

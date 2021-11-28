@@ -55,4 +55,6 @@
 #define GLOBAL_MENU_ITENS 4
 #define PLAYER_MENU_ITENS 4
 
+#define STATES_NUMBER 2
+
 #endif //JOGO_DEFINITIONS_H
