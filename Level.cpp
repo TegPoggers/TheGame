@@ -96,6 +96,7 @@ namespace levels{
         p1->setPosition(0);
         entityList->push(p1);
         p1->setMapping(inputs.setLayout1());
+        p1->setHealth(100);
         if (players == 2){
             p2->setId(1);
             p2->setSprite(assets->operator[]("player2"));
@@ -103,6 +104,7 @@ namespace levels{
             p2->setPosition(-160);
             entityList->push(p2);
             p2->setMapping(inputs.setLayout2());
+            p2->setHealth(100);
 
         }
     }
@@ -150,7 +152,6 @@ namespace levels{
             if (!getPlayersAlive())
                 Being::setMenuState(st_end_game, 0);
         }
-
         setView();
 
         /*entities::Entity* orb = p1->getProjectile();
@@ -165,11 +166,11 @@ namespace levels{
             entityList->push(orb);orb->setSprite(assets->operator[]("playerOrb"));
         }*/
 
-        if (window->isOnView(entityList->getItem(0)->getSprite())){
+        /*if (window->isOnView(entityList->getItem(0)->getSprite())){
             cout << "Player 1 está na view" << endl;
         } else {
             cout << "PLayer 1 não está na view" << endl;
-        }
+        }*/
 
 
     }
