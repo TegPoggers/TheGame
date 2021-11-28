@@ -6,16 +6,24 @@
 #define JOGO_LEADERBOARD_H
 
 #include "View.h"
+#include "ScoreBoard.h"
 
 namespace menus {
 
     class LeaderBoard : public View{
+
+    private:
+        scoreboards::ScoreBoard scoreBoard;
+        sf::Text names[SCORES_MAX];
+        sf::Text scores[SCORES_MAX];
+
 
     public:
         LeaderBoard();
         ~LeaderBoard();
         void run();
         void initialize();
+        void showAllScores();
     };
 
 }

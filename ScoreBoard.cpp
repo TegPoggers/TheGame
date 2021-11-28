@@ -85,7 +85,7 @@ namespace scoreboards {
     }
 
     bool ScoreBoard::ended(){
-        if(line >= leaderboard.scores.size()){
+        if(line >= leaderboard.scores.size() - 1){
             return true;
         }
         return false;
