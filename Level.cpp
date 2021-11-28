@@ -141,6 +141,9 @@ namespace levels{
         physics.searchCollisions();
 
         for (int i = 0; i < entityList->getLen(); i++){
+            if(entityList->getItem(i)->getId() >= weak_goblin_id && entityList->getItem(i)->getId() <= boss_goblin_id){
+                dynamic_cast<Enemy*>(entityList->getItem(i))->setPlayer(entityList->getItem(0));
+            }
             entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition());
             window->draw(entityList->getItem(i)->getSprite());
         }
