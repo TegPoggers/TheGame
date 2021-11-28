@@ -6,7 +6,7 @@
 
 namespace menus{
 
-    GlobalMenu::GlobalMenu() : Menu(){
+    GlobalMenu::GlobalMenu() : View(){
     }
 
     GlobalMenu::~GlobalMenu(){   }

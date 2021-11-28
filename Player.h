@@ -54,6 +54,8 @@ namespace entities{
 
             void operator++();
 
+            int getScore();
+
         };
     }
 }

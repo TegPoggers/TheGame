@@ -76,6 +76,10 @@ namespace entities {
             this->points += points;
         }
 
+        int Player::getScore(){
+            return points;
+        }
+
         void Player::attackCounter() {
             counter++;
             if(counter < 144){

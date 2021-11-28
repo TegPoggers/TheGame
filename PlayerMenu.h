@@ -5,13 +5,13 @@
 #ifndef JOGO_PLAYERMENU_H
 #define JOGO_PLAYERMENU_H
 
-#include "Menu.h"
+#include "View.h"
 
 using namespace entities::characters;
 
 namespace menus{
 
-    class PlayerMenu : public Menu{
+    class PlayerMenu : public View{
 
     public:
         PlayerMenu();

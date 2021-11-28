@@ -12,6 +12,7 @@ Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), me
     menu.initialize();
     playerMenu.initialize();
     levelMenu.initialize(&p1, &p2);
+    endGame.initialize();
     //levelMenu.initialize(&p1, &p2);
     //healthy = new levels::HealthyForest(&p1, &p2);
     //infected = new levels::InfectedForest(&p1, &p2);
@@ -50,14 +51,14 @@ void Game::run() {
                 //renderLevel();
                 break;
 
-            /*case st_run_infected_forest:
-                //healthy->run();
-                //renderLevel();
-                infected->run();
+            case st_end_game:
+                cout << "Estou no end game" << endl;
+                endGame.run();
+                //Mudar para o leaderboard
                 break;
 
             case st_leader_board:
-                break;*/
+                break;
 
             case st_quit_game:
                 window.close();
@@ -84,3 +85,4 @@ void Game::renderLevel(){
 }
 
 sf::Event Game::event = sf::Event();
+int Game::finalScore = 0;
