@@ -30,7 +30,7 @@ namespace  levels {
         sf::Sprite* background;
         sf::Vector2f backPosition;
         managers::CollisionManager physics;
-        static bool won;
+        bool won;
         static bool players_alive;
         int score;
 

@@ -12,6 +12,7 @@ Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), me
     menu.initialize();
     playerMenu.initialize();
     levelMenu.initialize(&p1, &p2);
+    endGame.initialize();
     //levelMenu.initialize(&p1, &p2);
     //healthy = new levels::HealthyForest(&p1, &p2);
     //infected = new levels::InfectedForest(&p1, &p2);
@@ -52,7 +53,7 @@ void Game::run() {
 
             case st_end_game:
                 cout << "Estou no end game" << endl;
-                //Salvar nome
+                endGame.run();
                 //Mudar para o leaderboard
                 break;
 

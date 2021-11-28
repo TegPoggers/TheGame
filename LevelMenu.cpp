@@ -6,7 +6,7 @@
 
 namespace menus{
 
-    LevelMenu::LevelMenu() : Menu(), p1(), p2(), loadLevels(){
+    LevelMenu::LevelMenu() : View(), p1(), p2(), loadLevels(){
     }
 
     LevelMenu::~LevelMenu(){

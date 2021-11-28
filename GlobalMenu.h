@@ -5,12 +5,12 @@
 #ifndef JOGO_GLOBALMENU_H
 #define JOGO_GLOBALMENU_H
 
-#include "Menu.h"
+#include "View.h"
 #include "PlayerMenu.h"
 
 namespace menus{
 
-    class GlobalMenu : public Menu {
+    class GlobalMenu : public View {
 
     private:
         //leaderboard

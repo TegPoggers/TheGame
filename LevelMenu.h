@@ -5,7 +5,7 @@
 #ifndef JOGO_LEVELMENU_H
 #define JOGO_LEVELMENU_H
 
-#include "Menu.h"
+#include "View.h"
 #include "LoadLevels.h"
 //#include "HealthyForest.h"
 #include "InfectedForest.h"
@@ -14,7 +14,7 @@ using namespace levels;
 namespace menus {
 
 
-    class LevelMenu : public Menu{
+    class LevelMenu : public View{
 
     private:
         Player* p1;

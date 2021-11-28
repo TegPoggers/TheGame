@@ -2,37 +2,37 @@
 // Created by viviane on 25/11/2021.
 //
 
-#include "Menu.h"
+#include "View.h"
 
 namespace menus {
 
-    Menu::Menu() : Being() , text(), background(), backPosition(), inputs(nullptr), controls(){
+    View::View() : Being() , text(), background(), backPosition(), inputs(nullptr), controls(){
         selectedItem = 1;
         menu_counter = 0;
         inputs = new InputManager();
     }
 
-    Menu::~Menu(){
+    View::~View(){
 
     }
 
-    void Menu::setBackground(sf::Sprite* background){
+    void View::setBackground(sf::Sprite* background){
         this->background = background;
         this->background->setScale(GLOBAL_SCALE, GLOBAL_SCALE);
         setPosition(0,0);
     }
 
-    void Menu::setPosition(float x, float y){
+    void View::setPosition(float x, float y){
         backPosition.x = x;
         backPosition.y = y;
     }
 
-    sf::Vector2f Menu::getPosition(){
+    sf::Vector2f View::getPosition(){
         return backPosition;
     }
 
 
-   /* void Menu::initialize(){
+   /* void View::initialize(){
         setBackground(assets->operator[]("menu"));
         loadFont();
 
@@ -63,23 +63,23 @@ namespace menus {
         text[3].setPosition((WINDOW_WIDTH/2 - text[3].getGlobalBounds().width/2 ), (WINDOW_HEIGHT / 2) + 20 + text[3].getGlobalBounds().height);
     }*/
 
-    void Menu::renderMenu(int items){
+    void View::renderMenu(int items){
         window->draw(background);
         for (int i = 0; i < items; i++){
             window->draw(text[i]);
         }
     }
 
-    void Menu::renderPlayersMenu(){
+    void View::renderPlayersMenu(){
 
     }
 
-    void Menu::loadFont() {
+    void View::loadFont() {
         assets->loadFont(FONT_1, "fontOne");
         assets->loadFont(FONT_3, "fontThree");
     }
 
-    void Menu::moveUp(){
+    void View::moveUp(){
         if (selectedItem - 1 >= 1){
             text[selectedItem].setFillColor(sf::Color::White);
             selectedItem--;
@@ -88,7 +88,7 @@ namespace menus {
     }
 
 
-    void Menu::moveDown(){
+    void View::moveDown(){
         if (selectedItem + 1 < MENU_ITENS){
             text[selectedItem].setFillColor(sf::Color::White);
             selectedItem++;
@@ -96,11 +96,11 @@ namespace menus {
         }
     }
 
-    int Menu::GetPressedItem(){
+    int View::GetPressedItem(){
         return selectedItem;
     }
 
-    void Menu::runEvent(sf::Event* event) {
+    void View::runEvent(sf::Event* event) {
         renderMenu(MENU_ITENS);
         if (event->type == sf::Event::KeyReleased) {
 
@@ -113,12 +113,12 @@ namespace menus {
             }
         }
     }
-    int Menu::menu_speed = 72;
+    int View::menu_speed = 72;
 }
 
 
 
-    // sf::Event* Menu::event = nullptr;
+    // sf::Event* View::event = nullptr;
 
 
 

@@ -18,7 +18,7 @@ namespace levels{
     {
         this->p1 = p1;
         this->p2 = p2;
-        //onePlayer = true;
+        won = false;
         physics.setEntityList(entityList);
         physics.setWindow(window);
 
@@ -198,7 +198,6 @@ namespace levels{
         return score;
     }
 
-    bool Level::won = false;
     bool Level::players_alive = false;
 
 }

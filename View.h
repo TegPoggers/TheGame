@@ -2,8 +2,8 @@
 // Created by viviane on 25/11/2021.
 //
 
-#ifndef JOGO_MENU_H
-#define JOGO_MENU_H
+#ifndef JOGO_VIEW_H
+#define JOGO_VIEW_H
 
 #include "Player.h"
 #include "Being.h"
@@ -14,7 +14,7 @@ using namespace entities::characters;
 
 namespace menus{
 
-    class Menu : public Being{
+    class View : public Being{
     protected:
         int selectedItem;
         sf::Text text[MENU_ITENS];
@@ -27,8 +27,8 @@ namespace menus{
         int menu_counter;
 
     public:
-        Menu();
-        ~Menu();
+        View();
+        ~View();
 
         void moveUp();
         void moveDown();
@@ -51,4 +51,4 @@ namespace menus{
 
 
 
-#endif //JOGO_MENU_H
+#endif //JOGO_VIEW_H
