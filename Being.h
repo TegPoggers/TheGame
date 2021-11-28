@@ -21,7 +21,8 @@ enum id{
     star_id = 8,
     dark_energy_orb_id = 9,
     energy_orb_id = 10,
-    menu_id = 10
+    menu_id = 11,
+    finish_line_id = 12
 };
 
 enum states_id{

@@ -62,13 +62,13 @@ void List<TL>::push(TL* item){
     //Passando a lista errado?
     cout << pFirst << endl;
     if (pFirst == nullptr){
-        cout << "Push na Lista nula" << endl;
+        //cout << "Push na Lista nula" << endl;
         pFirst = new Element<TL>;
         pFirst->setItem(item);
         pLast = pFirst;
     }
     else {
-        cout << "Push na lista preechida" << endl;
+        //cout << "Push na lista preechida" << endl;
         Element<TL>* temp = new Element<TL>;
         temp->setItem(item);
         pLast->setNext(temp);

@@ -19,6 +19,8 @@
 #include "FirePit.h"
 #include "PointyBush.h"
 
+#include "FinishLine.h"
+
 namespace managers {
 
     class PlayerCollision {
@@ -41,6 +43,8 @@ namespace managers {
         void playerEnemyCollision(entities::characters::Player *player, entities::characters::Enemy *enemy);
 
         void playerObstacleCollision(entities::characters::Player *player, entities::StaticEntity *obstacle);
+
+        void playerFinishCollision(entities::characters::Player *player, entities::FinishLine *finish);
 
     };
 

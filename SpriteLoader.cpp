@@ -32,6 +32,8 @@ void SpriteLoader::run() {
 
     loadProjectiles();
 
+    loadFinishLine();
+
 }
 
 void SpriteLoader::loadFailedTexture(){
@@ -73,4 +75,9 @@ void SpriteLoader::loadProjectiles(){
 
     assets->loadSprite(DARK_ENERGY_ORB, "darkEnergyOrb");
     assets->loadSprite(ENERGY_ORB, "energyOrb");
+}
+
+void SpriteLoader::loadFinishLine() {
+    assets->loadSprite(END_LEVEL_CASTLE, "endLevelCastle");
+    assets->getSprite("endLevelCastle")->setScale(0.1, 0.1);
 }

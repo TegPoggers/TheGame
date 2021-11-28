@@ -17,10 +17,6 @@
 
 using namespace entities::characters;
 
-//Monitoria pra entender qual o uso da lista de jogadores, inimigos, etc
-// weak ( atira)
-// strong (anda e soca)
-// Boss (atira)  - Ver oq seria diferente o suficiente
 namespace  levels {
 
     class Level : public Being {
@@ -34,6 +30,8 @@ namespace  levels {
         sf::Sprite* background;
         sf::Vector2f backPosition;
         managers::CollisionManager physics;
+        static bool won;
+        static bool players_alive;
 
     public:
         Level();
@@ -53,11 +51,18 @@ namespace  levels {
         virtual void createEnemies() = 0;
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
-        void setOnePlayer(bool oneP);
-        bool getOnePlayer();
+
 
 
         void fixTouchingSpawn();
+
+        void isFinished();
+
+        bool getfixTouchingSpawn();
+
+        bool getPlayersAlive();
+
+        bool getWon();
     };
 }
 

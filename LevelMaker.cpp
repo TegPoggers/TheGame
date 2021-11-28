@@ -136,4 +136,14 @@ namespace levels{
         createPointyBush();
         createSpikes();
     }
+
+    void LevelMaker::renderFinishLine() {
+
+        entities::FinishLine* finish = new entities::FinishLine();
+
+        if (entityList && assets) {
+            entityList->push(static_cast<entities::Entity *>(finish));
+            assets->getSprite("pointyBush")->setScale(0.7, 0.7);
+        }
+    }
 }

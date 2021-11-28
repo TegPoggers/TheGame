@@ -17,6 +17,7 @@
 #include "PointyBush.h"
 #include "FirePit.h"
 #include "Player.h"
+#include "FinishLine.h"
 
 using namespace entities::characters;
 using namespace entities::obstacles;
@@ -48,6 +49,8 @@ namespace levels{
         void createPointyBush();
 
         void renderObstacles();
+
+        void renderFinishLine();
     };
 
 }

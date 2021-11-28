@@ -8,7 +8,8 @@ namespace entities{
     namespace characters{
 
         BossGoblin::BossGoblin() : Enemy(),
-        attack_counter(0){
+        attack_counter(0),
+        jump_counter(0){
             sprite = assets->getSprite("bossGoblin");
             setId(boss_goblin_id);
         }
@@ -35,6 +36,11 @@ namespace entities{
                 attack_counter = 0;
             }
             attack_counter++;
+            if(jump_counter >= jump_speed) {
+                jump();
+                jump_counter = 0;cout << this->speed.y << this->ground << endl;
+            }
+            jump_counter++;
             walk();
         }
 
@@ -69,10 +75,17 @@ namespace entities{
             return aux;
         }
 
+        void BossGoblin::jump(){
+            speed.y = jump_height;
+            ground = false;
+        }
+
         int BossGoblin::projectile_damage = 40;
         int BossGoblin::collision_damage = 70;
         int BossGoblin::attack_speed = 976;
         float BossGoblin::walk_speed = 0.35;
+        float BossGoblin::jump_speed = 288;
+        float BossGoblin::jump_height = -10;
 
     }
 }

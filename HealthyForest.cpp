@@ -23,9 +23,10 @@ namespace levels{
         levelMaker.createWeakGoblin();
         levelMaker.createStrongGoblin();
         levelMaker.renderObstacles();
+        levelMaker.renderFinishLine();
         for (int i = 0; i < entityList->getLen(); i++){
             entityList->getItem(i)->setFeetPosition(725);
-            if (entityList->getItem(i)->getId() == fire_pit_id){
+            if (entityList->getItem(i)->getId() == fire_pit_id || entityList->getItem(i)->getId() == finish_line_id){
                 entityList->getItem(i)->setFeetPosition(775);
             }
         }

@@ -49,10 +49,10 @@ namespace managers{
             enemy->setGround(true);
         }
         else if (enemy->getPosition().x > obstacle->getPosition().x) {
-            enemy->move(sf::Vector2f(0.1, 0));
+            enemy->move(sf::Vector2f(1, 0));
         }
         else if (enemy->getPosition().x < obstacle->getPosition().x) {
-            enemy->move(sf::Vector2f(-0.1, 0));
+            enemy->move(sf::Vector2f(-1, 0));
         }
     }
 }
