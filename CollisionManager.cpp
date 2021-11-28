@@ -60,6 +60,10 @@ namespace managers{
                     entity_list->pop(entity_list->getItem(i));
                 }
                 else{
+                    if(entity_list->getItem(i)->getId() >=weak_goblin_id && entity_list->getItem(i)->getId() <= boss_goblin_id && entity_list->getItem(0)
+                    ->getId() == player_id){
+                        dynamic_cast<entities::characters::Player*>(entity_list->getItem(0))->score(15);
+                    }
                     entity_list->pop(entity_list->getItem(i));
                     delete entity;
                 }

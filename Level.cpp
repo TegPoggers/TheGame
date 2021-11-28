@@ -155,7 +155,7 @@ namespace levels{
             if (!getPlayersAlive())
                 Being::setMenuState(st_end_game, 0);
         }
-        setView();
+        setView();cout << p1->getScore() << endl;
 
         /*entities::Entity* orb = p1->getProjectile();
 
