@@ -59,11 +59,11 @@ namespace menus{
                 cout << "Era pra mudar de fase ------------------------------------ " << endl;
                 if (levelState == st_run_healthy_forest){
                     Being::setMenuState(st_run_infected_forest, 0);
-                   // healthy->setPlayersAlive(true);
+                    healthy->setPlayersAlive(true);
                 }
                 else if (levelState == st_run_infected_forest){
                     Being::setMenuState(st_run_healthy_forest, 0);
-                  //  infected->setPlayersAlive(true);
+                    infected->setPlayersAlive(true);
                 }
             }
 
