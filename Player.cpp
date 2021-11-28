@@ -8,7 +8,6 @@ namespace entities {
 
         Player::Player() : MovingEntity(),
         inputs(nullptr),
-        points(0),
         counter(0)
         {
 
@@ -110,6 +109,7 @@ namespace entities {
 
         float Player::moving_speed = 5;
         float Player::jump_speed = -14;
+        int Player::points = 0;
 
     }
 

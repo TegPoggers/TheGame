@@ -13,8 +13,10 @@ namespace entities{
 
         Enemy::~Enemy() {}
 
-        void Enemy::setPlayer(Player *player) {
-            this->player = player;
+        void Enemy::setPlayer(Entity *player) {
+            if(player->getId() == player_id) {
+                this->player = dynamic_cast<Player*>(player);
+            }
         }
 
     }

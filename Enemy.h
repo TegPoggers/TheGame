@@ -26,7 +26,7 @@ namespace entities {
             virtual ~Enemy();
 
             //Arrumar para dois players
-            void setPlayer(Player* player);
+            void setPlayer(Entity* player);
 
             virtual void run() = 0;
 
