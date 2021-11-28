@@ -57,10 +57,14 @@ namespace menus{
         if (Being::getMenuState(2) < 2){
             if (levelState) {
                 cout << "Era pra mudar de fase ------------------------------------ " << endl;
-                if (levelState == st_run_healthy_forest)
+                if (levelState == st_run_healthy_forest){
                     Being::setMenuState(st_run_infected_forest, 0);
-                else if (levelState == st_run_infected_forest)
+                   // healthy->setPlayersAlive(true);
+                }
+                else if (levelState == st_run_infected_forest){
                     Being::setMenuState(st_run_healthy_forest, 0);
+                  //  infected->setPlayersAlive(true);
+                }
             }
 
             if (Being::getMenuState(0) == st_run_infected_forest){

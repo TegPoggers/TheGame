@@ -202,6 +202,10 @@ namespace levels{
         return score;
     }
 
+    void Level::setPlayersAlive(bool isAlive){
+        players_alive = isAlive;
+    }
+
     bool Level::players_alive = false;
 
 }

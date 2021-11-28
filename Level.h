@@ -61,6 +61,8 @@ namespace  levels {
 
         bool getPlayersAlive();
 
+        void setPlayersAlive(bool isAlive);
+
         bool getWon();
 
         int getScore();
