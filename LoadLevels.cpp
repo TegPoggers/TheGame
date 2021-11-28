@@ -6,7 +6,7 @@
 
 namespace menus{
 
-    LoadLevels::LoadLevels() : Being(), p1(), p2(), healthy(), levelState(0), finalScore(0) { }
+    LoadLevels::LoadLevels() : View(), p1(), p2(), healthy(), levelState(0){ }
 
     LoadLevels::~LoadLevels(){    }
 
@@ -19,9 +19,9 @@ namespace menus{
     }
 
     void LoadLevels::run(){
-        cout << "State " << getMenuState(0) << "  level state " << levelState << endl;
+        cout << "State " << Being::getMenuState(0) << "  level state " << levelState << endl;
 
-        while (getMenuState(0) == levelState){
+        while (Being::getMenuState(0) == levelState){
             window->clear();
             if (window->pollEvent(&event) && event.type == sf::Event::Closed){
                 Being::setMenuState(st_quit_game, 0);

@@ -54,6 +54,7 @@
 #define MENU_ITENS 4
 #define GLOBAL_MENU_ITENS 4
 #define PLAYER_MENU_ITENS 4
+#define LEADERBOARD_ITEMS 2
 
 #define STATES_NUMBER 3
 

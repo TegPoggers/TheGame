@@ -11,6 +11,10 @@ namespace scoreboards {
             leaderboard.names[i] = new char[cols];
         }
 
+        for(int i = 0; i < rows; i++)
+            for(int j = 0; j < cols; j++)
+                leaderboard.names[i][j] = 0;
+
         readScores();
 
     }
@@ -18,7 +22,7 @@ namespace scoreboards {
     ScoreBoard::~ScoreBoard(){}
 
     void ScoreBoard::readScores(){
-        std::ifstream ifs("names.txt");
+        std::ifstream ifs("../SaveData/names.txt");
         std::string content((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
         //cout << content << endl;
 
@@ -38,7 +42,7 @@ namespace scoreboards {
             }
         }
 
-        std::ifstream scores("scores.txt");
+        std::ifstream scores("../SaveData/scores.txt");
         std::string numbers((std::istreambuf_iterator<char>(scores)), (std::istreambuf_iterator<char>()));
 
         j = 0;
@@ -146,8 +150,8 @@ namespace scoreboards {
     }
 
     void ScoreBoard::saveScore(){
-        FILE* name_data = fopen("names.txt", "r+");
-        FILE* score_data = fopen("scores.txt", "r+");
+        FILE* name_data = fopen("../SaveData/names.txt", "r+");
+        FILE* score_data = fopen("../SaveData/scores.txt", "r+");
 
         rewind(name_data);
 

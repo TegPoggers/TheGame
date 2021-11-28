@@ -9,11 +9,12 @@
 #include "Player.h"
 #include "HealthyForest.h"
 #include "InfectedForest.h"
+#include "View.h"
 using namespace entities::characters;
 
 namespace menus{
 
-    class LoadLevels : Being {
+    class LoadLevels : View {
 
     private:
         Player* p1;
@@ -22,7 +23,7 @@ namespace menus{
         levels::InfectedForest* infected;
         sf::Event event;
         int levelState;
-        int finalScore;
+       // int finalScore;
 
     public:
         LoadLevels();

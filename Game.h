@@ -13,9 +13,8 @@
 #include "AssetManager.h"
 #include "SpriteLoader.h"
 #include "GlobalMenu.h"
+#include "LeaderBoard.h"
 #include "PlayerMenu.h"
-#include "HealthyForest.h"
-#include "InfectedForest.h"
 #include "Player.h"
 #include "LevelMenu.h"
 #include "EndGame.h"
@@ -33,12 +32,10 @@ private:
     menus::PlayerMenu playerMenu;
     menus::LevelMenu levelMenu;
     menus::EndGame endGame;
+    menus::LeaderBoard leaderBoard;
     Player p1;
     Player p2;
-    levels::HealthyForest* healthy;
-    levels::InfectedForest* infected;
     bool onePlayer;
-    static int finalScore;
 
 public:
 
@@ -50,11 +47,6 @@ public:
 
     void run();
 
-    void renderLevel();
-
-    static void setFinalScore (int score) { finalScore = score; }
-
-    static int getFinalScore() { return finalScore; }
 
 };
 

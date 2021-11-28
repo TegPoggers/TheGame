@@ -25,6 +25,8 @@ namespace menus{
         Controls controls;
         static int menu_speed;
         int menu_counter;
+        static int finalScore;
+
 
     public:
         View();
@@ -42,10 +44,11 @@ namespace menus{
         int GetPressedItem();
         int getMenuState();
         void runEvent(sf::Event* event);
+        static void setFinalScore (int score) { finalScore = score; }
+        static int getFinalScore() { return finalScore; }
 
 
     };
-
 
 }
 
