@@ -155,14 +155,13 @@ namespace scoreboards {
 
         rewind(name_data);
 
-        for(line = 0; line < leaderboard.scores.size(); line++){
+        for(line = 0; line < leaderboard.scores.size() - 1; line++){
             fprintf(name_data, "%s\n", leaderboard.names[line]);
             fprintf(score_data, "%d\n", leaderboard.scores[line]);
         }
 
-
-
-
+        fprintf(name_data, "%s", leaderboard.names[line]);
+        fprintf(score_data, "%d", leaderboard.scores[line]);
 
         fclose(name_data);
         fclose(score_data);
