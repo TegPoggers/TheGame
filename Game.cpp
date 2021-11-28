@@ -8,15 +8,12 @@ Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), me
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
     spriteLoader.run();
-    //Chamar initialize dos dois menus
+    //Views Inicialize
     menu.initialize();
     playerMenu.initialize();
     levelMenu.initialize(&p1, &p2);
     endGame.initialize();
-    //levelMenu.initialize(&p1, &p2);
-    //healthy = new levels::HealthyForest(&p1, &p2);
-    //infected = new levels::InfectedForest(&p1, &p2);
-    cout << "Construtora do Game" << endl;
+    leaderBoard.initialize();
 
     run();
 }
@@ -59,6 +56,7 @@ void Game::run() {
 
             case st_leader_board:
                 cout << "Estou no leader" << endl;
+                leaderBoard.run();
                 break;
 
             case st_quit_game:
@@ -73,17 +71,5 @@ void Game::run() {
 
 }
 
-void Game::renderLevel(){
-    if (Being::getMenuState(0) == st_run_healthy_forest){
-
-        healthy->renderPlayers(Being::getMenuState(1)); //Seg fault
-
-    } else if (Being::getMenuState(0) == st_run_infected_forest){
-        (onePlayer) ? infected->initializePlayers(&p1, nullptr) : infected->initializePlayers(&p1, &p2);
-        infected->initializeElements();
-        //infected->run();
-    }
-}
 
 sf::Event Game::event = sf::Event();
-int Game::finalScore = 0;

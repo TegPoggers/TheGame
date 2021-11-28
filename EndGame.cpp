@@ -6,7 +6,7 @@
 
 namespace menus{
 
-    EndGame::EndGame() : View(), player_name(){   }
+    EndGame::EndGame() : View(), player_name(), scoreBoard(){   }
 
     EndGame::~EndGame(){   }
 
@@ -25,14 +25,8 @@ namespace menus{
                 menu_counter = 0;
             } else if (inputs->isKeyPressed(controls.enter)) {
                 switch (selectedItem) {
-                    case 2:
-                        /*setMenuState(st_run_infected_forest, 0);
-                        //renderLevels();
-                        loadLevels.initialize(p1, p2);
-                        //infected->run();*/
-                        break;
                     case 3:
-                        //Salvar name no txt
+                        saveOnTxt();
                         setMenuState(st_leader_board, 0);
                         break;
                 }
@@ -64,7 +58,6 @@ namespace menus{
 
         text[2].setFont(*assets->getFont("fontThree"));
         text[2].setFillColor(sf::Color::Red);
-        //text[2].setString("Two players");
         text[2].setCharacterSize(50);
         text[2].setPosition((WINDOW_WIDTH/2 - text[2].getGlobalBounds().width/2 ), WINDOW_HEIGHT/2);
 
@@ -101,11 +94,19 @@ namespace menus{
             text_effect_time = sf::Time::Zero;
         }
 
-        player_name = input_text + (show_cursor ? '_' : ' ');
+        //player_name = input_text + (show_cursor ? '_' : ' ')
+        player_name = input_text;
+        player_name[player_name.size()] = '\0';
+        cout << "Stringeeee " << player_name << endl;
         text[2].setString(input_text + (show_cursor ? '_' : ' '));
         text[2].setPosition((WINDOW_WIDTH/2 - text[2].getGlobalBounds().width/2 ), WINDOW_HEIGHT/2);
         window->draw(text[2]);
 
+    }
+
+    void EndGame::saveOnTxt(){
+        scoreBoard.addScore(player_name, finalScore);
+        scoreBoard.saveScore();
     }
 
 

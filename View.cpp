@@ -114,11 +114,11 @@ namespace menus {
         }
     }
     int View::menu_speed = 72;
+    int View::finalScore = 0;
+
 }
 
 
-
-    // sf::Event* View::event = nullptr;
 
 
 

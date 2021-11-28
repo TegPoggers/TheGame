@@ -7,6 +7,8 @@
 
 #include "View.h"
 #include <locale>
+#include "ScoreBoard.h"
+
 
 namespace menus{
 
@@ -19,6 +21,7 @@ namespace menus{
        sf::Clock clock;
        static sf::Time text_effect_time;
        static bool show_cursor;
+       scoreboards::ScoreBoard scoreBoard;
 
     public:
         EndGame();
@@ -27,6 +30,7 @@ namespace menus{
         void initialize();
         void setFinalVIew();
         void writeName();
+        void saveOnTxt();
     };
 }
 

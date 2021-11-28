@@ -49,7 +49,7 @@ namespace scoreboards {
         void readScores();
 
         void addScore(Score score);
-        void addScore(string player_name, int player_score);
+        void addScore(string player_name, int player_score); // usar esse add txt
 
         void next();
 
