@@ -50,14 +50,14 @@ void Game::run() {
                 //renderLevel();
                 break;
 
-            /*case st_run_infected_forest:
-                //healthy->run();
-                //renderLevel();
-                infected->run();
+            case st_end_game:
+                cout << "Estou no end game" << endl;
+                //Salvar nome
+                //Mudar para o leaderboard
                 break;
 
             case st_leader_board:
-                break;*/
+                break;
 
             case st_quit_game:
                 window.close();
@@ -84,3 +84,4 @@ void Game::renderLevel(){
 }
 
 sf::Event Game::event = sf::Event();
+int Game::finalScore = 0;

@@ -32,6 +32,7 @@ namespace  levels {
         managers::CollisionManager physics;
         static bool won;
         static bool players_alive;
+        int score;
 
     public:
         Level();
@@ -52,17 +53,17 @@ namespace  levels {
         virtual void createObstacles() = 0;
         void shootCurrent(int i);
 
-
-
         void fixTouchingSpawn();
 
-        void isFinished();
+        bool isFinished();
 
         bool getfixTouchingSpawn();
 
         bool getPlayersAlive();
 
         bool getWon();
+
+        int getScore();
     };
 }
 

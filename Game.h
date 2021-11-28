@@ -36,6 +36,7 @@ private:
     levels::HealthyForest* healthy;
     levels::InfectedForest* infected;
     bool onePlayer;
+    static int finalScore;
 
 public:
 
@@ -48,6 +49,10 @@ public:
     void run();
 
     void renderLevel();
+
+    static void setFinalScore (int score) { finalScore = score; }
+
+    static int getFinalScore() { return finalScore; }
 
 };
 

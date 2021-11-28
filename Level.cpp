@@ -134,7 +134,7 @@ namespace levels{
 
         players_alive = physics.runEntities();//Teste de colocar na master
 
-        isFinished();
+        //isFinished();
 
         physics.searchCollisions();
 
@@ -142,6 +142,16 @@ namespace levels{
             entityList->getItem(i)->getSprite()->setPosition(entityList->getItem(i)->getPosition());
             window->draw(entityList->getItem(i)->getSprite());
         }
+
+        if (isFinished() || !getPlayersAlive()){
+            cout << "Is finished  -----------------------------------" << isFinished() << endl;
+            cout << "PLayers alive  -----------------------------------" << getPlayersAlive() << endl;
+            score = (p2 != nullptr) ? (p1->getScore() + p2->getScore()) : p1->getScore();
+            if (!getPlayersAlive())
+                Being::setMenuState(st_end_game, 0);
+        }
+
+        setView();
 
         /*entities::Entity* orb = p1->getProjectile();
 
@@ -155,24 +165,25 @@ namespace levels{
             entityList->push(orb);orb->setSprite(assets->operator[]("playerOrb"));
         }*/
 
-        setView();
         if (window->isOnView(entityList->getItem(0)->getSprite())){
             cout << "Player 1 está na view" << endl;
         } else {
             cout << "PLayer 1 não está na view" << endl;
         }
+
+
     }
 
     void Level::fixTouchingSpawn() {
         physics.mapCreatorCollision();
     }
 
-    void Level::isFinished() {
+    bool Level::isFinished() {
 
         if(entityList->getItem(0)->getPosition().x > DOOR_POSITION || entityList->getItem(1)->getPosition().x > DOOR_POSITION){
             won = true;
         }
-
+        return won;
     }
 
     bool Level::getWon() {
@@ -181,6 +192,10 @@ namespace levels{
 
     bool Level::getPlayersAlive(){
         return players_alive;
+    }
+
+    int Level::getScore() {
+        return score;
     }
 
     bool Level::won = false;

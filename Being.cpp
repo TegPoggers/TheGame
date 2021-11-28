@@ -39,4 +39,4 @@ bool Being::operator==(int id) {
 
 AssetManager* Being::assets = nullptr;
 WindowManager* Being::window = nullptr;
-int Being::menu_state[STATES_NUMBER] = {1, 0};
+int Being::menu_state[STATES_NUMBER] = {1, 0, 0};

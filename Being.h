@@ -33,6 +33,8 @@ enum states_id{
     st_run_infected_forest = 5,
     st_leader_board = 6,
     st_quit_game = 7,
+    st_load_levels = 8,
+    st_end_game = 9
 };
 
 class Being {
