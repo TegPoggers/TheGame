@@ -22,7 +22,7 @@ namespace entities {
             health -= dmg;
         }
 
-        int MovingEntity::getHealth() {
+        const int MovingEntity::getHealth() {
             return health;
         }
 

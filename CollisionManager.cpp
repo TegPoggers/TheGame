@@ -73,9 +73,8 @@ namespace managers{
     }
 
     void CollisionManager::flying(entities::Entity *entity) {
-        if(entity->getId() == player_id || entity->getId() == strong_goblin_id || entity->getId() == weak_goblin_id || entity->getId() ==
-        boss_goblin_id){
-            entities::characters::MovingEntity* faller = dynamic_cast<entities::characters::MovingEntity*>(entity);
+        if(*entity == player_id || *entity == strong_goblin_id || *entity == weak_goblin_id || *entity == boss_goblin_id){
+            auto* faller = dynamic_cast<entities::characters::MovingEntity*>(entity);
             if(faller->getFeetPosition() > 725){
                 faller->setGround(true);
             }
@@ -129,7 +128,7 @@ namespace managers{
             object1 = object2;
             object2 = aux;
         }
-        if(object1->getId() == player_id){
+        if(*object1 == player_id){
             player_collisions.analyzePlayerCollision(dynamic_cast<entities::characters::Player*>(object1), object2);
         }
 

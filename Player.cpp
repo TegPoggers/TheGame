@@ -52,10 +52,6 @@ namespace entities {
             if(can_attack && inputs->isKeyPressed(actions.shoot)){
                 fire = new Star(this);
                 fire->setDirection(direction);
-                //fire->setPosition(position.x, position.y);
-                float width = sprite->getGlobalBounds().width;
-                float height = sprite->getGlobalBounds().height;
-
                 fire->setPosition(sprite->getGlobalBounds().width/2 + position.x - 40, sprite->getGlobalBounds().height/2 + position.y - 20);
                 counter = 0;
             }

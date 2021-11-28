@@ -23,6 +23,12 @@ WindowManager* Being::getPWindow() {
     return window;
 }
 
+const bool Being::operator==(int id) const {
+    bool output = false;
+    id == this->id? output = true : output = false;
+    return output;
+}
+
 AssetManager* Being::assets = nullptr;
 WindowManager* Being::window = nullptr;
 int Being::menu_state = 1;

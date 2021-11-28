@@ -69,6 +69,8 @@ public:
 
     static void setMenuState(int st){ menu_state = st; }
 
+    const bool operator==(int id) const;
+
 };
 
 

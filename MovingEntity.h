@@ -45,7 +45,7 @@ namespace entities {
 
             virtual Entity* getProjectile() = 0;
 
-            int getHealth();
+            int const getHealth();
 
             void fall();
 
