@@ -58,6 +58,7 @@ void Game::run() {
                 break;
 
             case st_leader_board:
+                cout << "Estou no leader" << endl;
                 break;
 
             case st_quit_game:
