@@ -5,9 +5,12 @@
 #ifndef JOGO_MENU_H
 #define JOGO_MENU_H
 
+#include "Player.h"
 #include "Being.h"
 #include "InputManager.h"
 #include <SFML/Graphics.hpp>
+
+using namespace entities::characters;
 
 namespace menus{
 
@@ -35,6 +38,7 @@ namespace menus{
         void renderMenu(int items);
         void renderPlayersMenu();
         void loadFont();
+        //virtual void initialize(Player* p1, Player* p2) = 0; //Deixa como usual depois
         int GetPressedItem();
         int getMenuState();
         void runEvent(sf::Event* event);

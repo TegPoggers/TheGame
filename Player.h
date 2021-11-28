@@ -52,6 +52,8 @@ namespace entities{
 
             void setMapping(Actions actions);
 
+            void operator++();
+
         };
     }
 }

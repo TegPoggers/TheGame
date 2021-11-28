@@ -6,23 +6,18 @@
 #define JOGO_PLAYERMENU_H
 
 #include "Menu.h"
-#include "Player.h"
+
 using namespace entities::characters;
 
 namespace menus{
 
     class PlayerMenu : public Menu{
 
-    private:
-        bool onePlayer;
-        Player* p2;
-
     public:
         PlayerMenu();
         ~PlayerMenu();
         void run();
-        bool isOnePlayer();
-        void initialize(Player* p2);
+        void initialize();
 
     };
 

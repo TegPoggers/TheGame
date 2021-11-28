@@ -6,10 +6,14 @@
 #define JOGO_GLOBALMENU_H
 
 #include "Menu.h"
+#include "PlayerMenu.h"
 
 namespace menus{
 
     class GlobalMenu : public Menu {
+
+    private:
+        //leaderboard
 
     public:
 
@@ -17,17 +21,9 @@ namespace menus{
 
         ~GlobalMenu();
 
-        //void run(sf::Event* event);
-
         void initialize();
 
         void run();
-
-
-
-       // void run(sf::Event* event);
-
-
 
     };
 

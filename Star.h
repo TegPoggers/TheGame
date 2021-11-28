@@ -31,6 +31,8 @@ namespace entities {
 
         void initializeStar();
 
+        characters::Player* getCreator();
+
     };
 
 }

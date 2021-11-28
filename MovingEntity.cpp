@@ -47,6 +47,10 @@ namespace entities {
             this->speed.y = speed;
         }
 
+        void MovingEntity::setHealth(int health) {
+            this->health = health;
+        }
+
         float MovingEntity::gravity = 0.2;
 
     }

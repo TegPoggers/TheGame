@@ -101,6 +101,10 @@ namespace entities {
             this->actions = actions;
         }
 
+        void Player::operator++() {
+            points += 10;
+        }
+
         float Player::moving_speed = 5;
         float Player::jump_speed = -14;
 

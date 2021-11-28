@@ -26,7 +26,7 @@ namespace levels{
         else if (!this->p1)
             p1 = new Player();*/
 
-        renderPlayers(2);
+        renderPlayers(Being::getMenuState(1));
     }
 
     Level::~Level(){

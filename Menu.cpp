@@ -16,23 +16,6 @@ namespace menus {
 
     }
 
-   /* void Menu::run(sf::Event* event) {
-       // window->draw(background);
-       // renderGlobalMenu();
-
-        cout << "To no run " << endl;
-
-        // switch (event.type) {
-          //   case sf::Event::Closed:
-            //     window->close();
-              //   break;
-        // }
-
-
-
-
-    }*/
-
     void Menu::setBackground(sf::Sprite* background){
         this->background = background;
         this->background->setScale(GLOBAL_SCALE, GLOBAL_SCALE);

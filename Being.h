@@ -27,12 +27,11 @@ enum id{
 enum states_id{
     st_global_menu = 1,
     st_player_menu = 2,
-    st_run_healthy_forest = 3,
-    st_run_infected_forest = 4,
-    st_leader_board = 5,
-    st_quit_game = 6,
-    st_load_game = 7,
-    st_return = 8
+    st_level_menu = 3,
+    st_run_healthy_forest = 4,
+    st_run_infected_forest = 5,
+    st_leader_board = 6,
+    st_quit_game = 7,
 };
 
 class Being {
@@ -65,6 +64,8 @@ public:
     static int getMenuState(int pos);
 
     static void setMenuState(int st, int position);
+
+    bool operator==(int id);
 
 };
 
