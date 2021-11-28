@@ -15,7 +15,6 @@ namespace menus{
     void LeaderBoard::run(){
         renderMenu(LEADERBOARD_ITEMS);
 
-        //For do txt para pegar dados
         showAllScores();
 
         if (menu_counter > menu_speed) {
@@ -34,7 +33,6 @@ namespace menus{
     void LeaderBoard::initialize(){
         setBackground(assets->operator[]("menu"));
         loadFont();
-        //player_name = "@exemple";
         selectedItem = 1;
 
         text[0].setFont(*assets->getFont("fontOne"));
@@ -53,25 +51,26 @@ namespace menus{
 
     void LeaderBoard::showAllScores() {
         int i;
+        int y_height = 170;
 
-        for (i = 0, scoreBoard.first(); (!scoreBoard.ended() || i < 10); scoreBoard.next(), i++){
+        scoreBoard.readScores();
+        for (i = 0, scoreBoard.first(); !scoreBoard.ended() && i < 8; scoreBoard.next(), i++){
 
             names[i].setFont(*assets->getFont("fontThree"));
             names[i].setFillColor(sf::Color::White);
             names[i].setString(scoreBoard.getCurrent().name);
-            names[i].setCharacterSize(35);
-            names[i].setPosition((WINDOW_WIDTH/6 ),  170 + (names[i].getGlobalBounds().height * i));
+            names[i].setCharacterSize(40);
+            names[i].setPosition((WINDOW_WIDTH/6 ) - 60,  y_height);
             window->draw(names[i]);
 
             scores[i].setFont(*assets->getFont("fontThree"));
             scores[i].setFillColor(sf::Color::White);
             scores[i].setString(std::to_string(scoreBoard.getCurrent().score));
-            scores[i].setCharacterSize(35);
-            //scores[i].setPosition(((WINDOW_WIDTH/6) * 2),  170 + (scores[i].getGlobalBounds().height * i));
-            scores[i].setPosition((names[i].getPosition().x + names[i].getGlobalBounds().width + 50),170 + (scores[i].getGlobalBounds().height * i) );
+            scores[i].setCharacterSize(40);
+            scores[i].setPosition(WINDOW_WIDTH - (WINDOW_WIDTH/6) - scores[i].getGlobalBounds().width,y_height);
+            y_height += 20 + names[i].getGlobalBounds().height;
+
             window->draw(scores[i]);
         }
-
-
     }
 }

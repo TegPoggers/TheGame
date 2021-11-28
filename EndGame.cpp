@@ -107,6 +107,7 @@ namespace menus{
     void EndGame::saveOnTxt(){
         scoreBoard.addScore(player_name, finalScore);
         scoreBoard.saveScore();
+        scoreBoard.readScores();
     }
 
 
