@@ -45,6 +45,8 @@ namespace scoreboards {
         std::ifstream scores("../SaveData/scores.txt");
         std::string numbers((std::istreambuf_iterator<char>(scores)), (std::istreambuf_iterator<char>()));
 
+        leaderboard.scores.clear();
+
         j = 0;
         k = 0;
         int value = 0;
@@ -52,7 +54,9 @@ namespace scoreboards {
             if(numbers[i] == '\n'){
                 if(value){
                     leaderboard.scores.push_back(value);
+                    //leaderboard.scores[j] = value;
                     value = 0;
+                    j++;
                 }
             }
             else{
@@ -80,12 +84,16 @@ namespace scoreboards {
 
     void ScoreBoard::next(){
         line++;
-        current.name = leaderboard.names[line];
-        current.score = leaderboard.scores[line];
+        if(line < leaderboard.scores.size()) {
+            current.name = leaderboard.names[line];
+            current.score = leaderboard.scores[line];
+
+        }
     }
 
-    bool ScoreBoard::ended(){
-        if(line >= leaderboard.scores.size() - 1){
+    bool ScoreBoard::ended(){cout << leaderboard.scores.size() << endl;
+        if(line >= leaderboard.scores.size()){
+            line = 0;
             return true;
         }
         return false;
