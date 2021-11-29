@@ -28,7 +28,6 @@ namespace menus{
         int menu_counter;
         static int finalScore;
 
-
     public:
 
         View();

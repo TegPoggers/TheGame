@@ -46,7 +46,7 @@ namespace menus{
     }
 
     void LoadLevels::renderLevels() {
-        int players = Being::getMenuState(1);cout << players <<endl;
+        int players = Being::getMenuState(1);cout << p1->getHealth() << "\t" << p2->getHealth() << endl;
 
         if (Being::getMenuState(2) < 2){
             if (levelState) {

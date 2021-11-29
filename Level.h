@@ -63,7 +63,7 @@ namespace  levels {
 
         bool getPlayersAlive();
 
-        int getScore();
+        int getScore() const;
 
     };
 }
