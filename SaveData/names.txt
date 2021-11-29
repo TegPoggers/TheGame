@@ -1,5 +1,2 @@
-Aluno
 David
 Viviane
-Juan
-Maria
