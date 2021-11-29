@@ -13,6 +13,7 @@ namespace menus{
     void LoadLevels::initialize(Player* p1, Player* p2){
         this->p1 = p1;
         this->p2 = p2;
+
         renderLevels();
 
         run();
@@ -45,6 +46,7 @@ namespace menus{
     }
 
     void LoadLevels::renderLevels() {
+        int players = Being::getMenuState(1);cout << p1->getHealth() << "\t" << p2->getHealth() << endl;
 
         if (Being::getMenuState(2) < 2){
             if (levelState) {
@@ -67,6 +69,7 @@ namespace menus{
         }
         else {
             Being::setMenuState(st_end_game, 0);
+            Being::setMenuState(players, 1);
         }
     }
 

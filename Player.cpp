@@ -102,6 +102,10 @@ namespace entities {
             points += 10;
         }
 
+        void Player::setScore(int value) {
+            points = value;
+        }
+
         float Player::moving_speed = 5;
         float Player::jump_speed = -14;
         int Player::points = 0;

@@ -8,12 +8,12 @@ namespace levels{
 
     Level::Level() : Being() { }
 
-    //NÃO SEI FAZER DESGRAÇAS DE CONSTRUTORAS AAAAAAAAAAAAAAAAAA
     Level::Level(Player* p1, Player* p2) : Being(),
     entityList(new EntityList()),
     background(nullptr),
     backPosition(),
     physics(),
+    score(),
     levelMaker(p1, entityList, assets)
     {
         this->p1 = p1;
@@ -131,7 +131,7 @@ namespace levels{
         return players_alive;
     }
 
-    int Level::getScore() {
+    int Level::getScore() const {
         return score;
     }
 

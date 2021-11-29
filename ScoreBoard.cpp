@@ -133,6 +133,11 @@ namespace scoreboards {
         for(i = 0; i <= str.size(); i++){
             character[i] = str[i];
         }
+        character[i] = '\0';
+        /*while(i < 100){
+            character[i] = 0;
+            i++;
+        }*/
     }
 
     void ScoreBoard::saveScore(){
@@ -140,6 +145,7 @@ namespace scoreboards {
         FILE* score_data = fopen("../SaveData/scores.txt", "r+");
 
         rewind(name_data);
+        rewind(score_data);
 
         for(line = 0; line < leaderboard.scores.size() - 1; line++){
             fprintf(name_data, "%s\n", leaderboard.names[line]);
