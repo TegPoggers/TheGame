@@ -20,7 +20,6 @@ namespace menus{
     }
 
     void LoadLevels::run(){
-
         while (Being::getMenuState(0) == levelState){
             window->clear();
             if (window->pollEvent(&event) && event.type == sf::Event::Closed){
@@ -46,7 +45,7 @@ namespace menus{
     }
 
     void LoadLevels::renderLevels() {
-        int players = Being::getMenuState(1);cout << p1->getHealth() << "\t" << p2->getHealth() << endl;
+        int players = Being::getMenuState(1);
 
         if (Being::getMenuState(2) < 2){
             if (levelState) {

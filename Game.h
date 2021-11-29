@@ -41,6 +41,8 @@ public:
 
     void run();
 
+    void resetPlayers();
+
 };
 
 
