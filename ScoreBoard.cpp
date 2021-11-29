@@ -133,6 +133,11 @@ namespace scoreboards {
         for(i = 0; i <= str.size(); i++){
             character[i] = str[i];
         }
+        character[i] = '\0';
+        /*while(i < 100){
+            character[i] = 0;
+            i++;
+        }*/
     }
 
     void ScoreBoard::saveScore(){

@@ -55,6 +55,8 @@ namespace entities{
 
             int getScore();
 
+            virtual void setScore(int value);
+
         };
     }
 }

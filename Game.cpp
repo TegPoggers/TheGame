@@ -48,6 +48,7 @@ void Game::run() {
                 end_game.run();
                 p1.setHealth(100);
                 p2.setHealth(100);
+                p1.setScore(0);
                 break;
 
             case st_leader_board:
