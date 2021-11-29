@@ -13,14 +13,19 @@ private:
     List<entities::Entity> eList;
 
 public:
-    EntityList();
-    ~EntityList();
-    List<entities::Entity>* getList();
-    int getLen();
-    entities::Entity* getItem(int pos);
-    void push(entities::Entity* entity);
-    void pop(entities::Entity* entity);
 
+
+    EntityList();
+
+    ~EntityList();
+
+    int getLen();
+
+    entities::Entity* getItem(int pos);
+
+    void push(entities::Entity* entity);
+
+    void pop(entities::Entity* entity);
 
 };
 

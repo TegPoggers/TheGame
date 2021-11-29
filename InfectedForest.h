@@ -11,13 +11,15 @@ namespace levels {
 
     class InfectedForest : public Level{
     public:
+
         InfectedForest();
+
         InfectedForest(Player* p1, Player* p2);
+
         ~InfectedForest();
-        //void run();
+
         void initializeElements();
-        void createEnemies();
-        void createObstacles();
+
     };
 }
 

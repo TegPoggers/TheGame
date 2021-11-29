@@ -16,6 +16,7 @@ namespace menus{
 
     class View : public Being{
     protected:
+
         int selectedItem;
         sf::Text text[MENU_ITENS];
         sf::Sprite* background;
@@ -29,29 +30,27 @@ namespace menus{
 
 
     public:
+
         View();
         ~View();
 
-        void moveUp();
-        void moveDown();
-        void setBackground(sf::Sprite* background);
-        void setPosition(float x, float y);
-        sf::Vector2f getPosition();
-        void renderMenu(int items);
-        void renderPlayersMenu();
-        void loadFont();
-        //virtual void initialize(Player* p1, Player* p2) = 0; //Deixa como usual depois
-        int GetPressedItem();
-        int getMenuState();
-        void runEvent(sf::Event* event);
-        static void setFinalScore (int score) { finalScore = score; }
-        static int getFinalScore() { return finalScore; }
 
+        void moveUp();
+
+        void moveDown();
+
+        void setBackground(sf::Sprite* background);
+
+        void setPosition(float x, float y);
+
+        sf::Vector2f getPosition();
+
+        void renderMenu(int items);
+
+        void loadFont();
 
     };
 
 }
-
-
 
 #endif //JOGO_VIEW_H

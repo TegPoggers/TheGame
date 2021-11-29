@@ -9,20 +9,27 @@
 
 class SpriteLoader : public Being{
 public:
+
     SpriteLoader();
-    //SpriteLoader(AssetManager* assets, WindowManager* window);
+
     ~SpriteLoader();
+
     void run();
+
     void loadFailedTexture();
+
     void loadBackgrounds();
+
     void loadEnemies();
+
     void loadObstacles();
+
     void loadPlayers();
+
     void loadProjectiles();
+
     void loadFinishLine();
 
-
-    void loadPlatforms();
 };
 
 

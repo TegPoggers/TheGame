@@ -13,13 +13,14 @@ namespace levels{
     class HealthyForest : public Level{
 
     public:
+
         HealthyForest();
+
         HealthyForest(Player* p1, Player* p2);
+
         ~HealthyForest();
-        //void run();
+
         void initializeElements();
-        void createEnemies();
-        void createObstacles();
 
     };
 

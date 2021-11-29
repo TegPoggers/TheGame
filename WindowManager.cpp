@@ -7,18 +7,15 @@
 
 
 WindowManager::WindowManager() :
-sprites(),
 x(WINDOW_WIDTH),
 y(WINDOW_HEIGHT),
 window(){
     window.create(sf::VideoMode(x, y), "Save Saps");
     window.setFramerateLimit(144);
-    //view.reset(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
     createView();
 }
 
 WindowManager::WindowManager(int width, int height) :
-sprites(),
 x(width),
 y(height),
 window(){
@@ -26,13 +23,11 @@ window(){
         window.create(sf::VideoMode(width, height), "Save Saps");
     }
     else{
-        std::cout << "Not a valid window creation, reset to default size" << std::endl;
         x = 1280;
         y = 720;
         window.create(sf::VideoMode(x, y), "Save Saps");
     }
     window.setFramerateLimit(144);
-    //view.reset(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
     createView();
 }
 
@@ -84,20 +79,6 @@ void WindowManager::draw(sf::Text font){
 
 void WindowManager::close() {
     window.close();
-}
-
-void WindowManager::menuEvents(sf::Event* event) {
-
-    switch (event->type) {
-        // window closed
-        case sf::Event::Closed:
-            window.close();
-            break;
-
-            // we don't process other types of events
-        default:
-            break;
-    }
 }
 
 bool WindowManager::pollEvent(sf::Event* event) {

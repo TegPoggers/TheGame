@@ -6,32 +6,17 @@
 
 namespace entities{
 
-    Star::Star() : Projectile(),
-    creator(nullptr){
-        initializeStar();
-    }
-
-    Star::Star(characters::Player* creator, int direction) : Projectile(),
-    creator(creator){
-        this->direction = direction;
+    Star::Star() : Projectile(){
         initializeStar();
     }
 
     Star::~Star(){}
-
-    void Star::setCreator(characters::Player *creator) {
-        this->creator = creator;
-    }
 
     void Star::initializeStar(){
         damage = 40;
         speed = 7;
         sprite = assets->getSprite("playerOrb");
         id = star_id;
-    }
-
-    characters::Player *Star::getCreator() {
-        return creator;
     }
 
 }

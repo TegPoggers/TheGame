@@ -22,8 +22,8 @@ namespace  levels {
     class Level : public Being {
 
     protected:
+
         EntityList* entityList;
-        bool onePlayer;
         LevelMaker levelMaker;
         Player* p1;
         Player* p2;
@@ -35,35 +35,36 @@ namespace  levels {
         int score;
 
     public:
+
         Level();
+
         Level(Player* p1, Player* p2);
+
         ~Level();
 
-        void run();
-        void initializePlayers(Player* p1, Player* p2);
-        void renderPlayers(int players);
-        void loadGame(); // Roda a fase
-        void renderBackground();
-        void setPosition(float x, float y);
-        void setBackground(sf::Sprite* background);
-        sf::Vector2f getPosition();
-        void setView();
-        virtual void initializeElements() = 0;
-        virtual void createEnemies() = 0;
-        virtual void createObstacles() = 0;
-        void shootCurrent(int i);
 
-        void fixTouchingSpawn();
+        void run();
+
+        void renderPlayers(int players);
+
+        void renderBackground();
+
+        void setPosition(float x, float y);
+
+        void setBackground(sf::Sprite* background);
+
+        sf::Vector2f getPosition();
+
+        void setView();
+
+        virtual void initializeElements() = 0;
 
         bool isFinished();
 
-        bool getfixTouchingSpawn();
-
         bool getPlayersAlive();
 
-        bool getWon();
-
         int getScore();
+
     };
 }
 

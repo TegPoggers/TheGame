@@ -8,7 +8,5 @@ int main()
 
     game.run();
 
-    std::cout << "Plim plim plim o meu jogo faz assim" << std::endl;
-
     return 0;
 }

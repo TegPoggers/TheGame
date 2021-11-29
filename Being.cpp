@@ -15,12 +15,8 @@ void Being::setId(int id) {
     this->id = id;
 }
 
-const int Being::getId() {
+const int Being::getId() const {
     return id;
-}
-
-WindowManager* Being::getPWindow() {
-    return window;
 }
 
 int Being::getMenuState(int pos) {

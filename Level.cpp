@@ -34,20 +34,6 @@ namespace levels{
 
     }
 
-    void Level::initializePlayers(Player* p1, Player* p2){
-        this->p1 = p1;
-        this->p2 = p2;
-        onePlayer = true;
-        physics.setEntityList(entityList);
-        physics.setWindow(window);
-
-        if (this->p1 && this->p2)
-            onePlayer = false;
-        else if (!this->p1)
-            p1 = new Player();
-
-    }
-
     void Level::setPosition(float x, float y){
         backPosition.x = x;
         backPosition.y = y;
@@ -60,10 +46,6 @@ namespace levels{
     void Level::setBackground(sf::Sprite* background){
         this->background = background;
         this->background->setScale(GLOBAL_SCALE, GLOBAL_SCALE);
-
-    }
-
-    void Level::loadGame(){
 
     }
 
@@ -88,7 +70,6 @@ namespace levels{
 
     //Mudar onePLayer para int
     void Level::renderPlayers(int players){
-        cout << " -------------------------------------- PLAYERS " << players << endl;
         InputManager inputs;
         p1->setId(1);
         p1->setSprite(assets->operator[]("player1"));
@@ -107,25 +88,6 @@ namespace levels{
             p2->setHealth(100);
 
         }
-    }
-
-    void Level::shootCurrent(int i) {
-        int id = entityList->getItem(i)->getId();
-        if(id >= 1 && id <= 4) {
-            MovingEntity* shooter = dynamic_cast<MovingEntity*>(entityList->getItem(i));
-            entities::Entity* orb = shooter->getProjectile();if(id == 4){cout << "hello " << endl;}
-            if(orb != nullptr){
-                entityList->push(orb);
-            }
-        }
-        /*if(id == 2){
-            MovingEntity* shooter = static_cast<WeakGoblin*>(entityList->getItem(i));
-            entities::Entity* orb = shooter->getProjectile();
-            if(orb != nullptr){
-                entityList->push(orb);
-                orb->setSprite(assets->operator[]("weakGoblinOrb"));
-            }
-        }*/
     }
 
     void Level::run(){
@@ -149,37 +111,12 @@ namespace levels{
         }
 
         if (isFinished() || !getPlayersAlive()){
-            cout << "Is finished  -----------------------------------" << isFinished() << endl;
-            cout << "PLayers alive  -----------------------------------" << getPlayersAlive() << endl;
             score = (p2 != nullptr) ? (p1->getScore() + p2->getScore()) : p1->getScore();
             if (!getPlayersAlive())
                 Being::setMenuState(st_end_game, 0);
         }
         setView();
 
-        /*entities::Entity* orb = p1->getProjectile();
-
-        if(orb != nullptr){
-            entityList->push(orb);
-            orb->setSprite(assets->operator[]("playerOrb"));
-        }
-
-        orb = goblin->getProjectile();
-        if(orb){
-            entityList->push(orb);orb->setSprite(assets->operator[]("playerOrb"));
-        }*/
-
-        /*if (window->isOnView(entityList->getItem(0)->getSprite())){
-            cout << "Player 1 está na view" << endl;
-        } else {
-            cout << "PLayer 1 não está na view" << endl;
-        }*/
-
-
-    }
-
-    void Level::fixTouchingSpawn() {
-        physics.mapCreatorCollision();
     }
 
     bool Level::isFinished() {
@@ -187,10 +124,6 @@ namespace levels{
         if(entityList->getItem(0)->getPosition().x > DOOR_POSITION || entityList->getItem(1)->getPosition().x > DOOR_POSITION){
             won = true;
         }
-        return won;
-    }
-
-    bool Level::getWon() {
         return won;
     }
 

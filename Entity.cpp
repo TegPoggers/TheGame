@@ -6,10 +6,9 @@
 
 namespace entities{
 
-    Entity::Entity() :
+    Entity::Entity() : Being(),
     sprite(nullptr),
     position(0, 0),
-    Being(),
     alive(true)
     {}
 
@@ -31,7 +30,7 @@ namespace entities{
         position.y = y;
     }
 
-    sf::Vector2f Entity::getPosition() {
+    const sf::Vector2f Entity::getPosition() const {
         return position;
     }
 

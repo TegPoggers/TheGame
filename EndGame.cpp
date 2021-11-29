@@ -6,7 +6,7 @@
 
 namespace menus{
 
-    EndGame::EndGame() : View(), player_name(), scoreBoard(){   }
+    EndGame::EndGame() : View(), player_name(), score_board(){   }
 
     EndGame::~EndGame(){   }
 
@@ -94,10 +94,8 @@ namespace menus{
             text_effect_time = sf::Time::Zero;
         }
 
-        //player_name = input_text + (show_cursor ? '_' : ' ')
         player_name = input_text;
         player_name[player_name.size()] = '\0';
-        cout << "Stringeeee " << player_name << endl;
         text[2].setString(input_text + (show_cursor ? '_' : ' '));
         text[2].setPosition((WINDOW_WIDTH/2 - text[2].getGlobalBounds().width/2 ), WINDOW_HEIGHT/2);
         window->draw(text[2]);
@@ -105,9 +103,9 @@ namespace menus{
     }
 
     void EndGame::saveOnTxt(){
-        scoreBoard.addScore(player_name, finalScore);
-        scoreBoard.saveScore();
-        scoreBoard.readScores();
+        score_board.addScore(player_name, finalScore);
+        score_board.saveScore();
+        score_board.readScores();
     }
 
 

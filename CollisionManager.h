@@ -54,9 +54,10 @@ namespace managers {
 
         void setEntityList(EntityList* entities);
 
-        //retorna false se não tiver mais jogadores
+        //Retorna false se não tiver mais jogadores
         bool runEntities();
 
+        //Passa pelos elementos da lista e verifica quem atirou por meio de polling
         void shootCurrent(int i);
 
         //Retira os mortos da lista e os desaloca
@@ -65,16 +66,14 @@ namespace managers {
         //Detecta se está no ar e seja canJump como falso, seta como true caso contrário
         void flying(entities::Entity* entity);
 
+        //Loop para buscar colisões
         void searchCollisions();
 
+        //Detector de colisões entre 2 sprites
         void detectCollisions(entities::Entity* object1, entities::Entity* object2);
 
+        //Chama o subcollision resposável pela colisão atual ou não faz nada se não há interação
         void analyzeCollision(entities::Entity* object1, entities::Entity* object2);
-
-
-        void analyzeObstacleCollision(entities::StaticEntity* obstacle, entities::Entity* object);
-
-        void ObstacleEnemyCollision(entities::StaticEntity* obstacle, entities::characters::Enemy* enemy);
 
         void setWindow(WindowManager* window);
 

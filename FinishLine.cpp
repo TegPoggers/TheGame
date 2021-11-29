@@ -19,7 +19,7 @@ namespace entities{
     void FinishLine::run(){}
 
     int FinishLine::getCollisionDamage() {
-        return -1000;
+        return 0;
     }
 
 }

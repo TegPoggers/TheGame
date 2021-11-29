@@ -9,7 +9,6 @@
 #include <SFML/Graphics.hpp>
 #include "WindowManager.h"
 #include "MovingEntity.h"
-//#include "Level.h"
 #include "Star.h"
 
 namespace levels{
@@ -21,7 +20,7 @@ namespace entities{
         class Player : public MovingEntity {
 
         private:
-            static float moving_speed;//1.5 é um bom número pra 144 fps
+            static float moving_speed;
             static float jump_speed;
             InputManager *inputs;
             static int points;
@@ -44,7 +43,7 @@ namespace entities{
 
             void attackCounter();
 
-            void score(int points);
+            static void score(int score);
 
             int getCollisionDamage();
 

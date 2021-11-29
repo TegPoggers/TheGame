@@ -16,13 +16,13 @@ using namespace std;
 class WindowManager {
 
 private:
-    list<sf::Sprite> sprites;
-    list<sf::Sprite>::iterator it;
+
     int x, y;
     sf::RenderWindow window;
     sf::View view;
 
 public:
+
     WindowManager();
 
     WindowManager(int width, int height);
@@ -49,11 +49,7 @@ public:
 
     void draw(sf::Text font);
 
-    void menuEvents(sf::Event* event);
-
     bool pollEvent(sf::Event* event);
-
-    sf::RenderWindow* getPtWindow() { return &window; }
 
 };
 

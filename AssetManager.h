@@ -15,6 +15,7 @@ class AssetManager {
 
 private:
 
+    //é necessário carregar texturas antes de torna-las sprites
     std::map<std::string, sf::Sprite*> sprites;
     std::map<std::string, sf::Font*> fonts;
     std::map<std::string, sf::Texture*> textures;
@@ -38,10 +39,6 @@ public:
     sf::Sprite* getSprite(std::string name = "failed");
 
     sf::Sprite* operator[](std::string name);
-
-    void setScale(std::string name, sf::Vector2f absolute_multiplyer);
-
-    void scale(std::string name, sf::Vector2f multiplier);
 
     void loadFont(std::string path, std::string name);
 

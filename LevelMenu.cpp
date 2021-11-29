@@ -30,9 +30,7 @@ namespace menus{
                         break;
                     case 2:
                         setMenuState(st_run_infected_forest, 0);
-                        //renderLevels();
                         loadLevels.initialize(p1, p2);
-                        //infected->run();
                         break;
                     case 3:
                         setMenuState(st_player_menu, 0);

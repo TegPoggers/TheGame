@@ -11,6 +11,7 @@
 #include "vector"
 #include "fstream"
 #include "cstdio"
+
 using namespace std;
 
 namespace scoreboards {
@@ -34,9 +35,6 @@ namespace scoreboards {
         Leaderboard leaderboard;
         Score current;
 
-        FILE *names;
-        FILE *scores;
-
         int line;
 
     public:
@@ -59,13 +57,9 @@ namespace scoreboards {
 
         Score getCurrent();
 
-        int lenght();
-
         void sort();
 
         void stringToChar(char* character, string str);
-
-        void charToString(string str, char* character);
 
         void saveScore();
 

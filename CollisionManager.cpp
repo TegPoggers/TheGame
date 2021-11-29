@@ -109,8 +109,8 @@ namespace managers{
     }
 
     void CollisionManager::detectCollisions(entities::Entity *object1, entities::Entity *object2) {
-        //Verificar bounding box dos dois e verificar interseção
 
+        //Verificar bounding box dos dois e verificar interseção
         sf::Vector2f top_left1(0, 0), bottom_right1(0,0);
 
         top_left1 = object1->getPosition();

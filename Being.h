@@ -60,9 +60,7 @@ public:
 
     static void setWindowManager (WindowManager* wind) { window = wind; }
 
-    const int getId();
-
-    static WindowManager* getPWindow();
+    const int getId() const;
 
     static int getMenuState(int pos);
 

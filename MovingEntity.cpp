@@ -9,7 +9,6 @@ namespace entities {
 
         MovingEntity::MovingEntity() :
         Entity(),
-        lives(1),
         fire(nullptr),
         health(100),
         speed(0, 0),
@@ -33,7 +32,6 @@ namespace entities {
             else{
                 speed.y += gravity;
             }
-            //position.y += speed.y;
         }
 
         void MovingEntity::setGround(bool on_ground) {
