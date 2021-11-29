@@ -48,9 +48,7 @@ void AssetManager::loadSprite(std::string path, std::string name) {
     texture = new sf::Texture();
 
     if (!texture->loadFromFile(path)) {
-        std::cout << "Missing file texture" << std::endl;
         delete texture;
-
     }
     else {
         textures[name] = texture;
@@ -63,7 +61,7 @@ void AssetManager::loadSprite(std::string path, std::string name) {
 
 }
 
-sf::Sprite* AssetManager::getSprite(std::string name) {
+sf::Sprite* AssetManager::getSprite(std::string name)  {
     return sprites[name];
 }
 
@@ -71,28 +69,11 @@ sf::Sprite* AssetManager::operator[](std::string name) {
     return sprites[name];
 }
 
-void AssetManager::setScale(std::string name, sf::Vector2f absolute_multiplyer) {
-    if(sprites[name]) {
-        sprite = sprites[name];
-        sprite->setScale(absolute_multiplyer);
-    }
-}
-
-void AssetManager::scale(std::string name, sf::Vector2f multiplier) {
-    if(sprites[name]){
-        sprite = sprites[name];
-        sprite->scale(multiplier);
-    }
-}
-
-
 void AssetManager::loadFont(std::string path, std::string name){
     font = new sf::Font();
 
     if (!font->loadFromFile(path)) {
-        std::cout << "Missing file font" << std::endl;
         delete font;
-
     }
     else {
         fonts[name] = font;

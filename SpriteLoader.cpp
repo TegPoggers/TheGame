@@ -8,12 +8,6 @@ SpriteLoader::SpriteLoader() {
 
 }
 
-/*SpriteLoader::SpriteLoader(AssetManager* assets, WindowManager* window) {
-    Being::setAssetManager(assets);
-    Being::setWindowManager(window);
-    run();
-}*/
-
 SpriteLoader::~SpriteLoader() {
 
 }
@@ -58,10 +52,6 @@ void SpriteLoader::loadObstacles(){
     assets->loadSprite(SPIKES_PATH,"spikes");
     assets->loadSprite(POINTY_BUSH,"pointyBush");
     assets->loadSprite(FIRE_PIT,"firePit");
-}
-
-void SpriteLoader::loadPlatforms() {
-    assets->loadSprite(PLATFORM, "platform");
 }
 
 void SpriteLoader::loadPlayers(){

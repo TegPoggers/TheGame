@@ -15,21 +15,28 @@ namespace menus{
     class EndGame : public View{
 
     private:
+
        std::string input_text;
        std::string player_name;
-       // sf::Text iText("", font));
        sf::Clock clock;
        static sf::Time text_effect_time;
        static bool show_cursor;
-       scoreboards::ScoreBoard scoreBoard;
+       scoreboards::ScoreBoard score_board;
 
     public:
+
         EndGame();
+
         ~EndGame();
+
         void run();
+
         void initialize();
+
         void setFinalVIew();
+
         void writeName();
+
         void saveOnTxt();
     };
 }

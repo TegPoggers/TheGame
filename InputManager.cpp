@@ -34,24 +34,3 @@ bool InputManager::isKeyPressed(sf::Keyboard::Key key) {
     }
     return false;
 }
-
-
-bool InputManager::isMouseClicked(sf::Mouse::Button click) {
-    if(sf::Mouse::isButtonPressed(click)){
-        return true;
-    }
-    return false;
-}
-
-bool InputManager::isSpriteClicked(sf::Sprite sprite, sf::RenderWindow *window, sf::Mouse::Button button) {
-    if(sf::Mouse::isButtonPressed(button)){
-        sf::IntRect box (sprite.getPosition().x, sprite.getPosition().y, sprite.getGlobalBounds().width, sprite.getGlobalBounds().height);
-
-        if(box.contains(sf::Mouse::getPosition(*window))){
-            return true;
-        }
-    }
-    return false;
-}
-
-

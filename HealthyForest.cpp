@@ -12,7 +12,6 @@ namespace levels{
         initializeElements();
     }
 
-    //Não sei fazer desgraça de destrutora
     HealthyForest::~HealthyForest(){
 
     }
@@ -30,14 +29,6 @@ namespace levels{
                 entityList->getItem(i)->setFeetPosition(775);
             }
         }
-    }
-
-    void HealthyForest::createEnemies(){
-
-    }
-
-    void HealthyForest::createObstacles(){
-
     }
 
 }

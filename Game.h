@@ -5,11 +5,6 @@
 #ifndef JOGO_GAME_H
 #define JOGO_GAME_H
 
-/*#include <SFML/Window.hpp> //Precisa desse?
-#include <SFML/Graphics.hpp>
-#include "WindowManager.h"
-#include "InputManager.h" */
-//#include "PlayState.h"
 #include "AssetManager.h"
 #include "SpriteLoader.h"
 #include "GlobalMenu.h"
@@ -18,24 +13,23 @@
 #include "Player.h"
 #include "LevelMenu.h"
 #include "EndGame.h"
-using namespace entities::characters;
-//Incluir menu
 
+using namespace entities::characters;
 
 class Game {
 
 private:
+
     WindowManager window;
     AssetManager assets;
-    SpriteLoader spriteLoader;
+    SpriteLoader sprite_loader;
     menus::GlobalMenu menu;
-    menus::PlayerMenu playerMenu;
-    menus::LevelMenu levelMenu;
-    menus::EndGame endGame;
-    menus::LeaderBoard leaderBoard;
+    menus::PlayerMenu player_menu;
+    menus::LevelMenu level_menu;
+    menus::EndGame end_game;
+    menus::LeaderBoard leader_board;
     Player p1;
     Player p2;
-    bool onePlayer;
 
 public:
 
@@ -46,7 +40,6 @@ public:
     ~Game();
 
     void run();
-
 
 };
 

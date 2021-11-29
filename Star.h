@@ -23,15 +23,9 @@ namespace entities {
 
         Star();
 
-        Star(characters::Player* creator, int direction = 1);
-
         ~Star();
 
-        void setCreator(characters::Player* creator);
-
         void initializeStar();
-
-        characters::Player* getCreator();
 
     };
 

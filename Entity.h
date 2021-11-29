@@ -29,7 +29,7 @@ namespace entities {
 
         virtual int getCollisionDamage() = 0;
 
-        sf::Vector2f getPosition();
+        const sf::Vector2f getPosition() const;
 
         void setPosition(sf::Vector2f position);
         void setPosition(float x, float y = 0);

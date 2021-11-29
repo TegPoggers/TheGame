@@ -7,7 +7,6 @@
 
 #include <cstdlib>
 #include <ctime>
-
 #include "AssetManager.h"
 #include "EntityList.h"
 #include "WeakGoblin.h"
@@ -22,11 +21,11 @@
 using namespace entities::characters;
 using namespace entities::obstacles;
 
-
 namespace levels{
 
     class LevelMaker {
     private:
+
         Player* player;
         EntityList* entityList;
         AssetManager* assets;
@@ -34,18 +33,23 @@ namespace levels{
         float Xposition;
 
     public:
+
         LevelMaker();
+
         LevelMaker(Player* p, EntityList* list, AssetManager* asset);
+
         ~LevelMaker();
 
-        //Pelo menos 3 instâncias de cada tipo (min de 2 tipos)
-
         void createWeakGoblin();
+
         void createStrongGoblin();
+
         void createBossGoblin();
 
         void createSpikes();
+
         void createFirePit();
+
         void createPointyBush();
 
         void renderObstacles();

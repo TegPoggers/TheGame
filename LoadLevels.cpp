@@ -19,7 +19,6 @@ namespace menus{
     }
 
     void LoadLevels::run(){
-        cout << "State " << Being::getMenuState(0) << "  level state " << levelState << endl;
 
         while (Being::getMenuState(0) == levelState){
             window->clear();
@@ -29,34 +28,26 @@ namespace menus{
             }
             if (levelState == st_run_infected_forest){
                 infected->run();
-                if (infected->isFinished()){ //Considera o isFinished (tá pegando como se estivesse na posição da porta?)
-                    cout << "Fase terminou???????????????????????" << endl;
+                if (infected->isFinished()){
                     renderLevels();
                 }
             }
             else {
                 healthy->run();
                 if (healthy->isFinished()){
-                    cout << "Fase terminou???????????????????????" << endl;
                     renderLevels();
                 }
             }
             window->display();
         }
-        //Somar pontuação ao finalScore
         addScore();
         Being::setMenuState(st_end_game, 0);
-        //Verificar qual próxima fase (Comparar com o LevelState e jogadas) ou salvar pontuação
-        //renderLevels(); //Faço o render levels fora do while, então não roda
     }
 
-    //Problema está para passar de uma fase pra outra
-    //Roda uma vez e leva pro end game
     void LoadLevels::renderLevels() {
 
         if (Being::getMenuState(2) < 2){
             if (levelState) {
-                cout << "Era pra mudar de fase ------------------------------------ " << endl;
                 if (levelState == st_run_healthy_forest)
                     Being::setMenuState(st_run_infected_forest, 0);
                 else if (levelState == st_run_infected_forest)
@@ -65,10 +56,8 @@ namespace menus{
 
             if (Being::getMenuState(0) == st_run_infected_forest){
                 Being::setMenuState((Being::getMenuState(2)+ 1), 2);
-                cout << "Iniciei a infected --------------------------" << endl;
                 levelState = st_run_infected_forest;
                 infected = new levels::InfectedForest(p1, p2);
-                cout << "Aloquei a infected --------------------------" << endl;
             } else {
                 Being::setMenuState((Being::getMenuState(2)+ 1), 2);
                 levelState = st_run_healthy_forest;
@@ -89,10 +78,4 @@ namespace menus{
             finalScore = infected->getScore();
         }
     }
-
-    int LoadLevels::getFinalScore(){
-        return finalScore;
-    }
-
-
 }

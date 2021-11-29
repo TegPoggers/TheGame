@@ -36,8 +36,6 @@ namespace managers{
         enemy->takeDamage(projectile->getCollisionDamage());
         projectile->die();
         entities::Star* star = dynamic_cast<entities::Star*>(projectile);
-        entities::characters::Player* player = star->getCreator();
-
     }
 
     void EnemyCollision::enemyObstacleCollision(entities::characters::Enemy *enemy, entities::StaticEntity *obstacle) {

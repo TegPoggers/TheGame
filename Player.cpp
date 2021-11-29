@@ -21,7 +21,6 @@ namespace entities {
         }
 
         void Player::run() {
-            //Takes inputs, current speeds and moves accordingly
             if(inputs->isKeyPressed(actions.left) && inputs->isKeyPressed(actions.right)){
                 speed.x = 0;
             }
@@ -49,12 +48,8 @@ namespace entities {
 
         void Player::attack() {
             if(can_attack && inputs->isKeyPressed(actions.shoot)){
-                fire = new Star(this);
+                fire = new Star();
                 fire->setDirection(direction);
-                //fire->setPosition(position.x, position.y);
-                float width = sprite->getGlobalBounds().width;
-                float height = sprite->getGlobalBounds().height;
-
                 fire->setPosition(sprite->getGlobalBounds().width/2 + position.x - 40, sprite->getGlobalBounds().height/2 + position.y - 20);
                 counter = 0;
             }
@@ -71,8 +66,8 @@ namespace entities {
 
         }
 
-        void Player::score(int points) {
-            this->points += points;
+        void Player::score(int score) {
+            points += score;
         }
 
         int Player::getScore(){

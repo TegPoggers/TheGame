@@ -11,18 +11,12 @@
 namespace entities {
     namespace characters {
 
-        enum Direction {
-            Left,
-            Right
-        };
-
         class MovingEntity : public Entity {
 
         protected:
 
             int direction;
             int health;
-            int lives;
             Projectile* fire;
             sf::Vector2f speed;
             bool ground;

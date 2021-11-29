@@ -12,9 +12,6 @@ namespace menus{
 
     class GlobalMenu : public View {
 
-    private:
-        //leaderboard
-
     public:
 
         GlobalMenu();

@@ -14,9 +14,14 @@ namespace menus{
     class PlayerMenu : public View{
 
     public:
+
+
         PlayerMenu();
+
         ~PlayerMenu();
+
         void run();
+
         void initialize();
 
     };

@@ -22,13 +22,9 @@ namespace scoreboards {
     ScoreBoard::~ScoreBoard(){}
 
     void ScoreBoard::readScores(){
-        std::ifstream ifs("../SaveData/names.txt");
-        std::string content((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-        //cout << content << endl;
+        std::ifstream names("../SaveData/names.txt");
+        std::string content((std::istreambuf_iterator<char>(names)), (std::istreambuf_iterator<char>()));
 
-        string::iterator it;
-
-        //Mágica para fazer cada nome uma string (não STL) numa matriz
         int j = 0;
         int k = 0;
         for(int i = 0; i < content.length(); i++){
@@ -48,28 +44,21 @@ namespace scoreboards {
         leaderboard.scores.clear();
 
         j = 0;
-        k = 0;
         int value = 0;
         for(int i = 0; i < numbers.length(); i++){
             if(numbers[i] == '\n'){
                 if(value){
                     leaderboard.scores.push_back(value);
-                    //leaderboard.scores[j] = value;
                     value = 0;
                     j++;
                 }
             }
             else{
-                //Transformar chars em numeros
                 value *= 10;
                 value += numbers[i] - 48;
             }
         }
         leaderboard.scores.push_back(value);
-    }
-
-    int ScoreBoard::lenght(){
-        return leaderboard.scores.size();
     }
 
     void ScoreBoard::first(){
@@ -91,7 +80,7 @@ namespace scoreboards {
         }
     }
 
-    bool ScoreBoard::ended(){cout << leaderboard.scores.size() << endl;
+    bool ScoreBoard::ended(){
         if(line >= leaderboard.scores.size()){
             line = 0;
             return true;
@@ -100,9 +89,7 @@ namespace scoreboards {
     }
 
     void ScoreBoard::sort(){
-        //leaderboard.scores será arrumado e o name será alterado como consequência
 
-        //Insertion sort
         int value, j;
         char* name;
         for(int i = 1; i < leaderboard.scores.size(); i++) {
@@ -146,15 +133,6 @@ namespace scoreboards {
         for(i = 0; i <= str.size(); i++){
             character[i] = str[i];
         }
-        //character[++i] = '\0';
-    }
-
-    void ScoreBoard::charToString(string str, char* character){
-        int i;
-        for(i = 0; character[i] != '\0'; i++){
-            str[i] = character[i];
-        }
-        //str[++i] = '\0';
     }
 
     void ScoreBoard::saveScore(){

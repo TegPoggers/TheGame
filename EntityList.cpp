@@ -12,10 +12,6 @@ EntityList::~EntityList(){
 
 }
 
-List<entities::Entity> *EntityList::getList() {
-    return &eList;
-}
-
 int EntityList::getLen(){
     return eList.getLen();
 }

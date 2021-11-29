@@ -38,7 +38,7 @@ namespace entities{
             attack_counter++;
             if(jump_counter >= jump_speed) {
                 jump();
-                jump_counter = 0;cout << this->speed.y << this->ground << endl;
+                jump_counter = 0;
             }
             jump_counter++;
             walk();
@@ -46,7 +46,7 @@ namespace entities{
 
         void BossGoblin::walk(){
             p_position = player->getPosition();
-            if(p_position.x + 50 > position.x){//Esse + 50 vai mudar em função do tamanho do boss (talvez não pois não se pode andar no boss)
+            if(p_position.x + 50 > position.x){
                 position.x += walk_speed;
             }
             else{

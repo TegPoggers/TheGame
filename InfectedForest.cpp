@@ -33,12 +33,4 @@ namespace levels{
         }
     }
 
-    void InfectedForest::createEnemies(){
-
-
-    }
-
-    void InfectedForest::createObstacles(){
-
-    }
 }

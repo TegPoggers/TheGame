@@ -6,9 +6,6 @@
 #define JOGO_PROJECTILE_H
 
 #include "Entity.h"
-//#include "Player.h"
-//using namespace entities::characters;
-
 
 namespace entities {
 

@@ -6,7 +6,6 @@
 #define JOGO_INPUTMANAGER_H
 
 #include <SFML/Graphics.hpp>
-//#include <SFML/Window.hpp>
 
 typedef struct {
     sf::Keyboard::Key jump;
@@ -17,9 +16,9 @@ typedef struct {
 }Actions;
 
 typedef struct {
-    sf::Keyboard::Key up = sf::Keyboard::Up;
-    sf::Keyboard::Key enter = sf::Keyboard::Enter;
-    sf::Keyboard::Key down = sf::Keyboard::Down;
+    sf::Keyboard::Key up = sf::Keyboard::W;
+    sf::Keyboard::Key enter = sf::Keyboard::Space;
+    sf::Keyboard::Key down = sf::Keyboard::S;
 }Controls;
 
 class InputManager {
@@ -35,10 +34,6 @@ public:
     Actions setLayout2();
 
     virtual bool isKeyPressed(sf::Keyboard::Key key);
-
-    virtual bool isMouseClicked(sf::Mouse::Button click);
-
-    bool isSpriteClicked(sf::Sprite sprite, sf::RenderWindow* window, sf::Mouse::Button button);
 
 };
 

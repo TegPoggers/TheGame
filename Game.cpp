@@ -4,16 +4,15 @@
 
 #include "Game.h"
 
-Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), spriteLoader(), menu(), p1(), p2(){
+Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), sprite_loader(), menu(), p1(), p2(), player_menu(){
     Being::setAssetManager(&assets);
     Being::setWindowManager(&window);
-    spriteLoader.run();
-    //Views Inicialize
+    sprite_loader.run();
     menu.initialize();
-    playerMenu.initialize();
-    levelMenu.initialize(&p1, &p2);
-    endGame.initialize();
-    leaderBoard.initialize();
+    player_menu.initialize();
+    level_menu.initialize(&p1, &p2);
+    end_game.initialize();
+    leader_board.initialize();
 
     run();
 }
@@ -40,23 +39,19 @@ void Game::run() {
                 break;
 
             case st_player_menu:
-                playerMenu.run();
+                player_menu.run();
                 break;
 
             case st_level_menu:
-                levelMenu.run();
-                //renderLevel();
+                level_menu.run();
                 break;
 
             case st_end_game:
-                cout << "Estou no end game" << endl;
-                endGame.run();
-                //Mudar para o leaderboard
+                end_game.run();
                 break;
 
             case st_leader_board:
-                cout << "Estou no leader" << endl;
-                leaderBoard.run();
+                leader_board.run();
                 break;
 
             case st_quit_game:
