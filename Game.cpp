@@ -46,8 +46,7 @@ void Game::run() {
 
             case st_end_game:
                 end_game.run();
-                p1.setHealth(100);
-                p2.setHealth(100);
+                resetPlayers();
                 break;
 
             case st_leader_board:
@@ -64,6 +63,15 @@ void Game::run() {
 
     }
 
+}
+
+
+void Game::resetPlayers(){
+    p1.setHealth(100);
+    p2.setHealth(100);
+    p1.setScore(0);
+    p1.setIsAlive(true);
+    p2.setIsAlive(true);
 }
 
 

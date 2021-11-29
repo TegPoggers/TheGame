@@ -35,6 +35,7 @@ namespace menus{
         }
         menu_counter++;
 
+        Being::setMenuState(0, 2);
     }
 
 

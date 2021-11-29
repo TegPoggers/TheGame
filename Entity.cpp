@@ -53,13 +53,18 @@ namespace entities{
         alive = false;
     }
 
-    bool Entity::isAlive(){
+    bool Entity::getIsAlive(){
         return alive;
     }
 
     void Entity::move(sf::Vector2f amount) {
         position += amount;
     }
+
+    void Entity::setIsAlive(bool isAlive){
+        alive = isAlive;
+    }
+
 
 }
 

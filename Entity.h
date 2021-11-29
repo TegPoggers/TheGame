@@ -44,9 +44,11 @@ namespace entities {
 
         void die();
 
-        bool isAlive();
+        bool getIsAlive();
 
         void move(sf::Vector2f amount);
+
+        void setIsAlive(bool isAlive);
 
     };
 

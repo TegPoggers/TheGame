@@ -16,9 +16,9 @@ typedef struct {
 }Actions;
 
 typedef struct {
-    sf::Keyboard::Key up = sf::Keyboard::W;
-    sf::Keyboard::Key enter = sf::Keyboard::Space;
-    sf::Keyboard::Key down = sf::Keyboard::S;
+    sf::Keyboard::Key up = sf::Keyboard::Up;
+    sf::Keyboard::Key enter = sf::Keyboard::Return;
+    sf::Keyboard::Key down = sf::Keyboard::Down;
 }Controls;
 
 class InputManager {

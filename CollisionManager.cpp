@@ -54,7 +54,7 @@ namespace managers{
             ())){
                 entity_list->getItem(i)->die();
             }
-            if(!entity_list->getItem(i)->isAlive()){
+            if(!entity_list->getItem(i)->getIsAlive()){
                 entities::Entity* entity = entity_list->getItem(i);
                 if(*entity == player_id) {
                     entity_list->pop(entity_list->getItem(i));
