@@ -60,7 +60,7 @@ namespace menus {
         }
     }
 
-    int View::menu_speed = 72;
+    int View::menu_speed = 18;
     int View::finalScore = 0;
 
 }
