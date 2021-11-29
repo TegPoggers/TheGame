@@ -13,8 +13,6 @@ Game::Game() : window(WINDOW_WIDTH, WINDOW_HEIGHT), assets(), sprite_loader(), m
     level_menu.initialize(&p1, &p2);
     end_game.initialize();
     leader_board.initialize();
-
-    run();
 }
 
 Game::~Game() {
@@ -48,6 +46,8 @@ void Game::run() {
 
             case st_end_game:
                 end_game.run();
+                p1.setHealth(100);
+                p2.setHealth(100);
                 break;
 
             case st_leader_board:
